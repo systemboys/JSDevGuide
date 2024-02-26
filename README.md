@@ -22,93 +22,93 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 
 ---
 
-### Docker
+> ### Docker
+>
+> - [Docker Overview](#docker-overview)
+> - [Docker Installation](#docker-installation)
+> - [Docker Basics](#docker-basics)
 
-- [Docker Overview](#docker-overview)
-- [Docker Installation](#docker-installation)
-- [Docker Basics](#docker-basics)
+> ### Docker Compose
+>
+> - [Compose Overview](#compose-overview)
+> - [Compose Installation](#compose-installation)
+> - [Compose Usage](#compose-usage)
 
-### Docker Compose
+> ### Projetos
+>
+> - [Iniciando um projeto](#iniciando-um-projeto)
+> - [Criando API com TypeScript](#criando-api-com-typescript)
+> - [ORM Prisma](#orm-prisma)
 
-- [Compose Overview](#compose-overview)
-- [Compose Installation](#compose-installation)
-- [Compose Usage](#compose-usage)
+> ### Iniciando um projeto
+>
+> - [Configuração inicial](#configuração-inicial)
+> - [Estrutura de pastas](#estrutura-de-pastas)
+> - [Configuração do TypeScript](#configuração-do-typescript)
 
-### Projetos
+> ### Criando API com TypeScript
+>
+> - [Configuração do ambiente](#configuração-do-ambiente)
+> - [Definição de rotas](#definição-de-rotas)
+> - [Integração com banco de dados](#integração-com-banco-de-dados)
 
-- [Iniciando um projeto](#iniciando-um-projeto)
-- [Criando API com TypeScript](#criando-api-com-typescript)
-- [ORM Prisma](#orm-prisma)
+> ### ORM Prisma
+>
+> - [Instalação do Prisma](#instalação-do-prisma)
+> - [Definição de modelos](#definição-de-modelos)
+> - [Execução de consultas](#execução-de-consultas)
 
-### Iniciando um projeto
+> ### CRUD - Create, Read, Update e Delete
+>
+> - [Create](#create)
+> - [Read](#read)
+> - [Update](#update)
+> - [Delete](#delete)
 
-- [Configuração inicial](#configuração-inicial)
-- [Estrutura de pastas](#estrutura-de-pastas)
-- [Configuração do TypeScript](#configuração-do-typescript)
+> ### Rotas
+>
+> - [Definição de rotas](#definição-de-rotas)
+> - [Middleware](#middleware)
+> - [Autenticação](#autenticação)
 
-### Criando API com TypeScript
+> ### Componentes
+>
+> - [Componentes básicos](#componentes-básicos)
+> - [Componentes avançados](#componentes-avançados)
 
-- [Configuração do ambiente](#configuração-do-ambiente)
-- [Definição de rotas](#definição-de-rotas)
-- [Integração com banco de dados](#integração-com-banco-de-dados)
+> ### Funções
+>
+> - [Funções básicas](#funções-básicas)
+> - [Funções avançadas](#funções-avançadas)
 
-### ORM Prisma
+> ### Arrays
+>
+> - [Manipulação de arrays](#manipulação-de-arrays)
+> - [Iteração de arrays](#iteração-de-arrays)
 
-- [Instalação do Prisma](#instalação-do-prisma)
-- [Definição de modelos](#definição-de-modelos)
-- [Execução de consultas](#execução-de-consultas)
+> ### Frameworks
+>
+> - [Next.js](#nextjs)
+> - [Gatsby](#gatsby)
+> - [React Router](#react-router)
+> - [Material-UI](#material-ui)
+> - [Chakra UI](#chakra-ui)
+> - [Ant Design](#ant-design)
+> - [Bootstrap](#bootstrap)
+> - [Tailwind CSS](#tailwind-css)
+> - [Styled Components](#styled-components)
+> - [Redux](#redux)
 
-### CRUD - Create, Read, Update e Delete
-
-- [Create](#create)
-- [Read](#read)
-- [Update](#update)
-- [Delete](#delete)
-
-### Rotas
-
-- [Definição de rotas](#definição-de-rotas)
-- [Middleware](#middleware)
-- [Autenticação](#autenticação)
-
-### Componentes
-
-- [Componentes básicos](#componentes-básicos)
-- [Componentes avançados](#componentes-avançados)
-
-### Funções
-
-- [Funções básicas](#funções-básicas)
-- [Funções avançadas](#funções-avançadas)
-
-### Arrays
-
-- [Manipulação de arrays](#manipulação-de-arrays)
-- [Iteração de arrays](#iteração-de-arrays)
-
-### Frameworks
-
-- [Next.js](#nextjs)
-- [Gatsby](#gatsby)
-- [React Router](#react-router)
-- [Material-UI](#material-ui)
-- [Chakra UI](#chakra-ui)
-- [Ant Design](#ant-design)
-- [Bootstrap](#bootstrap)
-- [Tailwind CSS](#tailwind-css)
-- [Styled Components](#styled-components)
-- [Redux](#redux)
-
-### Bibliotecas
-
-- [Axios](#axios)
-- [React-Redux](#react-redux)
-- [Formik](#formik)
-- [Yup](#yup)
-- [React Hook Form](#react-hook-form)
-- [React Query](#react-query)
-- [React Router](#react-router)
-- [React Helmet](#react-helmet)
-- [React Icons](#react-icons)
-- [React-Bootstrap](#react-bootstrap)
+> ### Bibliotecas
+>
+> - [Axios](#axios)
+> - [React-Redux](#react-redux)
+> - [Formik](#formik)
+> - [Yup](#yup)
+> - [React Hook Form](#react-hook-form)
+> - [React Query](#react-query)
+> - [React Router](#react-router)
+> - [React Helmet](#react-helmet)
+> - [React Icons](#react-icons)
+> - [React-Bootstrap](#react-bootstrap)
 
