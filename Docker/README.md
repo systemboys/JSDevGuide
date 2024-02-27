@@ -5,6 +5,6 @@
 > - [Docker Basics](#docker-basics)
 >   - [DockerCompose](#DockerCompose)
 
-| ![Início](../imges/control/2860_home_house_icon.png?raw=true) | ![Voltar](../imges/control/11269_control_left_icon.png) | ![Subir](../imges/control/11280_control_up_icon.png) |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+> | ![Início](../imges/control/2860_home_house_icon.png?raw=true) | ![Voltar](../imges/control/11269_control_left_icon.png) | ![Subir](../imges/control/11280_control_up_icon.png) |
+> | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 
