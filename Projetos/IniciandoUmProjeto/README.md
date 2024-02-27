@@ -167,7 +167,7 @@
 
         - **--exec \"ts-node ./src/server.ts\"**: Esta opção diz ao nodemon para executar o comando `ts-node ./src/server.ts` sempre que um arquivo é alterado. O `ts-node` é uma ferramenta que permite executar TypeScript diretamente, sem a necessidade de compilar os arquivos para JavaScript primeiro. `./src/server.ts` é o arquivo de entrada do seu aplicativo.
 
-9. Instale as dependências que serão necessárias com o seguinte comando:
+9. Instale as dependências que serão necessárias para o projeto:
 
     Instale os pacotes "express", "cors" e "dotenv" usando o NPM com o seguinte comando:
 
