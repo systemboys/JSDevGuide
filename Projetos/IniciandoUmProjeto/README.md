@@ -119,7 +119,8 @@
 
         ```json
         "scripts": {
-            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+            "build": "tsc"
         },
         ```
 
@@ -132,7 +133,8 @@
             "main": "index.ts",
             "license": "MIT",
             "scripts": {
-                "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
+                "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+                "build": "tsc"
             },
             "devDependencies": {
                 "nodemon": "^2.0.22",
@@ -153,7 +155,7 @@
         }
         ```
 
-        Esta linha define um script que pode ser executado com o comando `npm run script`.
+        A linha `"scripts": {...}` define um script que pode ser executado com o comando `npm run script`. A linha `"build": "tsc"` cria o arquivo de build.
 
         Agora, vamos entender o que cada parte do script faz:
 
@@ -164,6 +166,26 @@
         - **--ext \"ts,json\"**: Esta opção diz ao nodemon para observar alterações em arquivos com as extensões `.ts` e `.json`.
 
         - **--exec \"ts-node ./src/server.ts\"**: Esta opção diz ao nodemon para executar o comando `ts-node ./src/server.ts` sempre que um arquivo é alterado. O `ts-node` é uma ferramenta que permite executar TypeScript diretamente, sem a necessidade de compilar os arquivos para JavaScript primeiro. `./src/server.ts` é o arquivo de entrada do seu aplicativo.
+
+9. Instale as dependências que serão necessárias com o seguinte comando:
+
+    Instale os pacotes "express", "cors" e "dotenv" usando o NPM com o seguinte comando:
+
+    ```bash
+    npm install express cors dotenv
+    ```
+
+    Este comando instalará os pacotes como dependências do seu projeto. Agora você pode usar "express", "cors" e "dotenv" em seu projeto Node.js.
+
+    Vamos entender o que cada pacote faz:
+
+    - **Express**: É um framework para aplicativo de rede de aplicativos Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
+
+    - **CORS (Cross-Origin Resource Sharing)**: É um pacote node.js para fornecer um middleware Connect/Express que pode ser usado para habilitar o CORS com várias opções.
+
+    - **Dotenv**: É um módulo de dependência zero que carrega variáveis de ambiente de um arquivo `.env` para `process.env`. Manter o controle das configurações do seu aplicativo pode ser confuso. Dotenv gerencia tudo isso para você.
+
+    Esses pacotes são comumente usados em muitos projetos Node.js para criar aplicações web robustas e seguras.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
