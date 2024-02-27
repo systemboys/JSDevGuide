@@ -119,7 +119,7 @@
 
         ```json
         "scripts": {
-            "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
         },
         ```
 
