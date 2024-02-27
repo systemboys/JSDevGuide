@@ -7,7 +7,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 ### *Summary*
 
 - [Docker](./Docker/README.md)
-    - [Docker Compose](#docker-compose)
+    - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose)
 - [Projetos](#projetos)
     - [Iniciando um projeto](#iniciando-um-projeto)
     - [Criando API com TypeScript](#criando-api-com-typescript)
