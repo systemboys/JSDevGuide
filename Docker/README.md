@@ -1,4 +1,8 @@
+> ![Docker](./images/docker.png)
+>
 > ## Docker
+
+> **_Sumario_**
 
 - [Docker Overview](#docker-overview)
 - [Docker Installation](#docker-installation)
