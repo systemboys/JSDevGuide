@@ -119,7 +119,7 @@
 
         ```json
         "scripts": {
-            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
         },
         ```
 
@@ -132,7 +132,7 @@
             "main": "index.ts",
             "license": "MIT",
             "scripts": {
-                "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+                "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
             },
             "devDependencies": {
                 "nodemon": "^2.0.22",
@@ -149,7 +149,7 @@
 
         ```json
         "scripts": {
-            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
         }
         ```
 
