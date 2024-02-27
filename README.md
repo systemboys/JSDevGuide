@@ -14,6 +14,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
     - [ORM Prisma](#orm-prisma)
         - [CRUD - Create, Read, Update e Delete](#crud---create-read-update-e-delete)
     - [Rotas](#rotas)
+    - [Controllers](#Controllers)
 - [Conceitos Básicos](#conceitos-b%C3%A1sicos)
     - [Funções](#funções)
     - [Arrays](#arrays)
