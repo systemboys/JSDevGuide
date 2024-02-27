@@ -8,7 +8,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 
 - [Docker](./Docker/README.md#docker "Docker")
     - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose "Docker Compose")
-- [Projetos](#projetos "Projetos")
+- [Projetos](./Projetos/README.md#projetos "Projetos")
     - [Iniciando um projeto](./Projetos/IniciandoUmProjeto/README.md#iniciando-um-projeto "Iniciando um projeto")
     - [Criando API com TypeScript](#criando-api-com-typescript "Criando API com TypeScript")
     - [ORM Prisma](#orm-prisma "ORM Prisma")
