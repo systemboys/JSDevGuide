@@ -4,7 +4,7 @@
 
 Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.JS, React.JS, Next.JS, Docker e outras tecnologias essenciais. Encontre instruções detalhadas, dicas práticas e exemplos de código para aprimorar suas habilidades de programação.
 
-## Sumário
+## Summary
 
 - [Docker](./Docker/README.md)
     - [Docker Compose](#docker-compose)
