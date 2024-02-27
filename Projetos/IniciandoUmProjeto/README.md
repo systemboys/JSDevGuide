@@ -58,6 +58,26 @@
     └─ package.json
     ```
 
+    > A estrutura acima, é um exemplo de uma estrutura padrão.
+
+5. Configurações do "TypeScript".
+
+    Você pode instalar o "Nodemon", "ts-node" e "sucrase" como dependências de desenvolvimento usando o NPM com o seguinte comando:
+
+    ```bash
+    npm install --save-dev nodemon ts-node sucrase
+    ```
+
+    Agora, vamos entender o que cada pacote faz:
+
+    - **Nodemon**: É uma ferramenta que ajuda a desenvolver aplicativos baseados em node.js ao reiniciar automaticamente a aplicação de node quando detecta alterações de arquivo no diretório.
+
+    - **ts-node**: É uma ferramenta que permite executar TypeScript diretamente, sem a necessidade de compilar os arquivos para JavaScript primeiro. É muito útil durante o desenvolvimento, quando você quer testar rapidamente seu código.
+
+    - **Sucrase**: É um compilador de código super rápido que permite que você escreva código em sintaxes modernas (como ES6, JSX, TypeScript, etc.) e o compila para versões mais antigas do JavaScript que podem ser executadas em ambientes mais antigos.
+
+    Esses três pacotes são comumente usados em conjunto para criar um ambiente de desenvolvimento eficiente para projetos Node.js. Espero que isso ajude! 😊
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
