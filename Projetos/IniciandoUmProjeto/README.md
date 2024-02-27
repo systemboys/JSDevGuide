@@ -132,7 +132,7 @@
             "main": "index.ts",
             "license": "MIT",
             "scripts": {
-                "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+                "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
             },
             "devDependencies": {
                 "nodemon": "^2.0.22",
@@ -149,17 +149,11 @@
 
         ```json
         "scripts": {
-            "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
-        }
-        ```
-
-        Esta linha define um script que pode ser executado com o comando `npm run script`. No entanto, parece que falta um nome para o script. Normalmente, seria algo como:
-
-        ```json
-        "scripts": {
             "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
         }
         ```
+
+        Esta linha define um script que pode ser executado com o comando `npm run script`.
 
         Agora, vamos entender o que cada parte do script faz:
 
