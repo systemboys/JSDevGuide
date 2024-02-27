@@ -7,6 +7,9 @@
 > - [Iniciando um projeto](./IniciandoUmProjeto/README.md#iniciando-um-projeto)
 > - [Criando API com TypeScript](#criando-api-com-typescript)
 > - [ORM Prisma](#orm-prisma)
+>    - [CRUD - Create, Read, Update e Delete](#crud---create-read-update-e-delete "CRUD - Create, Read, Update e Delete")
+> - [Rotas](#rotas "Rotas")
+> - [Controllers](#Controllers "Controllers")
 
 ----
 
