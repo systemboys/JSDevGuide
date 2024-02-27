@@ -6,21 +6,21 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 
 ### *Summary*
 
-- [Docker](./Docker/README.md)
-    - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose)
-- [Projetos](#projetos)
-    - [Iniciando um projeto](#iniciando-um-projeto)
-    - [Criando API com TypeScript](#criando-api-com-typescript)
-    - [ORM Prisma](#orm-prisma)
-        - [CRUD - Create, Read, Update e Delete](#crud---create-read-update-e-delete)
-    - [Rotas](#rotas)
-    - [Controllers](#Controllers)
-- [Conceitos Básicos](#conceitos-b%C3%A1sicos)
-    - [Funções](#funções)
-    - [Arrays](#arrays)
-- [Componentes](#componentes)
-- [Frameworks](#frameworks)
-- [Bibliotecas](#bibliotecas)
+- [Docker](./Docker/README.md "Docker")
+    - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose "Docker Compose")
+- [Projetos](#projetos "Projetos")
+    - [Iniciando um projeto](#iniciando-um-projeto "Iniciando um projeto")
+    - [Criando API com TypeScript](#criando-api-com-typescript "Criando API com TypeScript")
+    - [ORM Prisma](#orm-prisma "ORM Prisma")
+        - [CRUD - Create, Read, Update e Delete](#crud---create-read-update-e-delete "CRUD - Create, Read, Update e Delete")
+    - [Rotas](#rotas "Rotas")
+    - [Controllers](#Controllers "Controllers")
+- [Conceitos Básicos](#conceitos-b%C3%A1sicos "Conceitos Básicos")
+    - [Funções](#funções "Funções")
+    - [Arrays](#arrays "Arrays")
+- [Componentes](#componentes "Componentes")
+- [Frameworks](#frameworks "Frameworks")
+- [Bibliotecas](#bibliotecas "Bibliotecas")
 
 ---
 
