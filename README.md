@@ -14,21 +14,22 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
     - [ORM Prisma](#orm-prisma)
         - [CRUD - Create, Read, Update e Delete](#crud---create-read-update-e-delete)
     - [Rotas](#rotas)
+- [Conceitos Básicos](#conceitos-basicos)
+    - [Funções](#funções)
+    - [Arrays](#arrays)
 - [Componentes](#componentes)
-- [Funções](#funções)
-- [Arrays](#arrays)
 - [Frameworks](#frameworks)
 - [Bibliotecas](#bibliotecas)
 
 ---
 
-> ### Docker
+> ## Docker
 >
 > - [Docker Overview](#docker-overview)
 > - [Docker Installation](#docker-installation)
 > - [Docker Basics](#docker-basics)
 
-> ### Docker Compose
+> ## Docker Compose
 >
 > - [Compose Overview](#compose-overview)
 > - [Compose Installation](#compose-installation)
@@ -59,7 +60,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 > - [Execução de consultas](#execução-de-consultas)
 > - [Controllers](#controllers)
 
-> ### CRUD - Create, Read, Update e Delete
+> #### CRUD - Create, Read, Update e Delete
 >
 > - [Create](#create)
 > - [Read](#read)
@@ -72,10 +73,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 > - [Middleware](#middleware)
 > - [Autenticação](#autenticação)
 
-> ### Componentes
->
-> - [Componentes básicos](#componentes-básicos)
-> - [Componentes avançados](#componentes-avançados)
+> ## Conceitos Básicos
 
 > ### Funções
 >
@@ -87,7 +85,12 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 > - [Manipulação de arrays](#manipulação-de-arrays)
 > - [Iteração de arrays](#iteração-de-arrays)
 
-> ### Frameworks
+> ## Componentes
+>
+> - [Componentes básicos](#componentes-básicos)
+> - [Componentes avançados](#componentes-avançados)
+
+> ## Frameworks
 >
 > - [Next.js](#nextjs)
 > - [Gatsby](#gatsby)
@@ -100,7 +103,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 > - [Styled Components](#styled-components)
 > - [Redux](#redux)
 
-> ### Bibliotecas
+> ## Bibliotecas
 >
 > - [Axios](#axios)
 > - [React-Redux](#react-redux)
@@ -113,7 +116,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 > - [React Icons](#react-icons)
 > - [React-Bootstrap](#react-bootstrap)
 
-> ### Controllers
+> ## Controllers
 >
 > Os controllers no contexto do ORM Prisma são responsáveis por gerenciar a lógica de negócio da sua aplicação, principalmente em operações que envolvem a manipulação e interação com o banco de dados. Eles são responsáveis por receber requisições, processar os dados necessários e retornar as respostas apropriadas. Aqui estão algumas práticas recomendadas para trabalhar com controllers no contexto do Prisma:
 > 
