@@ -1,6 +1,6 @@
-> ![Docker](./images/docker.png)
->
 > ## Docker
+>
+> ![Docker](./images/docker.png)
 
 > ### *Summary*
 
