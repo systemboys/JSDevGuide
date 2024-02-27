@@ -96,6 +96,81 @@
 
     O comando `npx` é uma ferramenta que vem com o NPM e permite executar pacotes Node.js que foram instalados localmente em seu projeto. Neste caso, estamos usando `npx` para executar o compilador TypeScript (`tsc`) com a opção `--init` para inicializar um novo projeto TypeScript.
 
+8. No arquivo `package.json`, altere ...
+
+    ```json
+    {
+        "name": "backend",
+        "version": "1.0.0",
+        "main": "index.ts",
+        "license": "MIT",
+        "devDependencies": {
+            "nodemon": "^2.0.22",
+            "sucrase": "^3.32.0",
+            "ts-node": "^10.9.1"
+        }
+    },
+    "dependencies": {
+        "typescript": "^5.0.4"
+    }
+    ```
+
+    - Abaixo de `"licence": "MIT",`, acima das dependências de desenvolvimento `"devDepencencies": {...}`, adicione as seguintes linhas:
+
+        ```json
+        "scripts": {
+            "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+        },
+        ```
+
+        Deverá ficar da seguinte forma:
+
+        ```json
+        {
+            "name": "backend",
+            "version": "1.0.0",
+            "main": "index.ts",
+            "license": "MIT",
+            "scripts": {
+                "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+            },
+            "devDependencies": {
+                "nodemon": "^2.0.22",
+                "sucrase": "^3.32.0",
+                "ts-node": "^10.9.1"
+            }
+        },
+        "dependencies": {
+            "typescript": "^5.0.4"
+        }
+        ```
+
+        Analisando essa linha no arquivo `package.json`:
+
+        ```json
+        "scripts": {
+            "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+        }
+        ```
+
+        Esta linha define um script que pode ser executado com o comando `npm run script`. No entanto, parece que falta um nome para o script. Normalmente, seria algo como:
+
+        ```json
+        "scripts": {
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\""
+        }
+        ```
+
+        Agora, vamos entender o que cada parte do script faz:
+
+        - **nodemon**: É uma ferramenta que reinicia automaticamente a aplicação Node.js quando detecta alterações nos arquivos.
+
+        - **--watch \"src/**\"**: Esta opção configura o nodemon para observar alterações em todos os arquivos na pasta `src` e suas subpastas.
+
+        - **--ext \"ts,json\"**: Esta opção diz ao nodemon para observar alterações em arquivos com as extensões `.ts` e `.json`.
+
+        - **--exec \"ts-node ./src/server.ts\"**: Esta opção diz ao nodemon para executar o comando `ts-node ./src/server.ts` sempre que um arquivo é alterado. O `ts-node` é uma ferramenta que permite executar TypeScript diretamente, sem a necessidade de compilar os arquivos para JavaScript primeiro. `./src/server.ts` é o arquivo de entrada do seu aplicativo.
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
