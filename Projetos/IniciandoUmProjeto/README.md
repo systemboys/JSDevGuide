@@ -531,6 +531,47 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Depois que o modelo de dados é definido, você pode gerar o Prisma Client, que expõe consultas CRUD e mais para os modelos definidos. Se você estiver usando TypeScript, obterá total segurança de tipo para todas as consultas (mesmo ao recuperar apenas os subconjuntos dos campos de um modelo).
 
+    > Docs: [https://www.prisma.io/](#https://www.prisma.io/ "Acessar a documentação do Prisma")
+
+    ---
+
+    Para instalar o Prisma via NPM, você pode usar o seguinte comando:
+
+    ```bash
+    npm install prisma @prisma/client
+    ```
+
+    Este comando instala o pacote `prisma` que contém o CLI do Prisma e o pacote `@prisma/client` que é o cliente do Prisma.
+
+    Depois de instalar o Prisma, você pode gerar o cliente Prisma usando o seguinte comando:
+
+    ```bash
+    npx prisma generate
+    ```
+
+    Este comando lê o arquivo de esquema Prisma e gera o cliente Prisma. Agora você pode importar o cliente Prisma em seu código para acessar seu banco de dados. Por exemplo:
+
+    ```javascript
+    const { PrismaClient } = require('@prisma/client')
+
+    const prisma = new PrismaClient()
+
+    async function main() {
+    const allUsers = await prisma.user.findMany()
+    console.log(allUsers)
+    }
+
+    main()
+    .catch(e => {
+        throw e
+    })
+    .finally(async () => {
+        await prisma.$disconnect()
+    })
+    ```
+
+    Neste exemplo, estamos importando o `PrismaClient` do pacote `@prisma/client` e usando-o para buscar todos os usuários do banco de dados.
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
