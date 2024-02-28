@@ -591,7 +591,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         /myProject/
         ├─ /src/
         │  ├─ /services/
-        │  │  └─ prisma.ts ">>> New file <<<"
+        │  │  └─ prisma.ts    ">>> New file <<<"
         │  └─ index.ts
         ├─ docker-compose.yml
         └─ package.json
@@ -648,14 +648,14 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         ├─ /prisma/
         │  ├─ /migrations/
         │  │  ├─ /20230522172022_init/
-        │  │  │  └─ migration.sql ">>> New file <<<"
-        │  │  └─ migration_lock.toml ">>> New file <<<"
-        │  └─ schema.prisma ">>> New file <<<"
+        │  │  │  └─ migration.sql      ">>> New file <<<"
+        │  │  └─ migration_lock.toml   ">>> New file <<<"
+        │  └─ schema.prisma            ">>> New file <<<"
         ├─ /src/
         │  ├─ /services/
         │  │  └─ prisma.ts
         │  └─ index.ts
-        ├─ .env ">>> New file <<<"
+        ├─ .env                        ">>> New file <<<"
         ├─ docker-compose.yml
         └─ package.json
         ```
