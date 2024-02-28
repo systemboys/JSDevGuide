@@ -7,7 +7,7 @@
 > - [Configuração inicial](#configuração-inicial)
 > - [Criando banco de dados](#criando-banco-de-dados)
 >   - [Docker e Docker Compose](#docker-e-docker-compose)
->   - [Prisma](#prisma)
+>   - [ORM Prisma](#orm-prisma)
 > - [Configuração do TypeScript](#configuração-do-typescript)
 
 ----
@@ -466,9 +466,9 @@
     root@10:/home/userlinux/Documentos/Projects/myProject/api#
     ```
 
-3. Configure o ORM Prisma:
+### ORM Prisma
 
-    ### Prisma
+3. Configure o ORM Prisma:
 
     Prisma ORM é um mapeador objeto-relacional (ORM) de código aberto e de próxima geração¹. Ele consiste nas seguintes partes:
 
