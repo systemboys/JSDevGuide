@@ -229,7 +229,7 @@
     O ...
 
     ```bash
-    root@10:/home/marcos/Documentos/Projects/myProject/api# npm start
+    root@10:/home/userlinux/Documentos/Projects/myProject/api# npm start
 
     > api@1.0.0 start
     > nodemon --watch "src/**" --ext "ts,json" --exec "ts-node ./src/index.ts"
