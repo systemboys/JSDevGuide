@@ -536,7 +536,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Depois que o modelo de dados é definido, você pode gerar o Prisma Client, que expõe consultas CRUD e mais para os modelos definidos. Se você estiver usando TypeScript, obterá total segurança de tipo para todas as consultas (mesmo ao recuperar apenas os subconjuntos dos campos de um modelo).
 
-    > Docs: [https://www.prisma.io/](#https://www.prisma.io/ "Acessar a documentação do Prisma")
+    > Docs: [https://www.prisma.io/](https://www.prisma.io/ "Acessar a documentação do Prisma")
 
     ---
 
