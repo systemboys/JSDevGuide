@@ -346,11 +346,13 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Sua estrutura de arquivos ficará assim:
 
+    > Nova estrutura de arquivos!
+
     ```bash
     /myProject/
     ├─ /src/
     │  └─ index.ts
-    ├─ docker-compose.yml
+    ├─ docker-compose.yml ">>> New file <<<"
     └─ package.json
     ```
 
@@ -583,6 +585,18 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     - No diretório "`./src/services/`", crie um um arquivo com o nome "`prisma.ts`" para importar o Prisma/Cliente. Segue o código abaixo:
 
+        > Nova estrutura de arquivos!
+
+        ```bash
+        /myProject/
+        ├─ /src/
+        │  ├─ /services/
+        │  │  └─ prisma.ts ">>> New file <<<"
+        │  └─ index.ts
+        ├─ docker-compose.yml
+        └─ package.json
+        ```
+
         **File: `./src/services/prisma.ts`**
         ```ts
         import { PrismaClient } from '@prisma/client';
@@ -625,6 +639,25 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
         DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+        ```
+
+        > Nova estrutura de arquivos!
+
+        ```bash
+        /myProject/
+        ├─ /prisma/
+        │  ├─ /migrations/
+        │  │  ├─ /20230522172022_init/
+        │  │  │  └─ migration.sql ">>> New file <<<"
+        │  │  └─ migration_lock.toml ">>> New file <<<"
+        │  └─ schema.prisma ">>> New file <<<"
+        ├─ /src/
+        │  ├─ /services/
+        │  │  └─ prisma.ts
+        │  └─ index.ts
+        ├─ .env ">>> New file <<<"
+        ├─ docker-compose.yml
+        └─ package.json
         ```
 
         Configure os dados de acesso ao banco de dados, aqueles acessos que foram criados no arquivo "`docker-compose.yml`". Veja a variável `DATABASE_URL` abaixo:
