@@ -8,7 +8,7 @@
 > - [Criando banco de dados](#criando-banco-de-dados "Criando banco de dados")
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
 >   - [ORM Prisma](#orm-prisma "ORM Prisma")
->   - [Repository de usuários (CRUD)](# "Repository de usuários (CRUD)")
+>   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
 > - [Configuração do TypeScript](#configuração-do-typescript "Configuração do TypeScript")
 
 ----
