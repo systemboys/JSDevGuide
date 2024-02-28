@@ -12,7 +12,7 @@
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
 >   - [ORM Prisma](#orm-prisma "ORM Prisma")
 >   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
->   - [Controller de usuário](#controller--de-usu%C3%A1rio "Controller de usuário")
+>   - [Controller de usuário](#controller-de-usu%C3%A1rio "Controller de usuário")
 > - [Configuração do TypeScript](#configuração-do-typescript "Configuração do TypeScript")
 
 ----
