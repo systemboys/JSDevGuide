@@ -246,9 +246,7 @@
 
 Vamos configurar um banco de dados.
 
-1. Se você não tiver o Docker instalado em sua máquina, instale utilizando o seguinte comando:
-
-    Aqui estão as instruções para instalar o Docker em algumas das distribuições Linux mais comuns:
+1. Se você não tiver o **Docker** instalado em sua máquina, utilise as instruções seguintes para instalá-lo em algumas das distribuições Linux mais comuns:
 
     **Ubuntu:**
 
@@ -295,6 +293,14 @@ Vamos configurar um banco de dados.
     ```
 
     Por favor, note que você pode precisar de privilégios de superusuário para executar esses comandos. Além disso, essas instruções assumem que você está usando a arquitetura amd64, que é comum na maioria dos sistemas modernos. Se você estiver usando uma arquitetura diferente, substitua "amd64" pela sua arquitetura no comando que adiciona o repositório do Docker.
+
+    Você pode verificar se o Docker está instalado no seu sistema Linux usando o seguinte comando no terminal:
+
+    ```bash
+    docker --version
+    ```
+
+    Se o Docker estiver instalado, este comando retornará a versão do Docker. Se não estiver instalado, você receberá uma mensagem de erro indicando que o comando 'docker' não foi encontrado. Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
