@@ -678,6 +678,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
         ![Migrations.SQL](./images/migrationSql.png)
 
+    **Obs.:** Não esqueça de estar com o Docker rodando, se o Docker parar, o banco de dados não vai rodar!
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
