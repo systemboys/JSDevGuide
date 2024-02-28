@@ -12,6 +12,7 @@
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
 >   - [ORM Prisma](#orm-prisma "ORM Prisma")
 >   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
+>   - [Controller de usuário](#controller--de-usu%C3%A1rio "Controller de usuário")
 > - [Configuração do TypeScript](#configuração-do-typescript "Configuração do TypeScript")
 
 ----
@@ -685,6 +686,14 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     **Obs.:** Não esqueça de estar com o Docker rodando, se o Docker parar, o banco de dados não vai rodar!
 
 ### Repository de usuários (CRUD)
+
+Content...
+
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Controller de usuário
 
 Content...
 
