@@ -337,7 +337,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
 2. Crie um arquivo chamado "`docker-compose.yml`" na raiz do seu projeto:
 
-    **File: `docker-compose.yml`**
+    **File: `./docker-compose.yml`**
 
     Sua estrutura de arquivos ficará assim:
 
@@ -571,6 +571,112 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     ```
 
     Neste exemplo, estamos importando o `PrismaClient` do pacote `@prisma/client` e usando-o para buscar todos os usuários do banco de dados.
+
+    > Toda vez que precisa se comunicar com o banco de dados, o Prisma precisa ser instanciado.
+    >
+    > Para não ser preciso fazer isso toda vez, faça o seguinte procedimento:
+
+    - No diretório "`./src/services/`", crie um um arquivo com o nome "`prisma.ts`" para importar o Prisma/Cliente. Segue o código abaixo:
+
+        **File: `./src/services/prisma.ts`**
+        ```ts
+        import { PrismaClient } from '@prisma/client';
+
+        export const prisma = new PrismaClient();s
+        ```
+
+    - Digite no **terminal** o seguinte comando "`npx prisma init`":
+
+        ```bash
+        npx prisma init
+        ```
+
+        O comando `npx prisma init` é usado para inicializar um novo projeto Prisma. Ele cria um diretório chamado `prisma` no diretório atual do seu projeto. Dentro deste diretório, ele gera um arquivo chamado `schema.prisma`, que é um esqueleto do esquema do banco de dados.
+
+        O arquivo `schema.prisma` é onde você define seus modelos de aplicação e configura seu banco de dados. Aqui está um exemplo de como pode ser o conteúdo inicial do arquivo `schema.prisma`:
+
+        ```prisma
+        datasource client {
+            provider = "prisma-client-js"
+        }
+
+        generator db {
+            provider = "postgresql"
+            url      = env("DATABASE_URL")
+        }
+        ```
+
+        Neste exemplo, estamos configurando uma fonte de dados (datasource) para usar o PostgreSQL e estamos configurando o gerador (generator) para gerar o Prisma Client em JavaScript.
+
+        Depois de configurar o `schema.prisma`, você pode executar `npx prisma generate` para gerar o Prisma Client. O Prisma Client é um construtor de consultas autogerado e com tipagem segura para Node.js e TypeScript.
+
+        Após a execução do comando "`npx prisma init`", o Prisma criou outro arquivo "`.env`" contendo o seguinte conteúdo:
+
+        ```tex
+        # Environment variables declared in this file are automatically made available to Prisma.
+        # See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+        # Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+        # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+        DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+        ```
+
+        Configure os dados de acesso ao banco de dados, aqueles acessos que foram criados no arquivo "`docker-compose.yml`". Veja a variável `DATABASE_URL` abaixo:
+
+        ```tex
+        DATABASE_URL="postgresql://pguser:pgpassword@localhost:5432/dbsystem?schema=public"
+        ```
+
+    - Execute o seguinte comando para criar o banco de dados:
+
+        ```bash
+        npx prisma migrate dev --name init
+        ```
+
+        Agora, vamos entender o que esse comando faz:
+
+        - `prisma migrate dev`: Este comando é parte do Prisma Migrate, que é uma ferramenta de migração de banco de dados declarativa. O comando `migrate dev` é usado durante o desenvolvimento e aplica as migrações de banco de dados no ambiente de desenvolvimento. Ele também gera e aplica uma nova migração se houver alterações no Prisma Schema.
+
+        - `--name init`: A opção `--name` permite que você dê um nome personalizado para a migração. Neste caso, a migração é chamada de `init`.
+
+        Portanto, o comando `npx prisma migrate dev --name init` irá gerar uma nova migração chamada `init` se houver alterações no Prisma Schema, e então aplicará essa migração no banco de dados de desenvolvimento. Se não houver alterações no Prisma Schema, ele simplesmente aplicará as migrações existentes.
+
+        > Após digitar o comando, é criado um diretório com o nome `migrations`, dentro, está uma migration .sql.
+
+        ![Migrations](./images/migrations.png)
+
+        > Ele converteu a tabela que foi escrita para uma linguagem SQL.
+
+        ![Migrations.SQL](./images/migrationSql.png)
+
+    - Crie a tabela de dados do banco de dados, segue o código abaixo:
+
+        ```prisma
+        datasource client {
+            provider = "prisma-client-js"
+        }
+
+        generator db {
+            provider = "postgresql"
+            url      = env("DATABASE_URL")
+        }
+
+        model User {
+            id       Int     @id @default(autoincrement())
+            name     String
+            email    String
+            password String
+            phone    String
+            address  String
+            number   String
+            city     String
+            state    String
+            cep      String
+            status   Boolean @default(true)
+            deleted  Boolean @default(false)
+        }
+        ```
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
