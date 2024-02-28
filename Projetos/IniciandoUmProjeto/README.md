@@ -5,7 +5,7 @@
 > ### *Summary*
 
 > - [Configuração inicial](#configuração-inicial)
-> - [Estrutura de pastas](#estrutura-de-pastas)
+> - [Criando banco de dados](#criando-banco-de-dados)
 > - [Configuração do TypeScript](#configuração-do-typescript)
 
 ----
@@ -50,10 +50,6 @@
     ```tex
     /myProject/
     ├─ /src/
-    │  ├─ /controllers/
-    │  ├─ /repositories/
-    │  ├─ /routes/
-    │  ├─ /services/
     │  └─ index.ts
     └─ package.json
     ```
@@ -241,6 +237,64 @@
     [nodemon] starting `ts-node ./src/index.ts`
     Servidor rodando na porta 3000!
     ```
+
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+## Criando banco de dados
+
+Vamos configurar um banco de dados.
+
+1. Se você não tiver o Docker instalado em sua máquina, instale utilizando o seguinte comando:
+
+    Aqui estão as instruções para instalar o Docker em algumas das distribuições Linux mais comuns:
+
+    **Ubuntu:**
+
+    ```bash
+    # Atualize sua lista de pacotes
+    sudo apt update
+
+    # Instale alguns pacotes pré-requisitos
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+    # Adicione a chave GPG para o repositório oficial do Docker
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    # Adicione o repositório do Docker às fontes do APT
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+    # Atualize o banco de dados do pacote com os pacotes do Docker do recém adicionado repositório
+    sudo apt update
+
+    # Instale o Docker
+    sudo apt install docker-ce
+    ```
+
+    **Debian:**
+
+    ```bash
+    # Atualize sua lista de pacotes
+    sudo apt-get update
+
+    # Instale alguns pacotes pré-requisitos
+    sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
+    # Adicione a chave GPG para o repositório oficial do Docker
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+    # Adicione o repositório do Docker às fontes do APT
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    # Atualize o banco de dados do pacote com os pacotes do Docker do recém adicionado repositório
+    sudo apt-get update
+
+    # Instale o Docker
+    sudo apt-get install docker-ce
+    ```
+
+    Por favor, note que você pode precisar de privilégios de superusuário para executar esses comandos. Além disso, essas instruções assumem que você está usando a arquitetura amd64, que é comum na maioria dos sistemas modernos. Se você estiver usando uma arquitetura diferente, substitua "amd64" pela sua arquitetura no comando que adiciona o repositório do Docker.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
