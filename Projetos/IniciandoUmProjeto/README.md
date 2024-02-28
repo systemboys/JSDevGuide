@@ -220,13 +220,13 @@
     })
     ```
 
-13. Se tudo estiver correto, dê um Start na API com o seguinte comando:
+13. Start o servidor com o seguinte comando:
 
     ```bash
     npm start
     ```
 
-    O ...
+    No console do seu terminal, será exibidas as informações indicando que o servidor está rodando na porta configurada.
 
     ```bash
     root@10:/home/userlinux/Documentos/Projects/myProject/api# npm start
@@ -234,7 +234,7 @@
     > api@1.0.0 start
     > nodemon --watch "src/**" --ext "ts,json" --exec "ts-node ./src/index.ts"
 
-    [nodemon] 3.1.0
+    [nodemon] 2.0.22
     [nodemon] to restart at any time, enter `rs`
     [nodemon] watching path(s): src/**
     [nodemon] watching extensions: ts,json
