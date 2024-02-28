@@ -47,7 +47,7 @@
 
 4. Crie sua estrutura de diretório:
 
-    ```tex
+    ```bash
     /myProject/
     ├─ /src/
     │  └─ index.ts
@@ -301,6 +301,105 @@ Vamos configurar um banco de dados.
     ```
 
     Se o Docker estiver instalado, este comando retornará a versão do Docker. Se não estiver instalado, você receberá uma mensagem de erro indicando que o comando 'docker' não foi encontrado. Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema.
+
+2. Crie um arquivo chamado "`docker-compose.yml`" na raiz do seu projeto:
+
+    **File: `docker-compose.yml`**
+
+    Sua estrutura de arquivos ficará assim:
+
+    ```bash
+    /myProject/
+    ├─ /src/
+    │  └─ index.ts
+    ├─ docker-compose.yml
+    └─ package.json
+    ```
+
+    Crie uma imagem Docker dentro do arquivo:
+
+    ```yaml
+    version: "3"
+
+    services:
+        pgsql-db:
+            image: postgres
+            ports:
+                - "5432:5432"
+            container_name: "pgsql-db"
+            restart: always
+            volumes:
+                - ./data-pgsql-db:/var/lib/postgresql/data
+            environment:
+                POSTGRES_USER: pguser
+                POSTGRES_PASSWORD: pgpassword
+
+    volumes:
+        data-pgsql-db:
+    ```
+
+    **Explicando cada seção do arquivo `docker-compose.yml`:**
+
+    ```yaml
+    version: "3"
+    ```
+    Esta linha especifica a versão do formato do arquivo `docker-compose.yml`. A versão "3" é uma das mais recentes e suporta a maioria das opções de configuração.
+
+    ```yaml
+    services:
+    ```
+    Aqui começamos a definir os serviços, que são os contêineres que queremos executar.
+
+    ```yaml
+        pgsql-db:
+    ```
+    Este é o nome do serviço, neste caso, `pgsql-db`. Este nome será usado como prefixo para criar contêineres.
+
+    ```yaml
+            image: postgres
+    ```
+    Esta linha especifica a imagem Docker a ser usada para criar o contêiner. Neste caso, estamos usando a imagem oficial do PostgreSQL.
+
+    ```yaml
+            ports:
+                - "5432:5432"
+    ```
+    Aqui estamos mapeando a porta 5432 do contêiner para a porta 5432 do host. Isso significa que o serviço PostgreSQL no contêiner estará disponível na porta 5432 do host.
+
+    ```yaml
+            container_name: "pgsql-db"
+    ```
+    Esta linha define o nome do contêiner. Se não for especificado, o Docker gerará um nome automaticamente.
+
+    ```yaml
+            restart: always
+    ```
+    Esta opção define a política de reinicialização do contêiner. No caso de `always`, o contêiner será reiniciado sempre que parar. Se parar manualmente, ele só será reiniciado quando o contêiner for manualmente reiniciado ou o Docker for reiniciado.
+
+    ```yaml
+            volumes:
+                - ./data-pgsql-db:/var/lib/postgresql/data
+    ```
+    Aqui estamos montando um volume. Isso mapeia o diretório `./data-pgsql-db` do host para o diretório `/var/lib/postgresql/data` no contêiner. Isso é útil para persistência de dados.
+
+    ```yaml
+            environment:
+                POSTGRES_USER: pguser
+                POSTGRES_PASSWORD: pgpassword
+    ```
+    Aqui estamos definindo variáveis de ambiente que serão usadas pela imagem do PostgreSQL. Estas são usadas para criar um novo usuário `pguser` com a senha `pgpassword`.
+
+    ```yaml
+    volumes:
+        data-pgsql-db:
+    ```
+    Finalmente, estamos definindo um volume chamado `data-pgsql-db`. Este volume pode ser usado por qualquer serviço na composição. Neste caso, está sendo usado pelo serviço `pgsql-db`.
+
+    Após digitar o conteúdo da imagem, execute o seguinte comando no terminal:
+
+    ```bash
+    sudo docker-compose up -d
+    ```
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
