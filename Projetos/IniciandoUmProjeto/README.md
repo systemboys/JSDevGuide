@@ -401,6 +401,69 @@ Vamos configurar um banco de dados.
     sudo docker-compose up -d
     ```
 
+    Explicando o comando acima:
+
+    - `sudo`: Este comando é usado para executar o comando seguinte com privilégios de superusuário (root). Isso é necessário porque algumas operações do Docker requerem esses privilégios.
+
+    - `docker-compose up`: Este comando é usado para iniciar todos os serviços definidos em um arquivo `docker-compose.yml` na mesma pasta. Ele cria e inicia contêineres para cada serviço.
+
+    - `-d`: Esta opção, também conhecida como "detached mode", faz com que os contêineres sejam executados em segundo plano. Sem essa opção, os logs dos contêineres seriam enviados para o terminal atual.
+
+    Para visualizar a imagem criada, você pode usar o comando `docker images`. Este comando lista todas as imagens Docker disponíveis no seu sistema. Aqui está o comando:
+
+    ```bash
+    docker images
+    ```
+
+    Você verá uma lista de imagens com informações como o repositório, a tag, o ID da imagem, quando foi criada e o tamanho. A imagem do PostgreSQL que você usou no seu arquivo `docker-compose.yml` deve aparecer nesta lista. Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema. Se você usou uma tag específica para a imagem do PostgreSQL no seu arquivo `docker-compose.yml`, você também verá essa tag na lista. Se nenhuma tag foi especificada, a tag padrão é `latest`.
+
+    Você verá algo parecido com isto:
+
+    ```bash
+    root@10:/home/userlinux/Documentos/Projects/myProject/api# docker images
+    REPOSITORY   TAG           IMAGE ID       CREATED         SIZE
+    postgres     latest        eb634efa7ee4   7 days ago      431MB
+    mysql        8             a88c3e85e887   5 weeks ago     632MB
+    node         20-buster     5d384b4f9436   7 months ago    969MB
+    node         20.5-buster   5d384b4f9436   7 months ago    969MB
+    node         buster        5d384b4f9436   7 months ago    969MB
+    mysql        8.0.30        dbaea59d1b41   16 months ago   449MB
+    root@10:/home/userlinux/Documentos/Projects/myProject/api#
+    ```
+
+    Outro comando utilizado para visualizar as imagens:
+
+    Explicando o comando abaixo:
+
+    ```bash
+    sudo docker ps
+    ```
+
+    - `sudo`: Este comando é usado para executar o comando seguinte com privilégios de superusuário (root). Isso é necessário porque algumas operações do Docker requerem esses privilégios.
+
+    - `docker ps`: Este comando é usado para listar todos os contêineres Docker que estão atualmente em execução no seu sistema.
+
+    A saída deste comando inclui várias colunas:
+
+    - `CONTAINER ID`: Um identificador único para o contêiner.
+    - `IMAGE`: A imagem Docker usada para criar o contêiner.
+    - `COMMAND`: O comando que foi iniciado no contêiner.
+    - `CREATED`: Quando o contêiner foi criado.
+    - `STATUS`: O status atual do contêiner.
+    - `PORTS`: As portas que estão expostas pelo contêiner.
+    - `NAMES`: O nome do contêiner.
+
+    Se você quiser ver todos os contêineres no seu sistema, não apenas os que estão em execução, você pode usar o comando `docker ps -a`. A opção `-a` significa "all" (todos). Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema.
+
+    Você verá algo parecido com isto:
+
+    ```bash
+    root@10:/home/userlinux/Documentos/Projects/myProject/api# docker ps
+    CONTAINER ID   IMAGE      COMMAND                  CREATED      STATUS        PORTS                                       NAMES
+    d1096018f728   postgres   "docker-entrypoint.s…"   2 days ago   Up 15 hours   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   pgsql-db
+    root@10:/home/userlinux/Documentos/Projects/myProject/api#
+    ```
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
