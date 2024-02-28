@@ -187,6 +187,61 @@
 
     Esses pacotes são comumente usados em muitos projetos Node.js para criar aplicações web robustas e seguras.
 
+10. Instale as tipagens do TypeScript e o CORS:
+
+    ```bash
+    npm i --save-dev @types/express
+    ```
+
+    ```bash
+    npm install --save-dev @types/cors
+    ```
+
+11. Acesse o arquivo `index.ts` e importe Express, o CORS:
+
+    ```ts
+    import express from 'express';
+    import cors from 'cors';
+    import dotenv from 'dotenv';
+    ```
+
+12. No mesmo arquivo `index.ts`, configure o Dotenv dando continuidade na escrita no código:
+
+    ```ts
+    dotenv.config();
+
+    const app = express();
+
+    app.use(cors());
+    app.use(express.json());
+
+    app.listen(3000, () => {
+        console.log("Servidor rodando na porta 3000!");
+    })
+    ```
+
+13. Se tudo estiver correto, dê um Start na API com o seguinte comando:
+
+    ```bash
+    npm start
+    ```
+
+    O ...
+
+    ```bash
+    root@10:/home/marcos/Documentos/Projects/myProject/api# npm start
+
+    > api@1.0.0 start
+    > nodemon --watch "src/**" --ext "ts,json" --exec "ts-node ./src/index.ts"
+
+    [nodemon] 3.1.0
+    [nodemon] to restart at any time, enter `rs`
+    [nodemon] watching path(s): src/**
+    [nodemon] watching extensions: ts,json
+    [nodemon] starting `ts-node ./src/index.ts`
+    Servidor rodando na porta 3000!
+    ```
+
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
