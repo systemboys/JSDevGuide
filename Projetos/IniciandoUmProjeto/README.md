@@ -6,6 +6,8 @@
 
 > - [Configuração inicial](#configuração-inicial)
 > - [Criando banco de dados](#criando-banco-de-dados)
+>   - [Docker e Docker Compose](#docker-e-docker-compose)
+>   - [Prisma](#prisma)
 > - [Configuração do TypeScript](#configuração-do-typescript)
 
 ----
@@ -244,7 +246,7 @@
 
 ## Criando banco de dados
 
-Vamos configurar um banco de dados.
+### Docker e Docker Compose
 
 1. Se você não tiver o **Docker** instalado em sua máquina, utilise as instruções seguintes para instalá-lo em algumas das distribuições Linux mais comuns:
 
@@ -463,6 +465,47 @@ Vamos configurar um banco de dados.
     d1096018f728   postgres   "docker-entrypoint.s…"   2 days ago   Up 15 hours   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   pgsql-db
     root@10:/home/userlinux/Documentos/Projects/myProject/api#
     ```
+
+3. Configure o ORM Prisma:
+
+    ### Prisma
+
+    Prisma ORM é um mapeador objeto-relacional (ORM) de código aberto e de próxima geração¹. Ele consiste nas seguintes partes:
+
+    - **Prisma Client**: Um construtor de consultas autogerado e com tipagem segura para Node.js e TypeScript¹.
+    - **Prisma Migrate**: Sistema de migração¹.
+    - **Prisma Studio**: Interface gráfica para visualizar e editar dados no seu banco de dados¹.
+
+    Cada projeto que usa uma ferramenta do conjunto de ferramentas Prisma ORM começa com um arquivo de esquema Prisma. O esquema Prisma permite que os desenvolvedores definam seus modelos de aplicação em uma linguagem intuitiva de modelagem de dados¹.
+
+    Aqui está um exemplo de definição de modelo com tipos de dados²:
+
+    ```prisma
+    model User {
+    id     Int @id @default(autoincrement())
+    name  String
+    email String   @unique
+    age    Int?
+    createdAt DateTime  @default(now())
+    role  Role     @default(USER)
+    }
+
+    enum  Role {
+    USER
+    ADMIN
+    }
+    ```
+
+    No exemplo acima, temos uma entidade "User" com várias colunas, como "id" (inteiro), "name" (string), "email" (string único), "age" (inteiro opcional), "createdAt" (data e hora com valor padrão de agora) e "role" (enum com valores USER e ADMIN)².
+
+    Depois que o modelo de dados é definido, você pode gerar o Prisma Client, que expõe consultas CRUD e mais para os modelos definidos¹. Se você estiver usando TypeScript, obterá total segurança de tipo para todas as consultas (mesmo ao recuperar apenas os subconjuntos dos campos de um modelo)¹.
+
+    Origem: conversa com o Bing, 27/02/2024
+    (1) What is Prisma ORM? (Overview). https://www.prisma.io/docs/orm/overview/introduction/what-is-prisma.
+    (2) Introdução ao Prisma ORM - Medium. https://medium.com/@mattheus.h.m.s/introdução-ao-prisma-orm-81fd6784c10c.
+    (3) Aprenda a utilizar o Prisma.io com Node.js - Nine Labs. https://bing.com/search?q=ORM+Prisma+conceito.
+    (4) Primeiros passos com Prisma. O uso de ORM's no desenvolvimento de… | by .... https://medium.com/codengage/primeiros-passos-com-prisma-df6633464417.
+    (5) undefined. https://prisma.io.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
