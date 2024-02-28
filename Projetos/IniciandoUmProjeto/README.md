@@ -628,28 +628,6 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         DATABASE_URL="postgresql://pguser:pgpassword@localhost:5432/dbsystem?schema=public"
         ```
 
-    - Execute o seguinte comando para criar o banco de dados:
-
-        ```bash
-        npx prisma migrate dev --name init
-        ```
-
-        Agora, vamos entender o que esse comando faz:
-
-        - `prisma migrate dev`: Este comando é parte do Prisma Migrate, que é uma ferramenta de migração de banco de dados declarativa. O comando `migrate dev` é usado durante o desenvolvimento e aplica as migrações de banco de dados no ambiente de desenvolvimento. Ele também gera e aplica uma nova migração se houver alterações no Prisma Schema.
-
-        - `--name init`: A opção `--name` permite que você dê um nome personalizado para a migração. Neste caso, a migração é chamada de `init`.
-
-        Portanto, o comando `npx prisma migrate dev --name init` irá gerar uma nova migração chamada `init` se houver alterações no Prisma Schema, e então aplicará essa migração no banco de dados de desenvolvimento. Se não houver alterações no Prisma Schema, ele simplesmente aplicará as migrações existentes.
-
-        > Após digitar o comando, é criado um diretório com o nome `migrations`, dentro, está uma migration .sql.
-
-        ![Migrations](./images/migrations.png)
-
-        > Ele converteu a tabela que foi escrita para uma linguagem SQL.
-
-        ![Migrations.SQL](./images/migrationSql.png)
-
     - Crie a tabela de dados do banco de dados, segue o código abaixo:
 
         ```prisma
@@ -677,6 +655,28 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
             deleted  Boolean @default(false)
         }
         ```
+
+    - Execute o seguinte comando para criar o banco de dados:
+
+        ```bash
+        npx prisma migrate dev --name init
+        ```
+
+        Agora, vamos entender o que esse comando faz:
+
+        - `prisma migrate dev`: Este comando é parte do Prisma Migrate, que é uma ferramenta de migração de banco de dados declarativa. O comando `migrate dev` é usado durante o desenvolvimento e aplica as migrações de banco de dados no ambiente de desenvolvimento. Ele também gera e aplica uma nova migração se houver alterações no Prisma Schema.
+
+        - `--name init`: A opção `--name` permite que você dê um nome personalizado para a migração. Neste caso, a migração é chamada de `init`.
+
+        Portanto, o comando `npx prisma migrate dev --name init` irá gerar uma nova migração chamada `init` se houver alterações no Prisma Schema, e então aplicará essa migração no banco de dados de desenvolvimento. Se não houver alterações no Prisma Schema, ele simplesmente aplicará as migrações existentes.
+
+        > Após digitar o comando, é criado um diretório com o nome `migrations`, dentro, está uma migration .sql.
+
+        ![Migrations](./images/migrations.png)
+
+        > Ele converteu a tabela que foi escrita para uma linguagem SQL.
+
+        ![Migrations.SQL](./images/migrationSql.png)
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
