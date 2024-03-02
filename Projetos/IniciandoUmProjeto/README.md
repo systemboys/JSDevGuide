@@ -16,6 +16,7 @@
 >   - [Ajustando retornos](#ajustando-retornos "Ajustando retornos")
 >   - [Paginação de registros](#paginação-de-registros "Paginação de registros")
 >   - [Pesquisa de registros](#pesquisa-de-registros "Pesquisa de registros")
+> - [Token JWT](#token-jwt "Token JWT")
 
 ----
 
@@ -1761,6 +1762,12 @@ http://localhost:3000/v1/user?skip=0take=20&search=rafael
 ```
 
 O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+## Token JWT
+
+Continue content...
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
