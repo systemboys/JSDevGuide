@@ -647,9 +647,9 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
         ```bash
         /myProject/
-        ├─ /prisma/
-        │  ├─ /migrations/
-        │  │  ├─ /20230522172022_init/
+        ├─ /prisma/                    ">>> New folder <<<"
+        │  ├─ /migrations/             ">>> New folder <<<"
+        │  │  ├─ /20230522172022_init/ ">>> New folder <<<"
         │  │  │  └─ migration.sql      ">>> New file <<<"
         │  │  └─ migration_lock.toml   ">>> New file <<<"
         │  └─ schema.prisma            ">>> New file <<<"
