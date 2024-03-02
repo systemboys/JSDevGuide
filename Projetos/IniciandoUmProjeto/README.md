@@ -504,7 +504,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     root@10:/home/userlinux/Documentos/Projects/myProject/api#
     ```
 
-    [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### ORM Prisma
 
@@ -720,19 +720,17 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     **Obs.:** Não esqueça de estar com o Docker rodando, se o Docker parar, o banco de dados não vai rodar!
 
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### Repository de usuários (CRUD)
 
 Content...
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Controller de usuário
 
 Content...
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
