@@ -342,8 +342,6 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
 2. Crie um arquivo chamado "`docker-compose.yml`" na raiz do seu projeto:
 
-    **File: `./docker-compose.yml`**
-
     Sua estrutura de arquivos ficará assim:
 
     > Nova estrutura de arquivos!
@@ -357,6 +355,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     ```
 
     Crie uma imagem Docker dentro do arquivo:
+
+    **File: `./docker-compose.yml`**
 
     ```yaml
     version: "3"
@@ -764,6 +764,8 @@ const deleteUser = await prisma.user.delete({
 
 Esses são exemplos básicos. O Prisma Client oferece muitas outras opções para realizar operações CRUD.
 
+Vamos começar criando um arquivo, veja nossa estrutura abaixo e o novo arquivo:
+
 > Nova estrutura de arquivos!
 
 ```bash
@@ -783,6 +785,162 @@ Esses são exemplos básicos. O Prisma Client oferece muitas outras opções par
 ├─ .env
 ├─ docker-compose.yml
 └─ package.json
+```
+
+Para seguirmos com nosso exemplo, iremos alterar nossa tabela no arquivo `./prisma/schema.prisma` de usuários, veja a alteração abaixo:
+
+```prisma
+model User {
+    id       Int     @id @default(autoincrement())
+    name     String
+    email    String
+    password String
+    phone    String?
+    address  String?
+    number   String?
+    city     String?
+    state    String?
+    cep      String?
+    masterId Int?
+    status   Boolean @default(true)
+    deleted  Boolean @default(false)
+}
+```
+
+Na tabela acima, o ponto de interrogação (?) após o tipo de campo indica que o campo é **opcional**. Isso significa que quando um novo registro é criado na tabela `User`, esses campos podem ser deixados em branco. Em outras palavras, não é necessário fornecer um valor para esses campos ao criar um novo `User`.
+
+Quanto à coluna `masterId`, foi adicionada para definir a quem pertence. Ela serve para identificar a qual usuário mestre um determinado registro pertence. Isso é útil em cenários onde você tem uma relação de "muitos para um" entre registros e usuários mestres. Por exemplo, se vários registros na tabela `User` pertencem a um único usuário mestre, você pode usar o `masterId` para rastrear isso. Se `masterId` for opcional (como indicado pelo `?`), isso significa que nem todos os usuários precisam pertencer a um usuário mestre. Alguns registros `User` podem não ter um `masterId`.
+
+Após essa alteração, é preciso dizer ao Prisma que houve alterações e ele tem que atualizar no banco de dados, segue o comando novamente:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+> O Prisma vai lá no banco, verifica se houve alterações e atualiza.
+>
+> ![Docker](./images/migrateionSql_exc2.png)
+>
+> Após executado o comando `npx prisma migrate dev --name init`, o arquivo `.sql` foi criado novamente.
+
+No arquivo "`user.repository.ts`" criado e mostrado anteriormente na estrutura de arquivos, deve-se importar o Prisma e exportar a variável `createrUser`, veja o código:
+
+```ts
+import { prisma } from '../services/prisma';
+
+// Criar registro.
+export const createrUser = async (data: any) => {
+    const user = await prisma.user.create({
+        data
+    });
+    return user;
+};
+```
+
+Crie um diretório chamado "`./src/entities/`" e o arquivo "`user.ts`":
+
+
+
+> Nova estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /entities/               ">>> New folder <<<"
+│  │  └─ user.ts               ">>> New file <<<"
+│  ├─ /repositories/
+│  │  └─ user.repository.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
+
+**File: `./src/entities/user.ts`**
+
+```ts
+export type User = {
+    name:      string;
+    email:     string;
+    password:  string;
+    phone?:    string | null;
+    address?:  string | null;
+    number?:   string | null;
+    city?:     string | null;
+    state?:    string | null;
+    cep?:      string | null;
+    masterId?: number | null;
+}
+```
+
+Dentro do "`user.repository.ts`", deve ser importado o user.ts:
+
+**File: `./repositories/user.prepository.ts`**
+
+```ts
+import { prisma } from "../services/prisma";
+import { User } from "../entities/user";
+
+// Criar registro.
+export const createrUser = async (data: any) => {
+    const user = await prisma.user.create({
+        data
+    });
+    return user;
+};
+
+// Listar todos os registros.
+export const getAll = async (masterId: number) => {
+    const users = await prisma.user.findMany({
+        where: {
+            deleted: false,
+            masterId
+        },
+    });
+    return users;
+}
+
+// Listar um registro a partir do ID (registro único).
+export const getById = async (id: number) => {
+    const user = await prisma.user.findUnique({
+        where: {
+            id
+        }
+    });
+    return user
+}
+
+// Atualizar registro a partir de um ID.
+export const updateUser = async (id: number, data: any) => {
+    const user = await prisma.user.update({
+        where: {
+            id
+        },
+        data
+    });
+    return user
+}
+
+// Deletar registro a partir de um ID.
+export const deleteUser = async (id: number) => {
+    const user = await prisma.user.update({
+        where: {
+            id
+        },
+        data: {
+            deleted: true,
+        },
+    });
+    return;
+}
 ```
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")

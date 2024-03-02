@@ -21,3 +21,14 @@ Conteúdo do assunto
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
+---
+
+## Exibição de arquivo:
+
+**File: `./dir1/dir2/file.jsx`**
+
+```jsx
+# Content ...
+```
+---
+
