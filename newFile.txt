@@ -32,3 +32,16 @@ Conteúdo do assunto
 ```
 ---
 
+> Estrutura de arquivos!
+
+```bash
+/rootDirectory/
+├─ /dir1/
+│  ├─ /subDir1/
+│  │  └─ file3.jsx
+│  └─ file2.jsx
+└─ file1.jsx
+```
+
+---
+

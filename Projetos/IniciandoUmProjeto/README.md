@@ -344,7 +344,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Sua estrutura de arquivos ficará assim:
 
-    > Nova estrutura de arquivos!
+    > Estrutura de arquivos!
 
     ```bash
     /myProject/
@@ -587,7 +587,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     - No diretório "`./src/services/`", crie um um arquivo com o nome "`prisma.ts`" para importar o Prisma/Cliente. Segue o código abaixo:
 
-        > Nova estrutura de arquivos!
+        > Estrutura de arquivos!
 
         ```bash
         /myProject/
@@ -643,7 +643,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
         ```
 
-        > Nova estrutura de arquivos!
+        > Estrutura de arquivos!
 
         ```bash
         /myProject/
@@ -766,7 +766,9 @@ Esses são exemplos básicos. O Prisma Client oferece muitas outras opções par
 
 **Vamos começar criando um arquivo, veja nossa estrutura abaixo e o novo arquivo:**
 
-> Nova estrutura de arquivos!
+Crie o seguinte arquivo "`./src/repositories/user.repository.ts`":
+
+> Estrutura de arquivos!
 
 ```bash
 /myProject/
@@ -841,7 +843,7 @@ Crie um diretório chamado "`./src/entities/`" e o arquivo "`user.ts`":
 
 
 
-> Nova estrutura de arquivos!
+> Estrutura de arquivos!
 
 ```bash
 /myProject/
