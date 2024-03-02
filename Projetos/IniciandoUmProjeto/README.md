@@ -504,6 +504,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     root@10:/home/userlinux/Documentos/Projects/myProject/api#
     ```
 
+    [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### ORM Prisma
 
 3. Configure o ORM Prisma:
