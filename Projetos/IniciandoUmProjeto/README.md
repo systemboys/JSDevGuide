@@ -997,7 +997,7 @@ import {
 // Criar registro.
 export const create = async (req: Request, res: Response) => {
     try {
-        req.body.password = bcrypt.hash(req.body.password, 10);
+        req.body.password = await bcrypt.hash(req.body.password, 10);
         const data = await userValidation.parse(req.body);
         const user = await createrUser(data);
         return res.status(200).send(user);
@@ -1248,7 +1248,19 @@ Para testar as rotas, utilize a extenção "`Thunder Client`" no VSCode ou o "`I
 
 Use as configurações seguintes para testar:
 
+> Teste na requisição "`http://localhost:3000/v1/user`":
+
 ![Testando a requisição 'user'](./images/localhost_3000_v1_user.png)
+
+Nesse teste, ele apresenta um erro, uma exigência, isso era o erro esperado. A validação exige um email e uma senha. Para fazer novamente o teste e passar por este erro, informe o email e a senha:
+
+![Testando novamente a requisição 'user'](./images/localhost_3000_v1_user_test_2.png)
+
+Teste com a rota "user" passando o ID:
+
+> Teste na requisição "`http://localhost:3000/v1/user/1`" onde a mesma passa um "ID":
+
+![Testando novamente a requisição 'user'](./images/localhost_3000_v1_user_test_3_passing_id.png)
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
