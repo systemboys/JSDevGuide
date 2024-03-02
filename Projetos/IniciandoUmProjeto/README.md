@@ -724,7 +724,66 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
 ### Repository de usuários (CRUD)
 
-Content...
+CRUD é um acrônimo que significa: **Create** (Criar), **Read** (Ler), **Update** (Atualizar) e **Delete** (Excluir). Essas são as quatro operações básicas que você pode realizar em qualquer banco de dados persistente.
+
+No ORM Prisma, você pode realizar operações CRUD com a API do Prisma Client gerada. Aqui estão alguns exemplos de como você pode fazer isso:
+
+- **Create (Criar)**: Você pode criar um único registro. Por exemplo, o seguinte código cria um único usuário com dois campos:
+
+```javascript
+const user = await prisma.user.create({
+  data: {
+    email: 'elsa@prisma.io',
+    name: 'Elsa Prisma',
+  },
+})
+```
+
+- **Read (Ler)**: Você pode ler os registros de várias maneiras. Por exemplo, o seguinte código lê todos os usuários:
+
+```javascript
+const allUsers = await prisma.user.findMany()
+```
+
+- **Update (Atualizar)**: Você pode atualizar um registro existente. Por exemplo, o seguinte código atualiza um usuário existente:
+
+```javascript
+const updateUser = await prisma.user.update({
+  where: { id: 1 },
+  data: { email: 'elsa.updated@prisma.io' },
+})
+```
+
+- **Delete (Excluir)**: Você pode excluir um registro existente. Por exemplo, o seguinte código exclui um usuário:
+
+```javascript
+const deleteUser = await prisma.user.delete({
+  where: { id: 1 },
+})
+```
+
+Esses são exemplos básicos. O Prisma Client oferece muitas outras opções para realizar operações CRUD.
+
+> Nova estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /repositories/
+│  │  └─ user.repository.ts ">>> New file <<<"
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
