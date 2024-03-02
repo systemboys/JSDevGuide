@@ -777,7 +777,7 @@ Vamos começar criando um arquivo, veja nossa estrutura abaixo e o novo arquivo:
 │  │  └─ migration_lock.toml
 │  └─ schema.prisma
 ├─ /src/
-│  ├─ /repositories/
+│  ├─ /repositories/        ">>> New folder <<<"
 │  │  └─ user.repository.ts ">>> New file <<<"
 │  ├─ /services/
 │  │  └─ prisma.ts
