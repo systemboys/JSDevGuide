@@ -1338,7 +1338,7 @@ export const getById = async (id: number) => {
 // ...
 ```
 
-Ao chamar a requisição na criação de um registro, a senha não vem junto com os outros dados:
+Ao chamar a requisição na criação de um registro, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
 
 ![Trazendo apenas dados específicos](./images/Bringing_only_specific_data.png)
 
