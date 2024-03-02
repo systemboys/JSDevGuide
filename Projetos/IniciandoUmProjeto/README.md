@@ -14,7 +14,7 @@
 >   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
 >   - [Controller de usuário](#controller-de-usu%C3%A1rio "Controller de usuário")
 >   - [Ajustando retornos](#ajustando-retornos)
-> - [Configuração do TypeScript](#configuração-do-typescript "Configuração do TypeScript")
+>   - [Paginação de registros](#paginação-de-registros "Paginação de registros")
 
 ----
 
@@ -1411,6 +1411,39 @@ export const getAll = async (masterId: number | null) => {
 Ao chamar a requisição de seleção de todos os registros, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
 
 ![Trazendo apenas dados específicos, com o 'getAll'](./images/Bringing_only_specific_data_-_getAll.png)
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Paginação de registros
+
+O Prisma é um ORM (Object Relational Mapping) que tem como objetivo principal facilitar a interação entre o código da aplicação e os dados armazenados em um banco de dados relacional, eliminando a necessidade de escrever consultas SQL manualmente.
+
+Embora a "Paginação de registros" não tenha sido explicitamente mencionada nossa documentação, é um conceito comum em muitos ORMs, incluindo o Prisma. A paginação é uma técnica usada para dividir um grande conjunto de dados em partes menores (ou páginas). Isso torna a manipulação de grandes conjuntos de dados mais eficiente e a experiência do usuário mais fluida.
+
+No Prisma, você pode usar os operadores `take` e `skip` para implementar a paginação. O operador `take` define o número de registros que você deseja obter, enquanto o operador `skip` define quantos registros você deseja pular.
+
+Aqui está um exemplo de como você pode implementar a paginação com Prisma:
+
+```javascript
+const posts = await prisma.post.findMany({
+  take: 10, // Limita o número de posts retornados para 10
+  skip: 5,  // Pula os primeiros 5 posts
+});
+```
+
+Neste exemplo, o Prisma retornará 10 posts, começando do sexto post. Isso é útil quando você tem muitos registros e quer exibi-los em partes menores para melhorar a experiência do usuário.
+
+> Vamos imaginar que temos 100 registros em uma tabela, mas ao invés de entregar 100 registro de uma vez para o Frontend, com a paginação, podendo entregar pro exemplo, 20 registros a cada página. Veja o exemplo abaixo:
+>
+> |  De  | Até  |
+> | :--: | :--: |
+> |  1   |  20  |
+> |  21  |  40  |
+> |  41  |  60  |
+> |  61  |  80  |
+> |  81  | 100  |
+>
+> Dessa forma, os registros serão entregues por parte, a cada 10 registros.
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
