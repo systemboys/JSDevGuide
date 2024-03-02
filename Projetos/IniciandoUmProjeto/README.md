@@ -13,6 +13,7 @@
 >   - [ORM Prisma](#orm-prisma "ORM Prisma")
 >   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
 >   - [Controller de usuário](#controller-de-usu%C3%A1rio "Controller de usuário")
+>   - [Ajustando retornos](#ajustando-retornos)
 > - [Configuração do TypeScript](#configuração-do-typescript "Configuração do TypeScript")
 
 ----
@@ -1275,6 +1276,71 @@ Teste com a rota "user" passando o ID na requisição "DELETE":
 ![Testando novamente a requisição 'user' com o PUT](./images/localhost_3000_v1_user_test_5_passing_id.png)
 
 > ( i ) Observe que o registro foi apagado! Não haverá returno, o registro apenas foi apagado.
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Ajustando retornos
+
+Ao criar um registro de um usuário, junto com todos os dados do registro, a senha está sendo retornada e isso não é uma boa ideia. Vamos ajustar para retornar apenas o ID, o que é necessário para o Frontend.
+
+No arquivo "`./src/repositories/user.repository.ts`" faça a seguinte alteração, veja o trecho do código no "`user.repository.ts`":
+
+**File: `./repositories/user.prepository.ts`**
+
+```ts
+// ...
+
+// Criar registro.
+export const createrUser = async (data: any) => {
+    const user = await prisma.user.create({
+        data,
+        select: {
+            id: true
+        }
+    });
+    return user;
+};
+
+//  ...
+```
+
+Retorna somente o ID, deixando de apresentar todos os dados do registro:
+
+![Ajustando o retorno da crição de registro obtendo apenas o ID](./images/Adjusting_returns_by_bringing_in_the_ID.png)
+
+Ajuste o "`getById`", quando o registro for requisitado a partir de um ID:
+
+```ts
+// ...
+
+// Listar um registro a partir do ID (registro único).
+export const getById = async (id: number) => {
+    const user = await prisma.user.findUnique({
+        where: {
+            id
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            address: true,
+            number: true,
+            cep: true,
+            city: true,
+            masterId: true
+        }
+    });
+    return user
+}
+
+// ...
+```
+
+Ao chamar a requisição na criação de um registro, a senha não vem junto com os outros dados:
+
+![Trazendo apenas dados específicos](./images/Bringing_only_specific_data.png)
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
