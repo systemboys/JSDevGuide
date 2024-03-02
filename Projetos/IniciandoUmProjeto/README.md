@@ -13,8 +13,9 @@
 >   - [ORM Prisma](#orm-prisma "ORM Prisma")
 >   - [Repository de usuários (CRUD)](#repository-de-usu%C3%A1rios-crud "Repository de usuários (CRUD)")
 >   - [Controller de usuário](#controller-de-usu%C3%A1rio "Controller de usuário")
->   - [Ajustando retornos](#ajustando-retornos)
+>   - [Ajustando retornos](#ajustando-retornos "Ajustando retornos")
 >   - [Paginação de registros](#paginação-de-registros "Paginação de registros")
+>   - [Pesquisa de registros](#pesquisa-de-registros "Pesquisa de registros")
 
 ----
 
@@ -1010,7 +1011,7 @@ export const create = async (req: Request, res: Response) => {
 // Listar todos os registros.
 export const get = async (req: Request, res: Response) => {
     try {
-        const masterId = 1;
+        const masterId = null;
         const user = await getAll(masterId);
         return res.status(200).send(user);
     } catch (e) {
@@ -1433,7 +1434,7 @@ const posts = await prisma.post.findMany({
 
 Neste exemplo, o Prisma retornará 10 posts, começando do sexto post. Isso é útil quando você tem muitos registros e quer exibi-los em partes menores para melhorar a experiência do usuário.
 
-> Vamos imaginar que temos 100 registros em uma tabela, mas ao invés de entregar 100 registro de uma vez para o Frontend, com a paginação, podendo entregar pro exemplo, 20 registros a cada página. Veja o exemplo abaixo:
+> Vamos imaginar que temos 100 registros em uma tabela, mas ao invés de entregar 100 registro de uma vez para o Frontend, com a paginação, podendo entregar por exemplo, 20 registros a cada página. Veja o exemplo abaixo:
 >
 > |  De  | Até  |
 > | :--: | :--: |
@@ -1444,6 +1445,322 @@ Neste exemplo, o Prisma retornará 10 posts, começando do sexto post. Isso é �
 > |  81  | 100  |
 >
 > Dessa forma, os registros serão entregues por parte, a cada 10 registros.
+
+Modifique o "`getAll`" no arquivo "`./src/repositories/user.repository.ts`" para então começar a fatiar os resultados:
+
+```ts
+// ...
+
+// Listar todos os registros.
+export const getAll = async (
+    masterId: number | null,
+    skip: number,
+    take: number
+) => {
+    const[users, total] = await prisma.$transaction([
+        prisma.user.findMany({
+            where: {
+                deleted: false,
+                masterId
+            },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                password: false,
+                phone: true,
+                address: true,
+                number: true,
+                cep: true,
+                city: true,
+                masterId: true
+            },
+            skip,
+            take
+        }),
+        prisma.user.count({
+            where: {
+                masterId,
+                deleted: false
+            },
+        }),
+    ]);
+
+    // Retornar os registros.
+    const totalPage = Math.ceil(total / take);
+    return { total, totalPage, users }
+};
+
+// ...
+```
+
+> Observe que temos duas variáveis (`users, total`) e duas funções (`findMany({...}), count({...})`):
+> 
+> ```ts
+> // ...
+> 
+> const[
+>     users,
+>     total
+> ] = await prisma.$transaction([
+>     prisma.user.findMany({...}),
+>     prisma.user.count({...})
+> ]);
+> 
+> // ...
+> ```
+> O valor da primeira função (`findMany({...})`) vai definir a variável (`users`) e o valor da segunda função (`count({...})`) vai definir a variável (`total`).
+
+Quem definirá qual será a página que exibirá os 20 resultados a cada fatia do total de registro, é o "`Frontend`" utilizando um "componente de paginação", veja o exemplo dos botões que indicam a aquantidade de páginas:
+
+![Componente de paginação](./images/paginationComponent.png)
+
+No arquivo "`./src/controllers/user.controller.ts`", será esperado os parâmetros "`skip, take`", veja a modificação no código:
+
+**File: `./src/controllers/user.controller.ts`**
+
+```jsx
+// ...
+
+// Listar todos os registros.
+export const get = async (req: Request, res: Response) => {
+    try {
+        const masterId = null;
+        const skip = Number(req.query?.skip) || 0;
+        const take = Number(req.query?.take) || 20;
+        const user = await getAll(masterId, skip, take);
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+
+// ...
+```
+
+> Linha alteradas:
+>
+> `const skip = Number(req.query?.skip) || 0;`
+>
+> `const take = Number(req.query?.take) || 20;`
+>
+> `const user = await getAll(masterId, skip, take);`
+
+Para testar a requisição, vá no "Thunder Client" ou o "Insomnia" (sua preferência) no "`getAll`", na rota "`user`" e execute-a:
+
+> Resultado:
+
+![Execução de requisição com paginação](./images/requestTest1WithPagination.png)
+
+> Observe que a resposta traz o total e a quantidade junto com os registros.
+>
+> ```json
+> {
+>     "total": 2,
+>     "totalPage": 1,
+>     "users": [
+>         {...
+> ```
+
+Passando o parâmetro da paginação pelo "`GET`" na rota:
+
+```tex
+http://localhost:3000/v1/user?skip=0&take=20
+```
+
+Altere os parâmetros (`..?skip=0&take=20`) nos testes e verá o resultado.
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Pesquisa de registros
+
+A "Pesquisa de registros" é um recurso importante em qualquer ORM, incluindo o Prisma. Ele permite que você encontre registros específicos em seu banco de dados com base em determinados critérios.
+
+No Prisma, você pode usar o método `findMany` com um objeto de filtro para pesquisar registros. Este objeto de filtro pode incluir várias condições que os registros devem atender para serem retornados pela consulta.
+
+Aqui está um exemplo de como você pode implementar a pesquisa de registros com Prisma:
+
+```javascript
+const users = await prisma.user.findMany({
+  where: {
+    OR: [
+      { name: { contains: 'searchTerm' } },
+      { email: { contains: 'searchTerm' } },
+    ],
+  },
+});
+```
+
+Neste exemplo, o Prisma retornará todos os usuários cujo nome ou e-mail contém o termo de pesquisa. O operador `contains` é usado para pesquisar o termo dentro dos campos `name` e `email`. O operador `OR` é usado para retornar registros que atendem a qualquer uma das condições especificadas.
+
+Por favor, note que 'searchTerm' deve ser substituído pelo termo de pesquisa real que você deseja usar. Além disso, este é apenas um exemplo e a estrutura exata da consulta pode variar dependendo do seu esquema de banco de dados e dos campos que você deseja pesquisar.
+
+Vamos aplicar uma pesquisa de registros, vamos dar exeplos de usuários em uma tabela.
+
+No arquivo "`./prisma/schema.prisma`", no "`generator client {...}`", adicione a linha "`previewFeatures = ["fullTextSearch"]`", veja o código do arquivo:
+
+**File: `./prisma/schema.prisma`**
+
+```prisma
+// ...
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["fullTextSearch"]
+}
+// ...
+```
+
+> Atenção! Para MySQL, você também precisará incluir o sinalizador do recurso de visualização "`fullTextIndex`":
+> 
+> ```prisma
+> // ...
+> generator client {
+>     provider        = "prisma-client-js"
+>     previewFeatures = ["fullTextSearch", "fullTextIndex"]
+> }
+> // ...
+> ```
+
+Execute o Generate Prisma Client com o comando:
+
+```bash
+npx prisma generate
+```
+
+> Obs.: Não esqueça de parar a API para rodar o comando, após executar o Generate, start novamente a API.
+
+Modifique o "`getAll`" no arquivo "`./src/repositories/user.repository.ts`" para receber o parâmetro da pesquisa como uma "`string`". Veja o código modificado:
+
+```ts
+// ...
+
+// Listar todos os registros.
+export const getAll = async (
+    masterId: number | null,
+    skip: number,
+    take: number,
+    search: string | null
+) => {
+    if (!search) {
+        const[users, total] = await prisma.$transaction([
+            prisma.user.findMany({
+                where: {
+                    deleted: false,
+                    masterId
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                    password: false,
+                    phone: true,
+                    address: true,
+                    number: true,
+                    cep: true,
+                    city: true,
+                    masterId: true
+                },
+                skip,
+                take
+            }),
+            prisma.user.count({
+                where: {
+                    masterId,
+                    deleted: false
+                },
+            }),
+        ]);
+
+        // Retornar os registros.
+        const totalPage = Math.ceil(total / take);
+        return { total, totalPage, users }
+    } else {
+        const[users, total] = await prisma.$transaction([
+            prisma.user.findMany({
+                where: {
+                    deleted: false,
+                    masterId,
+                    name: {
+                        search
+                    }
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                    password: false,
+                    phone: true,
+                    address: true,
+                    number: true,
+                    cep: true,
+                    city: true,
+                    masterId: true
+                },
+                skip,
+                take
+            }),
+            prisma.user.count({
+                where: {
+                    masterId,
+                    deleted: false
+                },
+            }),
+        ]);
+
+        // Retornar os registros.
+        const totalPage = Math.ceil(total / take);
+        return { total, totalPage, users }
+    }
+};
+
+// ...
+```
+
+No arquivo "`./src/controllers/user.controller.ts`", será esperado os parâmetros "`search`" após "`skip, take`" que também virá por parâmetro, veja a modificação no código:
+
+**File: `./src/controllers/user.controller.ts`**
+
+```jsx
+// ...
+
+// Listar todos os registros.
+export const get = async (req: Request, res: Response) => {
+    try {
+        const masterId = null;
+        const skip = Number(req.query?.skip) || 0;
+        const take = Number(req.query?.take) || 20;
+        const search = req.query?.search ? String(req.query?.search) : null;
+        const user = await getAll(masterId, skip, take, search);
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+
+// ...
+```
+
+Para testar, use o parâmetro "`&search=`" na execução da requisição da rota "`user`", veja o exemplo:
+
+```tex
+http://localhost:3000/v1/user?search=rafael
+```
+
+> "Rafael" é o termo da busca!
+
+> Resultado:
+
+![Execução de requisição da pesquisa na rota 'user'](./images/requestTest1WithResearch.png)
+
+> Detalhe! Não precisa digitar palavras capitalizadas ou maiúscula em (`...?search=rafael`), a pesquisa não faz essa diferença.
+
+A paginação pode continuar na rota, os parâmetros "`skip, take`" junto com o "`search`":
+
+```tex
+http://localhost:3000/v1/user?skip=0take=20&search=rafael
+```
+
+O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
