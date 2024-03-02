@@ -764,7 +764,7 @@ const deleteUser = await prisma.user.delete({
 
 Esses são exemplos básicos. O Prisma Client oferece muitas outras opções para realizar operações CRUD.
 
-Vamos começar criando um arquivo, veja nossa estrutura abaixo e o novo arquivo:
+**Vamos começar criando um arquivo, veja nossa estrutura abaixo e o novo arquivo:**
 
 > Nova estrutura de arquivos!
 
