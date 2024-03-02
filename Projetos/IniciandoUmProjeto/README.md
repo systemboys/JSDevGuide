@@ -1248,19 +1248,33 @@ Para testar as rotas, utilize a extenção "`Thunder Client`" no VSCode ou o "`I
 
 Use as configurações seguintes para testar:
 
-> Teste na requisição "`http://localhost:3000/v1/user`":
+> Teste na requisição "`http://localhost:3000/v1/user`" usando o "`POST`":
 
 ![Testando a requisição 'user'](./images/localhost_3000_v1_user.png)
 
 Nesse teste, ele apresenta um erro, uma exigência, isso era o erro esperado. A validação exige um email e uma senha. Para fazer novamente o teste e passar por este erro, informe o email e a senha:
 
-![Testando novamente a requisição 'user'](./images/localhost_3000_v1_user_test_2.png)
+![Testando novamente a requisição 'user' com o POST](./images/localhost_3000_v1_user_test_2.png)
 
-Teste com a rota "user" passando o ID:
+Teste com a rota "user" passando o ID na requisição "GET":
 
-> Teste na requisição "`http://localhost:3000/v1/user/1`" onde a mesma passa um "ID":
+> Teste na requisição "`http://localhost:3000/v1/user/1`" usando o "`GET`" onde a mesma passa um "ID":
 
-![Testando novamente a requisição 'user'](./images/localhost_3000_v1_user_test_3_passing_id.png)
+![Testando novamente a requisição 'user' com o GET](./images/localhost_3000_v1_user_test_3_passing_id.png)
+
+Teste com a rota "user" passando o ID na requisição "PUT":
+
+> Teste na requisição "`http://localhost:3000/v1/user/1`" usando o "`PUT`" onde a mesma passa um "ID":
+
+![Testando novamente a requisição 'user' com o PUT](./images/localhost_3000_v1_user_test_4_passing_id.png)
+
+Teste com a rota "user" passando o ID na requisição "DELETE":
+
+> Teste na requisição "`http://localhost:3000/v1/user/1`" usando o "`DELETE`" onde a mesma passa um "ID":
+
+![Testando novamente a requisição 'user' com o PUT](./images/localhost_3000_v1_user_test_5_passing_id.png)
+
+> ( i ) Observe que o registro foi apagado! Não haverá returno, o registro apenas foi apagado.
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
