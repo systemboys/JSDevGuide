@@ -901,7 +901,7 @@ export const createrUser = async (data: any) => {
 };
 
 // Listar todos os registros.
-export const getAll = async (masterId: number) => {
+export const getAll = async (masterId: number | null) => {
     const users = await prisma.user.findMany({
         where: {
             deleted: false,
@@ -1338,9 +1338,79 @@ export const getById = async (id: number) => {
 // ...
 ```
 
-Ao chamar a requisição na criação de um registro, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
+Ao chamar a requisição de criação de um registro, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
 
 ![Trazendo apenas dados específicos](./images/Bringing_only_specific_data.png)
+
+Ajuste o "`updateUser`", quando a atualização for requisitada a partir de um ID:
+
+```ts
+// ...
+
+// Atualizar registro a partir de um ID.
+export const updateUser = async (id: number, data: any) => {
+    const user = await prisma.user.update({
+        where: {
+            id
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            address: true,
+            number: true,
+            cep: true,
+            city: true,
+            masterId: true
+        },
+        data
+    });
+    return user
+}
+
+// ...
+```
+
+Ao chamar a requisição de atualização de um registro, a senha também não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
+
+![Trazendo apenas dados específicos](./images/Bringing_only_specific_data_-_updateUser.png)
+
+Ajuste o "`getAll`", quando a seleção de todos os registros for solicitada:
+
+```ts
+// ...
+
+// Listar todos os registros.
+export const getAll = async (masterId: number | null) => {
+    const users = await prisma.user.findMany({
+        where: {
+            deleted: false,
+            masterId
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            password: false,
+            phone: true,
+            address: true,
+            number: true,
+            cep: true,
+            city: true,
+            masterId: true
+        },
+    });
+    return users;
+}
+
+// ...
+```
+
+Ao chamar a requisição de seleção de todos os registros, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
+
+![Trazendo apenas dados específicos, com o 'getAll'](./images/Bringing_only_specific_data_-_getAll.png)
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
