@@ -951,7 +951,304 @@ export const deleteUser = async (id: number) => {
 
 ### Controller de usuário
 
-Content...
+Crie o arquivo "`./src/controlers/user.controller.ts`", veja a estrutura de arquivos seguinte:
+
+> Estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/            ">>> New folder <<<"
+│  │  └─ user.controller.ts    ">>> New file <<<"
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /repositories/
+│  │  └─ user.repository.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
+
+Vamos importar o "Express" e seguir com o código no arquivo "`./user/controllers/user.controller.ts`".
+
+**File: `./user/controllers/user.controller.ts`**
+
+```jsx
+import { Request, Response } from 'express';
+import { userValidation } from '../validation/user.validation';
+import bcrypt from 'bcrypt';
+import {
+    createrUser,
+    deleteUser,
+    getAll,
+    getById,
+    updateUser
+} from '../repositories/user.repository';
+
+// Criar registro.
+export const create = async (req: Request, res: Response) => {
+    try {
+        req.body.password = bcrypt.hash(req.body.password, 10);
+        const data = await userValidation.parse(req.body);
+        const user = await createrUser(data);
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+};
+
+// Listar todos os registros.
+export const get = async (req: Request, res: Response) => {
+    try {
+        const masterId = 1;
+        const user = await getAll(masterId);
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+
+// Listar um registro a partir do ID (registro único).
+export const getId = async (req: Request, res: Response) => {
+    try {
+        cosnt user = await getById(Number(req.params.id));
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+
+// Atualizar registro a partir de um ID.
+export const update = async (req: Request, res: Response) => {
+    try {
+        const user = await updateUser(Number(req.params.id), req.body);
+        return res.status(200).send(user);
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+
+// Deletar registro a partir de um ID.
+export const remove = async (req: Request, res: Response) => {
+    try {
+        await deleteUser(Number(req.params.id));
+        return res.status(204).send();
+    } catch (e) {
+        return res.status(400).send(e);
+    }
+}
+```
+
+Utiliza a biblioteca "Bcrypt" para criptografar as senhas, utilize o comando seguinte:
+
+```bash
+npm install bcrypt @types/bcrypt
+```
+
+Crie um arquivo para retornar o erros, as validações. Veja a estrutura com o arquivo "`./src/validations/user.validation.ts`":
+
+> Estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/
+│  │  └─ user.controller.ts
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /repositories/
+│  │  └─ user.repository.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  ├─ /validations/            ">>> New folder <<<"
+│  │  └─ user.validation.ts    ">>> New file <<<"
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
+
+Use uma biblioteca chamada "Zod", use o comando "``":
+
+O comando NPM para instalar o Zod é:
+
+```bash
+npm install zod
+```
+
+Este comando instalará o pacote Zod no seu projeto. Lembre-se de executar este comando no diretório do seu projeto onde o arquivo `package.json` está localizado.
+
+Importe no arquivo "`./src/validations/user.validation.ts`", segue o código abaixo:
+
+**File: `./src/validations/user.validation.ts`**
+
+```jsx
+import { z } from 'zod';
+
+export const userValidation = z.object({
+    name:      z.string(),
+    email:     z.string().email(),
+    password:  z.string().min(6),
+    phone:     z.string().nullable().optional(),
+    address:   z.string().nullable().optional(),
+    number:    z.string().nullable().optional(),
+    city:      z.string().nullable().optional(),
+    state:     z.string().nullable().optional(),
+    cep:       z.string().nullable().optional(),
+    masterId:  z.number().nullable().optional()
+})
+```
+
+Crie o arquivo "`./src/routes/user.routes.ts`" para definir as rotas, segue abaixo a estrutura de arquivos com o novo arquivo e o conteúdo:
+
+> Estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/
+│  │  └─ user.controller.ts
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /repositories/
+│  │  └─ user.repository.ts
+│  ├─ /routes/                 ">>> New folder <<<"
+│  │  └─ user.routes.ts        ">>> New file <<<"
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  ├─ /validations/
+│  │  └─ user.validation.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
+
+**File: `./src/routes/user.routes.ts`**
+
+```jsx
+import {
+    create,
+    get,
+    getId,
+    remove,
+    update
+} from '../controllers/user.controller';
+
+// Rotas.
+export const userRoutes = (app: any) => {
+    app.post('/v1/user', create);
+    app.get('/v1/user', get);
+    app.get('/v1/user/:id', getId);
+    app.put('/v1/user/:id', update);
+    app.delete('/v1/user/:id', remove)
+}
+```
+
+Dentro do diretório "`./src/routes/`", crie o arquivo "`index.ts`":
+
+> Estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/
+│  │  └─ user.controller.ts
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /repositories/
+│  │  └─ user.repository.ts
+│  ├─ /routes/
+│  │  ├─ index.ts              ">>> New file <<<"
+│  │  └─ user.routes.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  ├─ /validations/
+│  │  └─ user.validation.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
+
+As rotas devem ser importadas dentro do arquivo "`./src/routes/index.ts`":
+
+**File: `./src/routes/index.ts`**
+
+```ts
+import { userRoutes } from './user.routes';
+
+const routes = (app: any) => {
+    userRoutes(app);
+}
+
+export default routes;
+```
+
+E dentro do "`./src/index.ts`" do diretório raiz, importe as rotas junto com as importações de "express, cors e dotenv" e passe o app para dentro:
+
+**File: `./src/index.ts`**
+
+```ts
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import routes from './routes';
+
+dotenv.config();
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+routes(app);
+
+app.listen(3000, () => {
+    console.log("Servidor rodando na porta 3000!");
+})
+```
+
+Execute o comando "`npm start`" e veja se está rodando:
+
+```bas
+npm start
+```
+
+Para testar as rotas, utilize a extenção "`Thunder Client`" no VSCode ou o "`Insomnia`", use o de sua preferência, mas aqui o exemplo é com a extenção "Thunder Client":
+
+![Thunder Client](./images/thunder_client.png)
+
+Use as configurações seguintes para testar:
+
+![Testando a requisição 'user'](./images/localhost_3000_v1_user.png)
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
