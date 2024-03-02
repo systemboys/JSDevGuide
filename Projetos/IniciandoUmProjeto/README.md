@@ -943,6 +943,8 @@ export const deleteUser = async (id: number) => {
 }
 ```
 
+> Obs.: Na variável "user", para apagar o registro utilize "`delete({...})`" ao invés de "`update({...})`". O exemplo acima, é uma exclusão lógica apenas, isso quer dizer que a coluna "`deleted`" do usuário será apenas atualizada para "`true`".
+
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Controller de usuário
