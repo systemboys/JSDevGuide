@@ -185,7 +185,7 @@
         ```json
         "scripts": {
             "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
-                "build": "tsc"
+            "build": "tsc"
         }
         ```
 
