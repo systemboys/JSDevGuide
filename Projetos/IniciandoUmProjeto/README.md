@@ -131,7 +131,7 @@
         },
         ```
 
-        Deverá ficar da seguinte forma:
+        Deve ficar da seguinte forma:
 
         ```json
         {
