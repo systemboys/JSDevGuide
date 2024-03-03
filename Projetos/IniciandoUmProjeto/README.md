@@ -27,18 +27,22 @@
 2. Navegue até o diretório onde você deseja criar o projeto.
 3. Digite o seguinte comando:
 
+    > Terminal
+
     ```bash
     npm init -y
     ```
 
     Este comando criará um novo arquivo `package.json` com as configurações padrão. O `-y` é usado para preencher automaticamente as opções padrão.
 
-    > Estrutura de arquivos!
+    > Estrutura de arquivos
 
     ```bash
     /myProject/
     └─ package.json ">>> New file <<<"
     ```
+
+    **File: `./package.json`**
 
     ```json
     {
@@ -65,7 +69,7 @@
 
 4. Crie sua estrutura de diretório:
 
-    > Estrutura de arquivos!
+    > Estrutura de arquivos
 
     ```bash
     /myProject/
@@ -79,6 +83,8 @@
 5. Configurações do "TypeScript".
 
     Você pode instalar o "Nodemon", "ts-node" e "sucrase" como dependências de desenvolvimento usando o NPM com o seguinte comando:
+
+    > Terminal
 
     ```bash
     npm install --save-dev nodemon ts-node sucrase
@@ -96,6 +102,8 @@
 
 6. Instale o TypeScript usando o NPM com o seguinte comando:
 
+    > Terminal
+
     ```bash
     npm install typescript
     ```
@@ -103,6 +111,8 @@
     Este comando instalará o TypeScript como uma dependência do seu projeto. Agora você pode usar o TypeScript em seu projeto Node.js!
 
 7. Inicialize um novo projeto TypeScript usando o NPM com o seguinte comando:
+
+    > Terminal
 
     ```bash
     npx tsc --init
@@ -187,6 +197,8 @@
 
     Instale os pacotes "express", "cors" e "dotenv" usando o NPM com o seguinte comando:
 
+    > Terminal
+
     ```bash
     npm install express cors dotenv
     ```
@@ -204,6 +216,8 @@
     Esses pacotes são comumente usados em muitos projetos Node.js para criar aplicações web robustas e seguras.
 
 10. Instale as tipagens do TypeScript e o CORS:
+
+    > Terminal
 
     ```bash
     npm i --save-dev @types/express
@@ -238,11 +252,15 @@
 
 13. Start o servidor com o seguinte comando:
 
+    > Terminal
+
     ```bash
     npm start
     ```
 
     No console do seu terminal, será exibidas as informações indicando que o servidor está rodando na porta configurada.
+
+    > Terminal
 
     ```bash
     root@10:/home/userlinux/Documentos/Projects/myProject/api# npm start
@@ -301,6 +319,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     **Ubuntu:**
 
+    > Terminal
+
     ```bash
     # Atualize sua lista de pacotes
     sudo apt update
@@ -322,6 +342,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     ```
 
     **Debian:**
+
+    > Terminal
 
     ```bash
     # Atualize sua lista de pacotes
@@ -347,6 +369,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Você pode verificar se o Docker está instalado no seu sistema Linux usando o seguinte comando no terminal:
 
+    > Terminal
+
     ```bash
     docker --version
     ```
@@ -357,7 +381,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Sua estrutura de arquivos ficará assim:
 
-    > Estrutura de arquivos!
+    > Estrutura de arquivos
 
     ```bash
     /myProject/
@@ -450,6 +474,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Após digitar o conteúdo da imagem, execute o seguinte comando no terminal:
 
+    > Terminal
+
     ```bash
     sudo docker-compose up -d
     ```
@@ -464,6 +490,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Para visualizar a imagem criada, você pode usar o comando `docker images`. Este comando lista todas as imagens Docker disponíveis no seu sistema. Aqui está o comando:
 
+    > Terminal
+
     ```bash
     docker images
     ```
@@ -471,6 +499,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     Você verá uma lista de imagens com informações como o repositório, a tag, o ID da imagem, quando foi criada e o tamanho. A imagem do PostgreSQL que você usou no seu arquivo `docker-compose.yml` deve aparecer nesta lista. Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema. Se você usou uma tag específica para a imagem do PostgreSQL no seu arquivo `docker-compose.yml`, você também verá essa tag na lista. Se nenhuma tag foi especificada, a tag padrão é `latest`.
 
     Você verá algo parecido com isto:
+
+    > Terminal
 
     ```bash
     root@10:/home/userlinux/Documentos/Projects/myProject/api# docker images
@@ -487,6 +517,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     Outro comando utilizado para visualizar as imagens:
 
     Explicando o comando abaixo:
+
+    > Terminal
 
     ```bash
     sudo docker ps
@@ -509,6 +541,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     Se você quiser ver todos os contêineres no seu sistema, não apenas os que estão em execução, você pode usar o comando `docker ps -a`. A opção `-a` significa "all" (todos). Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema.
 
     Você verá algo parecido com isto:
+
+    > Terminal
 
     ```bash
     root@10:/home/userlinux/Documentos/Projects/myProject/api# docker ps
@@ -559,6 +593,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     Para instalar o Prisma via NPM, você pode usar o seguinte comando:
 
+    > Terminal
+
     ```bash
     npm install prisma @prisma/client
     ```
@@ -566,6 +602,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     Este comando instala o pacote `prisma` que contém o CLI do Prisma e o pacote `@prisma/client` que é o cliente do Prisma.
 
     Depois de instalar o Prisma, você pode gerar o cliente Prisma usando o seguinte comando:
+
+    > Terminal
 
     ```bash
     npx prisma generate
@@ -600,7 +638,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     - No diretório "`./src/services/`", crie um um arquivo com o nome "`prisma.ts`" para importar o Prisma/Cliente. Segue o código abaixo:
 
-        > Estrutura de arquivos!
+        > Estrutura de arquivos
 
         ```bash
         /myProject/
@@ -620,6 +658,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         ```
 
     - Digite no **terminal** o seguinte comando "`npx prisma init`":
+
+        > Terminal
 
         ```bash
         npx prisma init
@@ -656,7 +696,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
         ```
 
-        > Estrutura de arquivos!
+        > Estrutura de arquivos
 
         ```bash
         /myProject/
@@ -710,6 +750,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
         ```
 
     - Execute o seguinte comando para criar o banco de dados:
+
+        > Terminal
 
         ```bash
         npx prisma migrate dev --name init
@@ -781,7 +823,7 @@ Esses são exemplos básicos. O Prisma Client oferece muitas outras opções par
 
 Crie o seguinte arquivo "`./src/repositories/user.repository.ts`":
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -828,6 +870,8 @@ Quanto à coluna `masterId`, foi adicionada para definir a quem pertence. Ela se
 
 Após essa alteração, é preciso dizer ao Prisma que houve alterações e ele tem que atualizar no banco de dados, segue o comando novamente:
 
+> Terminal
+
 ```bash
 npx prisma migrate dev --name init
 ```
@@ -856,7 +900,7 @@ Crie um diretório chamado "`./src/entities/`" e o arquivo "`user.ts`":
 
 
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -966,7 +1010,7 @@ export const deleteUser = async (id: number) => {
 
 Crie o arquivo "`./src/controlers/user.controller.ts`", veja a estrutura de arquivos seguinte:
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -1063,13 +1107,15 @@ export const remove = async (req: Request, res: Response) => {
 
 Utiliza a biblioteca "Bcrypt" para criptografar as senhas, utilize o comando seguinte:
 
+> Terminal
+
 ```bash
 npm install bcrypt @types/bcrypt
 ```
 
 Crie um arquivo para retornar o erros, as validações. Veja a estrutura com o arquivo "`./src/validations/user.validation.ts`":
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -1100,6 +1146,8 @@ Use uma biblioteca chamada "Zod", use o comando "``":
 
 O comando NPM para instalar o Zod é:
 
+> Terminal
+
 ```bash
 npm install zod
 ```
@@ -1129,7 +1177,7 @@ export const userValidation = z.object({
 
 Crie o arquivo "`./src/routes/user.routes.ts`" para definir as rotas, segue abaixo a estrutura de arquivos com o novo arquivo e o conteúdo:
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -1181,7 +1229,7 @@ export const userRoutes = (app: any) => {
 
 Dentro do diretório "`./src/routes/`", crie o arquivo "`index.ts`":
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/
@@ -1634,6 +1682,8 @@ generator client {
 
 Execute o Generate Prisma Client com o comando:
 
+> Terminal
+
 ```bash
 npx prisma generate
 ```
@@ -1935,7 +1985,7 @@ Use a nova rota "`http://localhost:3000/v1/login`" sem passar nada, como se o us
 
 > Observe a validação da senha e do email quando um ou ambos são informado erradamente!
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /myProject/

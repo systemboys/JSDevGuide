@@ -32,7 +32,7 @@ Conteúdo do assunto
 ```
 ---
 
-> Estrutura de arquivos!
+> Estrutura de arquivos
 
 ```bash
 /rootDirectory/
@@ -41,6 +41,12 @@ Conteúdo do assunto
 │  │  └─ file3.jsx
 │  └─ file2.jsx
 └─ file1.jsx
+```
+
+> Terminal
+
+```bash
+command ...
 ```
 
 ---
