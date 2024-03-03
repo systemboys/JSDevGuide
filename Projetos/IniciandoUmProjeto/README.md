@@ -19,6 +19,7 @@
 > - [Token JWT](#token-jwt "Token JWT")
 >   - [Rota de Login](#rota-de-login "Rota de Login")
 >   - [Decoded do Token](#decoded-do-token "Decoded do Token")
+>   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
 
 ----
 
@@ -284,6 +285,8 @@
 ## Criando banco de dados
 
 ### Docker e Docker Compose
+
+> Conceito
 
 **Docker** é uma plataforma de código aberto que permite aos desenvolvedores automatizar o processo de implantação, escalabilidade e execução de aplicativos dentro de contêineres. Um contêiner Docker é uma unidade padrão de software que empacota o código e todas as suas dependências para que o aplicativo seja executado de maneira rápida e confiável de um ambiente de computação para outro.
 
@@ -558,6 +561,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
 3. Configure o ORM Prisma:
 
+    > Conceito
+
     Prisma ORM é um mapeador objeto-relacional (ORM) de código aberto e de próxima geração. Ele consiste nas seguintes partes:
 
     - **Prisma Client**: Um construtor de consultas autogerado e com tipagem segura para Node.js e TypeScript.
@@ -779,6 +784,8 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Repository de usuários (CRUD)
+
+> Conceito
 
 CRUD é um acrônimo que significa: **Create** (Criar), **Read** (Ler), **Update** (Atualizar) e **Delete** (Excluir). Essas são as quatro operações básicas que você pode realizar em qualquer banco de dados persistente.
 
@@ -1480,6 +1487,8 @@ Ao chamar a requisição de seleção de todos os registros, a senha não vem ju
 
 ### Paginação de registros
 
+> Conceito
+
 O Prisma é um ORM (Object Relational Mapping) que tem como objetivo principal facilitar a interação entre o código da aplicação e os dados armazenados em um banco de dados relacional, eliminando a necessidade de escrever consultas SQL manualmente.
 
 Embora a "Paginação de registros" não tenha sido explicitamente mencionada nossa documentação, é um conceito comum em muitos ORMs, incluindo o Prisma. A paginação é uma técnica usada para dividir um grande conjunto de dados em partes menores (ou páginas). Isso torna a manipulação de grandes conjuntos de dados mais eficiente e a experiência do usuário mais fluida.
@@ -1636,6 +1645,8 @@ Altere os parâmetros (`..?skip=0&take=20`) nos testes e verá o resultado.
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Pesquisa de registros
+
+> Conceito
 
 A "Pesquisa de registros" é um recurso importante em qualquer ORM, incluindo o Prisma. Ele permite que você encontre registros específicos em seu banco de dados com base em determinados critérios.
 
@@ -1830,6 +1841,8 @@ O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Token JWT
+
+> Conceito
 
 O JWT (JSON Web Token) é uma forma de autenticação que permite que um servidor verifique a identidade de um usuário sem precisar armazenar informações sobre ele. Ele é um padrão aberto para representar dados de forma compacta e segura entre as partes. 
 
@@ -2075,6 +2088,161 @@ export const authRoutes = (app: any) => {
 Teste no "Thunder Cliente" ou "Insomnia":
 
 ![Decoded do Token, imagem 1](./images/TokenDecoded_img_1.png)
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Adicionando Middleware
+
+> Conceito
+
+"Middleware" é um termo usado em programação com NodeJS e ORM Prisma para se referir a funções que têm acesso ao objeto de solicitação (request), ao objeto de resposta (response) e à próxima função de middleware no ciclo de solicitação-resposta do aplicativo.
+
+Os middlewares atuam como ganchos de ciclo de vida em nível de consulta, permitindo que você execute uma ação antes ou depois que uma consulta é executada. Você pode usar o método `prisma.$use` para adicionar um middleware. Aqui está um exemplo de como você pode adicionar um middleware:
+
+```javascript
+const prisma = new PrismaClient()
+
+// Middleware 1
+prisma.$use(async (params, next) => {
+  // Manipule os parâmetros aqui
+  const result = await next(params)
+  // Veja os resultados aqui
+  return result
+})
+
+// Middleware 2
+prisma.$use(async (params, next) => {
+  // Manipule os parâmetros aqui
+  const result = await next(params)
+  // Veja os resultados aqui
+  return result
+})
+```
+
+Os parâmetros representam os parâmetros disponíveis no middleware, como o nome da consulta, e o próximo representa o próximo middleware na pilha ou a consulta original do Prisma Client.
+
+Os casos de uso possíveis para o middleware incluem:
+- Definir ou substituir um valor de campo - por exemplo, definir o idioma do contexto de um comentário de postagem de blog.
+- Validar dados de entrada - por exemplo, verificar a entrada do usuário para linguagem inadequada por meio de um serviço externo.
+- Interceptar uma consulta de exclusão e alterá-la para uma atualização para realizar uma exclusão suave.
+- Registrar o tempo necessário para executar uma consulta.
+
+Há muitos outros casos de uso para o middleware - esta lista serve como inspiração para os tipos de problemas que o middleware foi projetado para resolver.
+
+**Vamos lá para entendermos o conceito!**
+
+Crie o diretório e o arquivo "`./src/middlewares/auth.ts`":
+
+**File: `./src/middlewares/auth.ts`**
+
+```ts
+import jwt from "jsonwebtoken";
+
+export const verifyToken = async (req: any, res: any, mext: any) => {
+    try {
+        const token = req.headers.authorization;
+        
+        if (!token) throw { message: 'Necessário passar o token!' };
+
+        const replace = token.replace('Bearer ', '');
+        const decoded = jwt.verify(replace, String(process.env.TOKEN_KEY));
+        req.user = decoded;
+        next();
+    } catch (e) {
+        return res.status(401).send(e);
+    }
+};
+```
+
+> Atenção! Após o "Bearer" deve ter um espaço, veja: "`...ace('Bearer ', '...`"!
+
+Nas rotas de usuários no arquivo "`./src/routes/user.routes.ts`" importe o "`verifyToken`" e modifique os:
+
+> app.get('/v1/user', get);
+> 
+> app.get('/v1/user/:id', getId);
+> 
+> app.put('/v1/user/:id', update);
+> 
+> app.delete('/v1/user/:id', remove)
+
+Para:
+
+> app.get('/v1/user', verifyToken, get);
+> 
+> app.get('/v1/user/:id', verifyToken, getId);
+> 
+> app.put('/v1/user/:id', verifyToken, update);
+> 
+> app.delete('/v1/user/:id', verifyToken, remove)
+
+Deve ficar da seguinte forma:
+
+**File: `./src/routes/user.routes.ts`**
+
+```jsx
+// ...Outras linhas...
+import { verifyToken } from '../middlewares/auth';
+
+// Rotas.
+export const userRoutes = (app: any) => {
+    // ...Outras linhas...
+    app.get('/v1/user', verifyToken, get);
+    app.get('/v1/user/:id', verifyToken, getId);
+    app.put('/v1/user/:id', verifyToken, update);
+    app.delete('/v1/user/:id', verifyToken, remove)
+};
+```
+
+Faça o teste com o "Thunder Client" ou "Insomnia":
+
+> Sem o "TOKEN"!
+
+![Adicionando Middleware, testando...](./images/Adding_Middleware_test_1.png)
+
+> Com o "TOKEN"!
+
+![Adicionando Middleware, testando...](./images/Adding_Middleware_test_2.png)
+
+> Atenção! O "Bearer" não é necessário ser passado, quando a autenticação for feita pelo Fronend o "Bearer" vai automaticamente!
+
+![Adicionando Middleware, testando...](./images/Adding_Middleware_test_3.png)
+
+> Estrutura de arquivos
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/
+│  │  ├─ auth.controller.ts
+│  │  └─ user.controller.ts
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /middlewares/            ">>> New folder <<<"
+│  │  └─ auth.ts               ">>> New file <<<"
+│  ├─ /repositories/
+│  │  ├─ auth.repository.ts
+│  │  └─ user.repository.ts
+│  ├─ /routes/
+│  │  ├─ auth.routes.ts
+│  │  ├─ index.ts
+│  │  └─ user.routes.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  ├─ /validations/
+│  │  ├─ auth.validation.ts
+│  │  └─ user.validation.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
