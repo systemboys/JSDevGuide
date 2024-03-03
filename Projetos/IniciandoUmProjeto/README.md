@@ -17,6 +17,7 @@
 >   - [Paginação de registros](#paginação-de-registros "Paginação de registros")
 >   - [Pesquisa de registros](#pesquisa-de-registros "Pesquisa de registros")
 > - [Token JWT](#token-jwt "Token JWT")
+>   - [Rota de Login](#rota-de-login "Rota de Login")
 
 ----
 
@@ -1767,7 +1768,197 @@ O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
 
 ## Token JWT
 
-Continue content...
+O JWT (JSON Web Token) é uma forma de autenticação que permite que um servidor verifique a identidade de um usuário sem precisar armazenar informações sobre ele. Ele é um padrão aberto para representar dados de forma compacta e segura entre as partes. 
+
+O JWT é formado por três seções: Header, Payload e Signature. Ele é assinado usando uma chave secreta com algoritmo HMAC ou um par de chaves públicas e privadas RSA ou ECDSA. 
+
+Os dados contidos no token são públicos e podem ser lidos por qualquer um que o possua, porém há um mecanismo de segurança que faz com que somente quem tenha a senha, possa modificá-lo.
+
+O JWT é muito utilizado em cenários de autorização. Depois que o usuário estiver conectado, é possível observar cada solicitação e verificar se esta inclui o JWT, permitindo que o usuário acesse rotas, serviços e outros recursos. Além disso, os JWTs são úteis para trocas de informações pois, como eles são assinados, é possível ter certeza de que os remetentes são quem dizem ser quem são.
+
+**Agora vamos trabalhar com a proteção de nossa API.**
+
+> Vamos aplicar uma autenticação com o **Token JWT** ([https://jwt.io](https://jwt.io "Site do Token JWT")).
+> ![Token JWT](./images/Token_JWT.png)
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Rota de Login
+
+A primeira coisa que vamos fazer, é uma validação. Crie o arquivo "`./src/validation/auth.validation.ts`":
+
+**File: `./src/validation/auth.validation.ts`**
+
+```ts
+import { z } from 'zod';
+
+export const authValidation = z.object({
+    email: z.string().email(),
+    password: z.string().min(6)
+});
+```
+
+Crie o arquivo "`./src/controllers/auth.controller.ts`":
+
+**File: `./src/controllers/auth.controller.ts`**
+
+```ts
+import { authValidation } from '../validation/auth.validation';
+import { getUser } from '../repositories/auth.repository';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+export const auth = async (req: any, res: any) => {
+    try {
+        const data = await authValidation.parse(req.body);
+        const user = await getUser(data.email);
+        if (!user) throw { message: "Usuário não existe!" };
+        if (user && !user.status) throw { message: "Usuário bloqueado!" };
+        if (user && bcrypt.compareSync(data.password, user.password)) {
+            const token = jwt.sign(
+                {
+                    id: user.id,
+                    name: user.name,
+                    // master: user.masterId
+                    masterId: user.masterId
+                },
+                String(process.env.TOKEN_KEY),
+                { expiresIn: '24h' }
+            );
+            return res.status(200).send({ token });
+        } else {
+            return res.status(401).send({ message: "Não autorizado!" });
+        };
+    } catch (e) {
+        return res.status(401).send(e);
+    };
+};
+```
+
+> Observação: Para gerar o token, é necessário uma biblioteca, instale com o comando abaixo:
+>
+> ```bash
+> npm install jsonwebtoken
+> ```
+> 
+> Este comando instalará o pacote `jsonwebtoken` no seu projeto. Lembre-se de executar este comando no diretório raiz do seu projeto onde o arquivo `package.json` está localizado.
+
+> Ahh! Não esquecer também o pacote `@types/jsonwebtoken`:
+> 
+> ```bash
+> npm install --save-dev @types/jsonwebtoken
+> ```
+> 
+> Este comando instalará o pacote `@types/jsonwebtoken` como uma dependência de desenvolvimento no seu projeto. Lembre-se de executar este comando no diretório raiz do seu projeto onde o arquivo `package.json` está localizado. As dependências de desenvolvimento são pacotes que não são necessários para o aplicativo em execução, mas são necessários para o desenvolvimento, como pacotes de teste ou de tipos.
+
+Crie o arquivo "`./src/repositories/auth.repository.ts`":
+
+**File: `./src/repositories/auth.repository.ts`**
+
+```ts
+import { prisma } from "../services/prisma";
+
+export const getUser = async (email: string) => {
+    const user = await prisma.user.findFirst({
+        where: {
+            email
+        },
+    });
+};
+```
+
+Crie uma variável de ambiente no arquivo "`.env`":
+
+**File: `.env`**
+
+```
+# ...
+
+TOKEN_KEY="b9c9d7ee2bd3c0a4baa9b817de5d7d2fbc18db78d28db2374efd8d2c5a2e798a0f55feffd920759f54491ee8918fa4be52e5cef5756a9d020a695f832632fedf"
+```
+
+> Gerar um Hash: [Gerador de Hash](http://andti.com.br/tool/hash "Gerador de Hash")
+> ![Gerador de Hash](./images/HashGenerator.png)
+
+Crie uma rota no arquivo "`./src/routes/auth.routes.ts`":
+
+**File: `./src/routes/auth.routes.ts`**
+
+```ts
+import { auth }  from '../controllers/auth.controller';
+
+export const authRoutes = (app: any) => {
+    app.post("/v1/login", auth);
+};
+```
+
+No arquivo "`./src/routes/index.ts`", a nova rota tem que ser entendida:
+
+**File: `./src/routes/index.ts`**
+
+```ts
+import { userRoutes } from './user.routes';
+import { authRoutes } from './auth.routes';
+
+const routes = (app: any) => {
+    userRoutes(app);
+    authRoutes(app);
+}
+
+export default routes;
+```
+
+Após essa modificação, dê um "`npm start`" para testar.
+
+Use a nova rota "`http://localhost:3000/v1/login`" sem passar nada, como se o usuário tentasse entrar sem informar o email e senha:
+
+![Tentar acessar sem passar nada](./images/accessWithoutPassingData.png)
+
+> Observe que a resposta exige o email e a senha!
+
+![Tentar acessar passando os dados](./images/accessByPassingData.png)
+
+> Observe agora que ao passar os dados, a resposta vem com o TOKEN!
+
+![Tentar acessar passando os dados](./images/passingWrongPassword.png)
+
+![Tentar acessar passando os dados](./images/sendingWrongEmail.png)
+
+> Observe a validação da senha e do email quando um ou ambos são informado erradamente!
+
+> Estrutura de arquivos!
+
+```bash
+/myProject/
+├─ /prisma/
+│  ├─ /migrations/
+│  │  ├─ /20230522172022_init/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ /src/
+│  ├─ /controllers/
+│  │  ├─ auth.controller.ts    ">>> New file <<<"
+│  │  └─ user.controller.ts
+│  ├─ /entities/
+│  │  └─ user.ts
+│  ├─ /repositories/
+│  │  ├─ auth.repository.ts    ">>> New file <<<"
+│  │  └─ user.repository.ts
+│  ├─ /routes/
+│  │  ├─ auth.routes.ts        ">>> New file <<<"
+│  │  ├─ index.ts
+│  │  └─ user.routes.ts
+│  ├─ /services/
+│  │  └─ prisma.ts
+│  ├─ /validations/
+│  │  ├─ auth.validation.ts    ">>> New file <<<"
+│  │  └─ user.validation.ts
+│  └─ index.ts
+├─ .env
+├─ docker-compose.yml
+└─ package.json
+```
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
