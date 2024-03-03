@@ -33,6 +33,13 @@
 
     Este comando criará um novo arquivo `package.json` com as configurações padrão. O `-y` é usado para preencher automaticamente as opções padrão.
 
+    > Estrutura de arquivos!
+
+    ```bash
+    /myProject/
+    └─ package.json ">>> New file <<<"
+    ```
+
     ```json
     {
         "name": "backend",
@@ -58,10 +65,12 @@
 
 4. Crie sua estrutura de diretório:
 
+    > Estrutura de arquivos!
+
     ```bash
     /myProject/
-    ├─ /src/
-    │  └─ index.ts
+    ├─ /src/        ">>> New folder <<<"
+    │  └─ index.ts  ">>> New file <<<"
     └─ package.json
     ```
 
