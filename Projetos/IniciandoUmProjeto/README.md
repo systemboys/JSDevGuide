@@ -2261,15 +2261,15 @@ Aqui estão alguns conceitos-chave no desenvolvimento frontend:
 
 - **HTML (HyperText Markup Language)**: É a linguagem de marcação usada para estruturar e dar significado ao conteúdo da web.
 
-    ![HTML](./images/istockphoto-994454878-1024x1024.png)
+    ![HTML](./images/html_code.png)
 
 - **CSS (Cascading Style Sheets)**: É a linguagem usada para estilizar as páginas da web, incluindo layout, cores e fontes.
 
-    ![CSS](./images/Aprendendo-CSS-em-10-Minutos.png)
+    ![CSS](./images/css_code.png)
 
 - **JavaScript**: É a linguagem de script usada para criar funcionalidades dinâmicas na web.
 
-    ![JavaScript](./images/JavaScript_code.png)
+    ![JavaScript](./images/javascript_code.png)
 
 Além disso, os desenvolvedores frontend podem usar várias ferramentas e frameworks para facilitar o desenvolvimento, como React, Angular, Vue.js, SASS, LESS, entre outros.
 
