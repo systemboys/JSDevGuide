@@ -18,6 +18,7 @@
 >   - [Pesquisa de registros](#pesquisa-de-registros "Pesquisa de registros")
 > - [Token JWT](#token-jwt "Token JWT")
 >   - [Rota de Login](#rota-de-login "Rota de Login")
+>   - [Decoded do Token](#decoded-do-token "Decoded do Token")
 
 ----
 
@@ -859,6 +860,7 @@ model User {
     state    String?
     cep      String?
     masterId Int?
+    master   Boolean @default(false)
     status   Boolean @default(true)
     deleted  Boolean @default(false)
 }
@@ -937,6 +939,7 @@ export type User = {
     state?:    string | null;
     cep?:      string | null;
     masterId?: number | null;
+    master?:   boolean;
 }
 ```
 
@@ -1171,7 +1174,8 @@ export const userValidation = z.object({
     city:      z.string().nullable().optional(),
     state:     z.string().nullable().optional(),
     cep:       z.string().nullable().optional(),
-    masterId:  z.number().nullable().optional()
+    masterId:  z.number().nullable().optional(),
+    master:    z.boolean().default(false).optional()
 })
 ```
 
@@ -1348,7 +1352,7 @@ No arquivo "`./src/repositories/user.repository.ts`" faça a seguinte alteraçã
 **File: `./repositories/user.prepository.ts`**
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Criar registro.
 export const createrUser = async (data: any) => {
@@ -1361,7 +1365,7 @@ export const createrUser = async (data: any) => {
     return user;
 };
 
-//  ...
+// ...Outras linhas...
 ```
 
 Retorna somente o ID, deixando de apresentar todos os dados do registro:
@@ -1371,7 +1375,7 @@ Retorna somente o ID, deixando de apresentar todos os dados do registro:
 Ajuste o "`getById`", quando o registro for requisitado a partir de um ID:
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Listar um registro a partir do ID (registro único).
 export const getById = async (id: number) => {
@@ -1395,7 +1399,7 @@ export const getById = async (id: number) => {
     return user
 }
 
-// ...
+// ...Outras linhas...
 ```
 
 Ao chamar a requisição de criação de um registro, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
@@ -1405,7 +1409,7 @@ Ao chamar a requisição de criação de um registro, a senha não vem junto com
 Ajuste o "`updateUser`", quando a atualização for requisitada a partir de um ID:
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Atualizar registro a partir de um ID.
 export const updateUser = async (id: number, data: any) => {
@@ -1430,7 +1434,7 @@ export const updateUser = async (id: number, data: any) => {
     return user
 }
 
-// ...
+// ...Outras linhas...
 ```
 
 Ao chamar a requisição de atualização de um registro, a senha também não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
@@ -1440,7 +1444,7 @@ Ao chamar a requisição de atualização de um registro, a senha também não v
 Ajuste o "`getAll`", quando a seleção de todos os registros for solicitada:
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Listar todos os registros.
 export const getAll = async (masterId: number | null) => {
@@ -1465,7 +1469,7 @@ export const getAll = async (masterId: number | null) => {
     return users;
 }
 
-// ...
+// ...Outras linhas...
 ```
 
 Ao chamar a requisição de seleção de todos os registros, a senha não vem junto com os outros dados, observe que a coluna "`password:`" foi definida como "`false`":
@@ -1508,7 +1512,7 @@ Neste exemplo, o Prisma retornará 10 posts, começando do sexto post. Isso é �
 Modifique o "`getAll`" no arquivo "`./src/repositories/user.repository.ts`" para então começar a fatiar os resultados:
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Listar todos os registros.
 export const getAll = async (
@@ -1550,13 +1554,13 @@ export const getAll = async (
     return { total, totalPage, users }
 };
 
-// ...
+// ...Outras linhas...
 ```
 
 > Observe que temos duas variáveis (`users, total`) e duas funções (`findMany({...}), count({...})`):
 > 
 > ```ts
-> // ...
+> // ...Outras linhas...
 > 
 > const[
 >     users,
@@ -1566,7 +1570,7 @@ export const getAll = async (
 >     prisma.user.count({...})
 > ]);
 > 
-> // ...
+> // ...Outras linhas...
 > ```
 > O valor da primeira função (`findMany({...})`) vai definir a variável (`users`) e o valor da segunda função (`count({...})`) vai definir a variável (`total`).
 
@@ -1579,7 +1583,7 @@ No arquivo "`./src/controllers/user.controller.ts`", será esperado os parâmetr
 **File: `./src/controllers/user.controller.ts`**
 
 ```jsx
-// ...
+// ...Outras linhas...
 
 // Listar todos os registros.
 export const get = async (req: Request, res: Response) => {
@@ -1594,7 +1598,7 @@ export const get = async (req: Request, res: Response) => {
     }
 }
 
-// ...
+// ...Outras linhas...
 ```
 
 > Linha alteradas:
@@ -1661,23 +1665,23 @@ No arquivo "`./prisma/schema.prisma`", no "`generator client {...}`", adicione a
 **File: `./prisma/schema.prisma`**
 
 ```prisma
-// ...
+// ...Outras linhas...
 generator client {
     provider        = "prisma-client-js"
     previewFeatures = ["fullTextSearch"]
 }
-// ...
+// ...Outras linhas...
 ```
 
 > Atenção! Para MySQL, você também precisará incluir o sinalizador do recurso de visualização "`fullTextIndex`":
 > 
 > ```prisma
-> // ...
+> // ...Outras linhas...
 > generator client {
 >     provider        = "prisma-client-js"
 >     previewFeatures = ["fullTextSearch", "fullTextIndex"]
 > }
-> // ...
+> // ...Outras linhas...
 > ```
 
 Execute o Generate Prisma Client com o comando:
@@ -1693,7 +1697,7 @@ npx prisma generate
 Modifique o "`getAll`" no arquivo "`./src/repositories/user.repository.ts`" para receber o parâmetro da pesquisa como uma "`string`". Veja o código modificado:
 
 ```ts
-// ...
+// ...Outras linhas...
 
 // Listar todos os registros.
 export const getAll = async (
@@ -1774,7 +1778,7 @@ export const getAll = async (
     }
 };
 
-// ...
+// ...Outras linhas...
 ```
 
 No arquivo "`./src/controllers/user.controller.ts`", será esperado os parâmetros "`search`" após "`skip, take`" que também virá por parâmetro, veja a modificação no código:
@@ -1782,7 +1786,7 @@ No arquivo "`./src/controllers/user.controller.ts`", será esperado os parâmetr
 **File: `./src/controllers/user.controller.ts`**
 
 ```jsx
-// ...
+// ...Outras linhas...
 
 // Listar todos os registros.
 export const get = async (req: Request, res: Response) => {
@@ -1798,7 +1802,7 @@ export const get = async (req: Request, res: Response) => {
     }
 }
 
-// ...
+// ...Outras linhas...
 ```
 
 Para testar, use o parâmetro "`&search=`" na execução da requisição da rota "`user`", veja o exemplo:
@@ -1878,7 +1882,7 @@ export const auth = async (req: any, res: any) => {
                 {
                     id: user.id,
                     name: user.name,
-                    // master: user.masterId
+                    master: user.master,
                     masterId: user.masterId
                 },
                 String(process.env.TOKEN_KEY),
@@ -1931,7 +1935,7 @@ Crie uma variável de ambiente no arquivo "`.env`":
 **File: `.env`**
 
 ```
-# ...
+# ...Outras linhas...
 
 TOKEN_KEY="b9c9d7ee2bd3c0a4baa9b817de5d7d2fbc18db78d28db2374efd8d2c5a2e798a0f55feffd920759f54491ee8918fa4be52e5cef5756a9d020a695f832632fedf"
 ```
@@ -2018,6 +2022,59 @@ Use a nova rota "`http://localhost:3000/v1/login`" sem passar nada, como se o us
 ├─ docker-compose.yml
 └─ package.json
 ```
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Decoded do Token
+
+Vamos fazer a descriptografia do **Token**, para isso, vamos criar uma nova função no arquivo "`./src/controllers/auth.controller.ts`":
+
+**File: `./src/controllers/auth.controller.ts`**
+
+```ts
+import { authValidation, tokenValidation } from '../validation/auth.validation';
+
+// ...Outras linhas...
+
+export const validate = async (req: any, res: any) => {
+    try {
+        const data = await tokenValidation.parse(req.body);
+        const decode = await jwt.decode(data.token);
+        return res.status(200).send(decode);
+    } catch (e) {
+        return res.status(400).send(e);
+    };
+};
+```
+
+Crie uma validação no arquivo "`./src/validation/auth.validation.ts`":
+
+**File: `./src/validation/auth.validation.ts`**
+
+```ts
+// ...Outras linhas...
+
+export const tokenValidation = z.object({
+    token: z.string()
+});
+```
+
+Na rota no arquivo "`./src/routes/auth.routes.ts`" importe o "`validate`" e criar mais uma rota:
+
+**File: `./src/routes/auth.routes.ts`**
+
+```ts
+import { auth, validate }  from '../controllers/auth.controller';
+
+export const authRoutes = (app: any) => {
+    app.post("/v1/login", auth);
+    app.post("/v1/validate", validate);
+};
+```
+
+Teste no "Thunder Cliente" ou "Insomnia":
+
+![Decoded do Token, imagem 1](./images/TokenDecoded_img_1.png)
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
