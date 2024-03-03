@@ -16,10 +16,11 @@
 >   - [Ajustando retornos](#ajustando-retornos "Ajustando retornos")
 >   - [Paginação de registros](#paginação-de-registros "Paginação de registros")
 >   - [Pesquisa de registros](#pesquisa-de-registros "Pesquisa de registros")
-> - [Token JWT](#token-jwt "Token JWT")
+>   - [Token JWT](#token-jwt "Token JWT")
 >   - [Rota de Login](#rota-de-login "Rota de Login")
 >   - [Decoded do Token](#decoded-do-token "Decoded do Token")
 >   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
+> - [Começando nosso Frontend](# "Começando nosso Frontend")
 
 ----
 
@@ -1840,7 +1841,7 @@ O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
 
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
-## Token JWT
+### Token JWT
 
 > Conceito
 
@@ -2194,6 +2195,8 @@ export const userRoutes = (app: any) => {
 };
 ```
 
+> Obs.: Na linha "`app.post('/v1/user', create);`" não é necessário, porque é uma rota de criação de registro!
+
 Faça o teste com o "Thunder Client" ou "Insomnia":
 
 > Sem o "TOKEN"!
@@ -2244,5 +2247,35 @@ Faça o teste com o "Thunder Client" ou "Insomnia":
 └─ package.json
 ```
 
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+## Começando nosso Frontend
+
+"Frontend", também conhecido como desenvolvimento de interface do usuário, é a parte do desenvolvimento web que lida com o que o usuário vê e interage em um site ou aplicativo da web. 
+
+Os desenvolvedores frontend usam tecnologias como HTML, CSS e JavaScript para criar a interface do usuário. Eles são responsáveis por tudo o que você vê e interage em um site, incluindo layout, design, cores, fontes e formulários.
+
+Aqui estão alguns conceitos-chave no desenvolvimento frontend:
+
+- **HTML (HyperText Markup Language)**: É a linguagem de marcação usada para estruturar e dar significado ao conteúdo da web.
+
+    ![HTML](./images/istockphoto-994454878-1024x1024.png)
+
+- **CSS (Cascading Style Sheets)**: É a linguagem usada para estilizar as páginas da web, incluindo layout, cores e fontes.
+
+    ![CSS](./images/Aprendendo-CSS-em-10-Minutos.png)
+
+- **JavaScript**: É a linguagem de script usada para criar funcionalidades dinâmicas na web.
+
+    ![JavaScript](./images/JavaScript_code.png)
+
+Além disso, os desenvolvedores frontend podem usar várias ferramentas e frameworks para facilitar o desenvolvimento, como React, Angular, Vue.js, SASS, LESS, entre outros.
+
+Em resumo, o frontend é a parte do site que os usuários veem e interagem, e é criado usando várias tecnologias de codificação, como HTML, CSS e JavaScript..
+
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
 [![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
