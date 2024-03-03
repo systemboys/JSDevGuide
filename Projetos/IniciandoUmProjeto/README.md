@@ -127,6 +127,8 @@
 
 8. No arquivo `package.json`, altere ...
 
+    **File: `./package.json`**
+
     ```json
     {
         "name": "backend",
@@ -150,10 +152,12 @@
         "scripts": {
             "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
             "build": "tsc"
-        },
+        }
         ```
 
         Deve ficar da seguinte forma:
+
+        **File: `./package.json`**
 
         ```json
         {
@@ -180,7 +184,8 @@
 
         ```json
         "scripts": {
-            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\""
+            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+                "build": "tsc"
         }
         ```
 
