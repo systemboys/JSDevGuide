@@ -22,8 +22,6 @@
 >   - [Adicionando Middleware](./IniciandoUmProjeto/README.md#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](./IniciandoUmProjeto/README.md#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
 
----
-
 ## Título do assunto
 
 Conteúdo do assunto

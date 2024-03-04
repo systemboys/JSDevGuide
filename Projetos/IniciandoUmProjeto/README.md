@@ -22,8 +22,6 @@
 >   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
 
-----
-
 ## Configuração inicial
 
 1. Abra o terminal.

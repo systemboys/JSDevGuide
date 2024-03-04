@@ -11,8 +11,6 @@
 > - [Link 2](#link2 "Descrição 2")
 > - [Link 3](#link3 "Descrição 3")
 
-----
-
 ## Título do assunto
 
 Conteúdo do assunto
