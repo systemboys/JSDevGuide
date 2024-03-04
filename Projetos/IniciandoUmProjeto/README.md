@@ -6,7 +6,7 @@
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
 > ### *Summary*
-
+>
 > - [Configuração inicial](#configuração-inicial "Configuração inicial")
 > - [Criando banco de dados](#criando-banco-de-dados "Criando banco de dados")
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
