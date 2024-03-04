@@ -21,7 +21,7 @@
 >   - [Decoded do Token](#decoded-do-token "Decoded do Token")
 >   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
->   - [Como funciona o Redux e Redux-Saga](# "Como funciona o Redux e Redux-Saga")
+>   - [Como funciona o Redux e Redux-Saga](#como-funciona-o-redux-e-redux-saga "Como funciona o Redux e Redux-Saga")
 
 ## Configuração inicial
 
@@ -2233,7 +2233,7 @@ Em resumo, o frontend é a parte do site que os usuários veem e interagem, e é
 
 > Conceito
 
-Certamente! Vamos explorar os conceitos de **Redux** e **Redux-Saga**:
+Vamos explorar os conceitos de **Redux** e **Redux-Saga**:
 
 1. **Redux**:
    - O **Redux** é uma biblioteca amplamente utilizada para gerenciamento de estado em aplicações **React**.

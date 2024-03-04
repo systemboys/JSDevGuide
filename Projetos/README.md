@@ -21,6 +21,7 @@
 >   - [Decoded do Token](./IniciandoUmProjeto/README.md#decoded-do-token "Decoded do Token")
 >   - [Adicionando Middleware](./IniciandoUmProjeto/README.md#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](./IniciandoUmProjeto/README.md#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
+>   - [Como funciona o Redux e Redux-Saga](./IniciandoUmProjeto/README.md#como-funciona-o-redux-e-redux-saga "Como funciona o Redux e Redux-Saga")
 
 ## Título do assunto
 
