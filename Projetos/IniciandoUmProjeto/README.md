@@ -325,62 +325,10 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
 1. Se você não tiver o **Docker** instalado em sua máquina, utilise as instruções seguintes para instalá-lo em algumas das distribuições Linux mais comuns:
 
-    **Ubuntu:**
-
     > Terminal
 
     ```bash
-    # Atualize sua lista de pacotes
-    sudo apt update
-
-    # Instale alguns pacotes pré-requisitos
-    sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
-    # Adicione a chave GPG para o repositório oficial do Docker
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-    # Adicione o repositório do Docker às fontes do APT
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-    # Atualize o banco de dados do pacote com os pacotes do Docker do recém adicionado repositório
-    sudo apt update
-
-    # Instale o Docker
-    sudo apt install docker-ce
-    ```
-
-    **Debian:**
-
-    > Terminal
-
-    ```bash
-    # Atualize sua lista de pacotes
-    sudo apt-get update
-
-    # Instale alguns pacotes pré-requisitos
-    sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-
-    # Adicione a chave GPG para o repositório oficial do Docker
-    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-
-    # Adicione o repositório do Docker às fontes do APT
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-    # Atualize o banco de dados do pacote com os pacotes do Docker do recém adicionado repositório
-    sudo apt-get update
-
-    # Instale o Docker
-    sudo apt-get install docker-ce
-    ```
-
-    Por favor, note que você pode precisar de privilégios de superusuário para executar esses comandos. Além disso, essas instruções assumem que você está usando a arquitetura amd64, que é comum na maioria dos sistemas modernos. Se você estiver usando uma arquitetura diferente, substitua "amd64" pela sua arquitetura no comando que adiciona o repositório do Docker.
-
-    Você pode verificar se o Docker está instalado no seu sistema Linux usando o seguinte comando no terminal:
-
-    > Terminal
-
-    ```bash
-    docker --version
+    curl -fsSL https://get.docker.com | bash
     ```
 
     Se o Docker estiver instalado, este comando retornará a versão do Docker. Se não estiver instalado, você receberá uma mensagem de erro indicando que o comando 'docker' não foi encontrado. Lembre-se de que você pode precisar de permissões de superusuário (sudo) para executar comandos do Docker, dependendo de como o Docker foi instalado no seu sistema.
