@@ -21,6 +21,7 @@
 >   - [Decoded do Token](#decoded-do-token "Decoded do Token")
 >   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
+>   - [Como funciona o Redux e Redux-Saga](# "Como funciona o Redux e Redux-Saga")
 
 ## Configuração inicial
 
@@ -2225,6 +2226,72 @@ Aqui estão alguns conceitos-chave no desenvolvimento frontend:
 Além disso, os desenvolvedores frontend podem usar várias ferramentas e frameworks para facilitar o desenvolvimento, como React, Angular, Vue.js, SASS, LESS, entre outros.
 
 Em resumo, o frontend é a parte do site que os usuários veem e interagem, e é criado usando várias tecnologias de codificação, como HTML, CSS e JavaScript..
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Como funciona o Redux e Redux-Saga
+
+> Conceito
+
+Certamente! Vamos explorar os conceitos de **Redux** e **Redux-Saga**:
+
+1. **Redux**:
+   - O **Redux** é uma biblioteca amplamente utilizada para gerenciamento de estado em aplicações **React**.
+   - Ele centraliza o estado da aplicação em uma única **store**.
+   - Os principais componentes do Redux são:
+     - **Actions**: Representam eventos que ocorrem na aplicação. São objetos que descrevem o que aconteceu e são responsáveis por alterar o estado.
+     - **Reducers**: Funções puras que atualizam o estado com base nas ações. Recebem o estado atual e uma ação como entrada e retornam um novo estado.
+     - **Store**: Armazena o estado global da aplicação.
+     - **Dispatch**: Método para disparar ações.
+   - O Redux é excelente para gerenciar o estado síncrono da aplicação.
+
+2. **Redux-Saga**:
+   - O **Redux-Saga** é um middleware para lidar com efeitos colaterais assíncronos no Redux.
+   - Ele utiliza **sagas**, que são padrões de design originados do mundo de transações distribuídas.
+   - As sagas são como threads separadas na aplicação, responsáveis exclusivamente pelos efeitos colaterais.
+   - Principais características do Redux-Saga:
+     - Pode ser iniciado, pausado e cancelado a partir da aplicação principal usando ações Redux normais.
+     - Tem acesso ao estado completo da aplicação Redux.
+     - Pode despachar ações Redux.
+   - As sagas gerenciam o fluxo de operações assíncronas e permitem lidar com tarefas complexas, como chamadas de API e manipulação de cookies.
+
+Em resumo, o **Redux** é uma biblioteca para gerenciamento de estado síncrono, enquanto o **Redux-Saga** lida com operações assíncronas de maneira eficiente, tornando o código mais legível e controlável.
+
+> Como funciona
+
+**Redux** é uma biblioteca amplamente utilizada para gerenciamento de estado em aplicações **React**. Vamos explorar como ele funciona:
+
+1. **Centralização do Estado**:
+   - O Redux centraliza o estado da aplicação em uma única store.
+   - Cada componente pode acessar e modificar esse estado compartilhado.
+
+2. **Componentes do Redux**:
+   - **Actions**: Representam eventos que ocorrem na aplicação. São objetos que descrevem o que aconteceu.
+   - **Reducers**: Funções puras que atualizam o estado com base nas ações. Recebem o estado atual e uma ação como entrada e retornam um novo estado.
+   - **Store**: Armazena o estado global da aplicação.
+   - **Dispatch**: Método para disparar ações.
+
+3. **Fluxo de Dados**:
+   - Um componente dispara uma ação usando `dispatch`.
+   - O reducer atualiza o estado com base na ação.
+   - Os componentes interessados são notificados sobre a mudança no estado.
+
+4. **Redux-Saga**:
+   - É um middleware para lidar com efeitos colaterais assíncronos no Redux.
+   - Utiliza funções geradoras do JavaScript para tornar o código mais legível e controlável.
+   - Exemplos de efeitos colaterais: chamadas de API, manipulação de cookies, etc.
+
+5. **Ciclo de Trabalho do Redux-Saga**:
+   - O componente dispara uma ação.
+   - O saga intercepta a ação e executa tarefas assíncronas.
+   - Após a conclusão, o saga dispara uma nova ação para atualizar o estado.
+
+6. **Benefícios do Redux-Saga**:
+   - Separação clara entre lógica assíncrona e lógica de estado.
+   - Facilita testes unitários.
+   - Permite tratamento avançado de fluxos assíncronos.
+
+Em resumo, o Redux e o Redux-Saga trabalham juntos para gerenciar o estado da aplicação, tornando-o previsível e escalável. O Redux cuida do estado síncrono, enquanto o Redux-Saga lida com operações assíncronas de maneira eficiente.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
