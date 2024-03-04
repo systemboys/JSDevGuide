@@ -22,6 +22,7 @@
 >   - [Adicionando Middleware](#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
 >   - [Como funciona o Redux e Redux-Saga](#como-funciona-o-redux-e-redux-saga "Como funciona o Redux e Redux-Saga")
+>   - [Configurando o Redux](#configurando-o-redux "Configurando o Redux")
 
 ## Configuração inicial
 
@@ -2292,6 +2293,12 @@ Em resumo, o **Redux** é uma biblioteca para gerenciamento de estado síncrono,
    - Permite tratamento avançado de fluxos assíncronos.
 
 Em resumo, o Redux e o Redux-Saga trabalham juntos para gerenciar o estado da aplicação, tornando-o previsível e escalável. O Redux cuida do estado síncrono, enquanto o Redux-Saga lida com operações assíncronas de maneira eficiente.
+
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Configurando o Redux
+
+Content...
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")

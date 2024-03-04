@@ -22,6 +22,7 @@
 >   - [Adicionando Middleware](./IniciandoUmProjeto/README.md#adicionando-middleware "Adicionando Middleware")
 > - [Começando nosso Frontend](./IniciandoUmProjeto/README.md#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
 >   - [Como funciona o Redux e Redux-Saga](./IniciandoUmProjeto/README.md#como-funciona-o-redux-e-redux-saga "Como funciona o Redux e Redux-Saga")
+>   - [Configurando o Redux](./IniciandoUmProjeto/README.md#configurando-o-redux "Configurando o Redux")
 
 ## Título do assunto
 
