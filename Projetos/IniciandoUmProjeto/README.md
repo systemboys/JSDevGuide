@@ -7,7 +7,7 @@
 
 > ### *Summary*
 >
-> - [Instalação Passo a Passo do Node.js e NPM no Linux](# "Instalação Passo a Passo do Node.js e NPM no Linux")
+> - [Instalação Passo a Passo do Node.js e NPM no Linux](#instala%C3%A7%C3%A3o-passo-a-passo-do-nodejs-e-npm-no-linux "Instalação Passo a Passo do Node.js e NPM no Linux")
 > - [Configuração inicial](#configuração-inicial "Configuração inicial")
 > - [Criando banco de dados](#criando-banco-de-dados "Criando banco de dados")
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
