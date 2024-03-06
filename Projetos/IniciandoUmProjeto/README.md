@@ -220,15 +220,6 @@ Espero que isso ajude! 😊
         }
         ```
 
-        Analisando essa linha no arquivo `package.json`:
-
-        ```json
-        "scripts": {
-            "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
-            "build": "tsc"
-        },
-        ```
-
         A linha `"scripts": {...}` define um script que pode ser executado com o comando `npm run script`. A linha `"build": "tsc"` cria o arquivo de build.
 
         Agora, vamos entender o que cada parte do script faz:
