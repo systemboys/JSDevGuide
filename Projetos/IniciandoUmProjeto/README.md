@@ -286,6 +286,8 @@ Espero que isso ajude! 😊
 12. No mesmo arquivo `index.ts`, configure o Dotenv dando continuidade na escrita no código:
 
     ```ts
+    // ...Outras linhas...
+    
     dotenv.config();
 
     const app = express();
