@@ -190,7 +190,7 @@ Espero que isso ajude! 😊
         "scripts": {
             "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
             "build": "tsc"
-        }
+        },
         ```
 
         > Obs.: É provável que existirá o "`"scripts": {...}`", no entanto, apenas modifique-o!
@@ -287,7 +287,7 @@ Espero que isso ajude! 😊
 
     ```ts
     // ...Outras linhas...
-    
+
     dotenv.config();
 
     const app = express();
