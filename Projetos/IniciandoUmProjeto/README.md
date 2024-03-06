@@ -81,10 +81,16 @@ Espero que isso ajude! 😊
 
     ```json
     {
-        "name": "backend",
-        "version": "1.0.0",
-        "main": "index.js",
-        "license": "MIT"
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
     }
     ```
 
@@ -186,6 +192,8 @@ Espero que isso ajude! 😊
             "build": "tsc"
         }
         ```
+
+        > Obs.: É provável que existirá o "`"scripts": {...}`", no entanto, apenas modifique-o!
 
         Deve ficar da seguinte forma:
 
