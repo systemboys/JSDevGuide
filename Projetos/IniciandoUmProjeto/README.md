@@ -7,6 +7,7 @@
 
 > ### *Summary*
 >
+> - [Instalação Passo a Passo do Node.js e NPM no Linux](# "Instalação Passo a Passo do Node.js e NPM no Linux")
 > - [Configuração inicial](#configuração-inicial "Configuração inicial")
 > - [Criando banco de dados](#criando-banco-de-dados "Criando banco de dados")
 >   - [Docker e Docker Compose](#docker-e-docker-compose "Docker e Docker Compose")
@@ -23,6 +24,37 @@
 > - [Começando nosso Frontend](#come%C3%A7ando-nosso-frontend "Começando nosso Frontend")
 >   - [Como funciona o Redux e Redux-Saga](#como-funciona-o-redux-e-redux-saga "Como funciona o Redux e Redux-Saga")
 >   - [Configurando o Redux](#configurando-o-redux "Configurando o Redux")
+
+## Instalação Passo a Passo do Node.js e NPM no Linux
+
+Para instalar o NPM (Node Package Manager) via terminal no Linux, você pode usar os seguintes comandos. Primeiro, você precisa instalar o Node.js, pois o NPM é distribuído com ele.
+
+```bash
+# Atualize o sistema
+sudo apt update
+
+# Instale o Node.js
+sudo apt install nodejs
+
+# Verifique a instalação do Node.js
+node -v
+
+# Instale o NPM
+sudo apt install npm
+
+# Verifique a instalação do NPM
+npm -v
+```
+
+Esses comandos devem instalar o Node.js e o NPM no seu sistema Linux. Lembre-se de que você precisa ter privilégios de superusuário (ou seja, acesso `sudo`) para instalar pacotes no Linux. Se você encontrar algum problema durante a instalação, verifique se o seu sistema está atualizado e tente novamente. Se o problema persistir, você pode precisar procurar soluções específicas para a sua distribuição Linux. 
+
+Por favor, note que esses comandos são para sistemas baseados em Debian, como Ubuntu. Se você estiver usando uma distribuição Linux diferente, os comandos podem variar. Por exemplo, para instalar o Node.js e o NPM no CentOS, você usaria `yum` em vez de `apt`. 
+
+Espero que isso ajude! 😊
+
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Configuração inicial
 
