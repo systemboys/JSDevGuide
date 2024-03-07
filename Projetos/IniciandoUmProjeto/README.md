@@ -561,13 +561,13 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     Aqui está um exemplo de definição de modelo com tipos de dados:
 
     ```prisma
-    model User {
-    id     Int @id @default(autoincrement())
-    name  String
-    email String   @unique
-    age    Int?
-    createdAt DateTime  @default(now())
-    role  Role     @default(USER)
+    model     User {
+    id        Int      @id @default(autoincrement())
+    name      String
+    email     String   @unique
+    age       Int?
+    createdAt DateTime @default(now())
+    role      Role     @default(USER)
     }
 
     enum  Role {
