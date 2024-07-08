@@ -11,7 +11,6 @@
 > - [Docker Installation](#docker-installation "Docker Installation")
 > - [Docker Basics](#docker-basics "Docker Basics")
 >   - [Docker Compose](./DockerCompose/README.md#docker-compose "Docker Compose")
->
 
 ----
 
