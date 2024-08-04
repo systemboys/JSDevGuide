@@ -7,10 +7,10 @@
 
 > ### *Summary*
 
-> - [Docker Overview](#docker-overview "Docker Overview")
+> - [Visão Geral do Docker](#vis%C3%A3o-geral-do-docker "Visão Geral do Docker")
 > - [Guia Completo para Instalação do Docker no Debian Linux](#guia-completo-para-instala%C3%A7%C3%A3o-do-docker-no-debian-linux "Guia Completo para Instalação do Docker no Debian Linux")
-> - [Docker Basics](#docker-basics "Docker Basics")
->   - [Docker Compose](./DockerCompose/README.md#docker-compose "Docker Compose")
+> - [Noções básicas do Docker](#docker-basics "Noções básicas do Docker")
+> - [Docker Compose](./DockerCompose/README.md#docker-compose "Docker Compose")
 
 ----
 
