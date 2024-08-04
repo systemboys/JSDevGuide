@@ -8,7 +8,7 @@
 > ### *Summary*
 
 > - [Visão Geral de Docker Compose](#vis%C3%A3o-geral-de-docker-compose "Visão Geral de Docker Compose")
-> - [Compose Installation](#compose-installation "Compose Installation")
+> - [Como Instalar Docker Compose](#como-instalar-docker-compose "Como Instalar Docker Compose")
 > - [Compose Usage](#compose-usage "Compose Usage")
 
 ----
@@ -141,6 +141,98 @@ volumes:
 Docker Compose é uma ferramenta essencial para desenvolver, testar e implementar aplicações complexas que envolvem múltiplos serviços, tornando a gestão de contêineres Docker mais eficiente e organizada.
 
 Conteúdo do assunto
+
+[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+## Como Instalar Docker Compose
+
+Para instalar Docker Compose no Linux (Debian, Ubuntu e outras distribuições baseadas em Debian), siga os passos abaixo:
+
+#### Passo 1: Atualizar o Sistema
+
+Primeiro, certifique-se de que seu sistema está atualizado:
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+#### Passo 2: Baixar a Versão Mais Recente do Docker Compose
+
+Acesse o site oficial do Docker Compose para verificar a versão mais recente. No momento da escrita deste guia, você pode usar o seguinte comando para baixar a versão estável mais recente:
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+#### Passo 3: Aplicar Permissões Executáveis
+
+Aplique permissões executáveis ao binário Docker Compose:
+
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+#### Passo 4: Verificar a Instalação
+
+Para verificar se o Docker Compose foi instalado corretamente, você pode verificar a versão instalada:
+
+```bash
+docker-compose --version
+```
+
+Você deve ver a versão do Docker Compose instalada, algo como:
+
+```
+docker-compose version 1.29.2, build 5becea4c
+```
+
+#### Passo 5: Configurar Autocompletar (Opcional)
+
+Se você quiser habilitar o autocompletar para o Docker Compose, execute os seguintes comandos:
+
+```bash
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+source /etc/bash_completion.d/docker-compose
+```
+
+### Nota sobre Atualizações
+
+Para atualizar o Docker Compose no futuro, basta repetir os passos acima para baixar a versão mais recente e substituir o binário existente.
+
+### Passo Adicional: Instalar Docker (se ainda não estiver instalado)
+
+Se você ainda não tiver o Docker instalado, siga os passos abaixo para instalá-lo:
+
+1. **Adicionar Repositório Docker**:
+   ```bash
+   sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+
+2. **Instalar Docker**:
+   ```bash
+   sudo apt update
+   sudo apt install docker-ce
+   ```
+
+3. **Iniciar e Habilitar Docker**:
+   ```bash
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   ```
+
+4. **Adicionar Seu Usuário ao Grupo Docker**:
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
+
+   Saia e entre novamente na sua sessão para que as mudanças tenham efeito.
+
+Com esses passos, Docker e Docker Compose estarão instalados e prontos para uso no seu sistema Debian Linux.
 
 [![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
 [![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
