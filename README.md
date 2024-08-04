@@ -6,6 +6,8 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 
 ### *Summary*
 
+- [Automação da Configuração do Ambiente React.js no Linux](# "Automação da Configuração do Ambiente React.js no Linux")
+    > Preparando ambiente Node para rodar aplicação React.Js, com a utilização de ShellScript (.sh).
 - [Docker](./Docker/README.md#docker "Docker")
     - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose "Docker Compose")
 - [Iniciando um projeto](./Projetos/IniciandoUmProjeto/README.md#iniciando-um-projeto "Iniciando um projeto")
