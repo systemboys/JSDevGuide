@@ -169,3 +169,146 @@ Pronto! O Docker deve estar instalado e funcionando no seu sistema Debian Linux.
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 [![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
+## Noções Básicas do Docker
+
+#### O que é o Docker?
+Docker é uma plataforma de código aberto projetada para automatizar a implantação de aplicações como contêineres portáteis e autossuficientes que podem ser executados em qualquer lugar.
+
+#### Componentes Principais
+
+1. **Docker Engine**:
+   - **Definição**: O Docker Engine é o coração do Docker, responsável por criar, executar e gerenciar contêineres.
+   - **Componentes**:
+     - **Daemon (dockerd)**: O servidor que gerencia os contêineres, imagens, redes e volumes Docker.
+     - **CLI (docker)**: A interface de linha de comando que os usuários interagem para executar comandos do Docker.
+     - **API**: A interface de programação de aplicativos que permite a comunicação entre o daemon Docker e outras ferramentas.
+
+2. **Imagens Docker**:
+   - **Definição**: Imagens são arquivos de sistema de arquivos somente leitura que contêm tudo o que é necessário para executar uma aplicação, incluindo código, bibliotecas e dependências.
+   - **Construção**: Criadas a partir de um Dockerfile e armazenadas no Docker Hub ou em registros privados.
+
+3. **Contêineres Docker**:
+   - **Definição**: Instâncias em execução de imagens Docker que isolam aplicações e suas dependências em um ambiente autossuficiente.
+   - **Isolamento**: Cada contêiner possui seu próprio sistema de arquivos, rede, espaço de processo, e outros recursos do sistema.
+
+4. **Dockerfile**:
+   - **Definição**: Um script de texto que contém um conjunto de instruções para construir uma imagem Docker.
+   - **Estrutura**:
+     - **FROM**: Especifica a imagem base.
+     - **RUN**: Executa comandos durante a construção da imagem.
+     - **COPY/ADD**: Copia arquivos e diretórios para a imagem.
+     - **CMD**: Especifica o comando padrão a ser executado quando um contêiner é iniciado.
+
+5. **Docker Hub**:
+   - **Definição**: Um repositório público onde as imagens Docker podem ser armazenadas, compartilhadas e distribuídas.
+   - **Uso**: Puxar (pull) imagens públicas ou enviar (push) imagens personalizadas.
+
+#### Comandos Básicos do Docker
+
+1. **Instalar Docker**:
+   - No Debian:
+     ```bash
+     sudo apt update
+     sudo apt install docker-ce
+     ```
+
+2. **Iniciar o Docker**:
+   - Iniciar o serviço Docker:
+     ```bash
+     sudo systemctl start docker
+     ```
+   - Habilitar o Docker para iniciar na inicialização do sistema:
+     ```bash
+     sudo systemctl enable docker
+     ```
+
+3. **Verificar a Instalação do Docker**:
+   - Verificar a versão do Docker:
+     ```bash
+     docker --version
+     ```
+   - Executar um contêiner de teste:
+     ```bash
+     docker run hello-world
+     ```
+
+4. **Gerenciar Imagens**:
+   - Listar imagens disponíveis:
+     ```bash
+     docker images
+     ```
+   - Baixar uma imagem do Docker Hub:
+     ```bash
+     docker pull <imagem>
+     ```
+   - Remover uma imagem:
+     ```bash
+     docker rmi <imagem>
+     ```
+
+5. **Gerenciar Contêineres**:
+   - Listar contêineres em execução:
+     ```bash
+     docker ps
+     ```
+   - Listar todos os contêineres (incluindo os parados):
+     ```bash
+     docker ps -a
+     ```
+   - Iniciar um novo contêiner:
+     ```bash
+     docker run -it <imagem> /bin/bash
+     ```
+   - Parar um contêiner em execução:
+     ```bash
+     docker stop <container_id>
+     ```
+   - Remover um contêiner:
+     ```bash
+     docker rm <container_id>
+     ```
+
+6. **Usar Dockerfile para Criar uma Imagem**:
+   - Criar uma imagem a partir de um Dockerfile:
+     ```bash
+     docker build -t <nome_imagem> .
+     ```
+
+7. **Executar Comandos em um Contêiner em Execução**:
+   - Executar um comando em um contêiner em execução:
+     ```bash
+     docker exec -it <container_id> <comando>
+     ```
+
+#### Exemplo de Dockerfile
+
+```dockerfile
+# Usar uma imagem base oficial do Python
+FROM python:3.8-slim
+
+# Definir o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copiar os arquivos do projeto para o contêiner
+COPY . /app
+
+# Instalar as dependências necessárias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Especificar o comando padrão a ser executado
+CMD ["python", "app.py"]
+```
+
+#### Vantagens do Docker
+
+1. **Portabilidade**: Contêineres podem ser executados em qualquer ambiente que suporte Docker, garantindo que a aplicação funcione da mesma forma em diferentes ambientes.
+2. **Eficiência**: Contêineres compartilham o kernel do sistema operacional, utilizando recursos de maneira mais eficiente do que máquinas virtuais.
+3. **Isolamento**: Aplicações e suas dependências são isoladas em contêineres, reduzindo conflitos entre pacotes e bibliotecas.
+4. **Escalabilidade**: Facilita a escalabilidade de aplicações, permitindo o gerenciamento de várias instâncias de contêineres de maneira simplificada.
+
+Docker é uma ferramenta poderosa que está revolucionando a forma como desenvolvedores e operadores de TI criam, distribuem e executam aplicações. Compreender suas noções básicas é fundamental para aproveitar todo o potencial dessa tecnologia.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
