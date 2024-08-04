@@ -1,10 +1,10 @@
-# SiSFloatBase
+# Ambiente Node.Js para React.Js
 
 ---
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
-## Automação da Configuração do Ambiente React.js no WSL
+## Automação da Configuração do Ambiente React.js no Linux
 
 ### Descrição do Script
 
