@@ -11,12 +11,12 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 - [Docker](./Docker/README.md#docker "Docker")
     - [Docker Compose](./Docker/DockerCompose/README.md#docker-compose "Docker Compose")
 - [Iniciando um projeto](./Projetos/IniciandoUmProjeto/README.md#iniciando-um-projeto "Iniciando um projeto")
-- [Conceitos Básicos](#conceitos-b%C3%A1sicos "Conceitos Básicos")
-    - [Funções](#funções "Funções")
-    - [Arrays](#arrays "Arrays")
-- [Componentes](#componentes "Componentes")
-- [Frameworks](#frameworks "Frameworks")
-- [Bibliotecas](#bibliotecas "Bibliotecas")
+- [Conceitos Básicos](#conceitos-b%C3%A1sicos "Conceitos Básicos")¨*
+    - [Funções](#funções "Funções")¨*
+    - [Arrays](#arrays "Arrays")¨*
+- [Componentes](#componentes "Componentes")¨*
+- [Frameworks](#frameworks "Frameworks")¨*
+- [Bibliotecas](#bibliotecas "Bibliotecas")¨*
 
 ---
 
