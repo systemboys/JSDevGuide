@@ -96,6 +96,9 @@ npm start
 echo "O ambiente React.js foi configurado e a aplicação está rodando em http://localhost:3000"
 ```
 
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
+
 ### Ajustando para instalar no Debian
 
 O script apresentado deve funcionar tanto no Ubuntu quanto no Debian Linux no WSL, pois ambos os sistemas são baseados no mesmo núcleo do Debian e compartilham a maioria dos comandos e processos de gerenciamento de pacotes.
@@ -176,6 +179,9 @@ echo "O ambiente React.js foi configurado e a aplicação está rodando em http:
 ```
 
 Este script deve funcionar perfeitamente tanto no Ubuntu quanto no Debian, garantindo que todas as dependências necessárias sejam instaladas e configuradas corretamente.
+
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
 
 ### Ajustando para instalar no Debian ou Ubuntu (.sh)
 
@@ -317,7 +323,7 @@ chmod +x setup-react.sh
 Este script agora é capaz de detectar a distribuição Linux e aplicar as configurações apropriadas automaticamente, tornando-o adequado tanto para Ubuntu quanto para Debian.
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
 
 ---
 
