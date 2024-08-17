@@ -1,6 +1,6 @@
 > ## Símbolos e notação do diagrama de Entidade-Relacionamento
 >
-> ![Descrição da imagem](./images/image.png)
+> ![img](https://corporate-assets.lucid.co/chart/2f2cbd61-b92c-4742-a126-82786e673bbe.svg?v=1707819374504)
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
