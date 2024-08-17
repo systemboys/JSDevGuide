@@ -7,18 +7,18 @@
 
 > ### *Summary*
 >
-> - [Símbolos de diagrama ER conceitual](./README.md#s%C3%ADmbolos-de-diagrama-er-conceitual "Símbolos de diagrama ER conceitual")
-> 	- [Símbolos de entidade ERD](./README.md#s%C3%ADmbolos-de-entidade-erd "Símbolos de entidade ERD")
-> 	- [Símbolos de relacionamento ERD](./README.md#s%C3%ADmbolos-de-relacionamento-erd "Símbolos de relacionamento ERD")
-> 	- [Símbolos de atributo ERD](./README.md#s%C3%ADmbolos-de-atributo-erd "Símbolos de atributo ERD")
-> - [Símbolos do diagrama ER físico](./README.md#s%C3%ADmbolos-do-diagrama-er-f%C3%ADsico "Símbolos do diagrama ER físico")
-> 	- [Campos](./README.md#campos "Campos")
-> 	- [Chaves](./README.md#chaves "Chaves")
-> 		- [Chaves primárias](./README.md#chaves-prim%C3%A1rias "Chaves primárias")
-> 		- [Chaves estrangeiras](./README.md#chaves-estrangeiras "Chaves estrangeiras")
-> 	- [Tipos de](./README.md#tipos-de "Tipos de")
-> - [Diagrama de RE notação](./README.md#diagrama-de-re-nota%C3%A7%C3%A3o "Diagrama de RE notação")
-> 	- [A Cardinalidade e a ordinalidade](./README.md#a-cardinalidade-e-a-ordinalidade "A Cardinalidade e a ordinalidade")
+> - [Símbolos de diagrama ER conceitual](#s%C3%ADmbolos-de-diagrama-er-conceitual "Símbolos de diagrama ER conceitual")
+> 	- [Símbolos de entidade ERD](#s%C3%ADmbolos-de-entidade-erd "Símbolos de entidade ERD")
+> 	- [Símbolos de relacionamento ERD](#s%C3%ADmbolos-de-relacionamento-erd "Símbolos de relacionamento ERD")
+> 	- [Símbolos de atributo ERD](#s%C3%ADmbolos-de-atributo-erd "Símbolos de atributo ERD")
+> - [Símbolos do diagrama ER físico](#s%C3%ADmbolos-do-diagrama-er-f%C3%ADsico "Símbolos do diagrama ER físico")
+> 	- [Campos](#campos "Campos")
+> 	- [Chaves](#chaves "Chaves")
+> 		- [Chaves primárias](#chaves-prim%C3%A1rias "Chaves primárias")
+> 		- [Chaves estrangeiras](#chaves-estrangeiras "Chaves estrangeiras")
+> 	- [Tipos de](#tipos-de "Tipos de")
+> - [Diagrama de RE notação](#diagrama-de-re-nota%C3%A7%C3%A3o "Diagrama de RE notação")
+> 	- [A Cardinalidade e a ordinalidade](#a-cardinalidade-e-a-ordinalidade "A Cardinalidade e a ordinalidade")
 
 ## Símbolos de diagrama ER conceitual
 
