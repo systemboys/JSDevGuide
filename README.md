@@ -17,6 +17,7 @@ Um guia abrangente para desenvolvedores JavaScript e TypeScript, cobrindo Node.J
 - [Componentes](#componentes "Componentes")¨*
 - [Frameworks](#frameworks "Frameworks")¨*
 - [Bibliotecas](#bibliotecas "Bibliotecas")¨*
+- [Símbolos e notação do diagrama de Entidade-Relacionamento](#bibliotecas "Símbolos e notação do diagrama de Entidade-Relacionamento")¨*
 
 ---
 
