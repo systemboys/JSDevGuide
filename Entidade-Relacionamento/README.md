@@ -92,7 +92,7 @@ Os tipos referem-se ao tipo de dados no campo correspondente em uma  tabela. Os 
 
 ## Diagrama de RE notação
 
-Embora a notação de pé de corvo seja frequentemente reconhecida como o estilo  mais intuitivo, alguns usam a notação OMT, IDEF, Bachman ou UML, de  acordo com suas preferências. A notação do pé do Crow, no entanto, tem  um formato gráfico intuitivo, tornando-se a notação preferida de ERD  para o Lucidchart. Considere usar um dos nossos [modelos](https://www.lucidchart.com/pages/templates/erd/lucidchart-erd-crows-foot?usecase=erd) de [diagrama de Crow Foot ER](https://www.lucidchart.com/pages/templates/erd/lucidchart-erd-crows-foot?usecase=erd).
+Embora a notação de pé de corvo seja frequentemente reconhecida como o estilo  mais intuitivo, alguns usam a notação OMT, IDEF, Bachman ou UML, de  acordo com suas preferências. A notação do pé do Crow, no entanto, tem  um formato gráfico intuitivo, tornando-se a notação preferida de ERD  para o Lucidchart.
 
 ### A Cardinalidade e a ordinalidade
 
