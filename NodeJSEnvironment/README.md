@@ -4,6 +4,12 @@
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
+> ### *Summary*
+>
+> - [Link 1](#link1 "Descrição 1")
+> - [Link 2](#link2 "Descrição 2")
+> - [Link 3](#link3 "Descrição 3")
+
 ## Automação da Configuração do Ambiente React.js no Linux
 
 ### Descrição do Script
@@ -97,7 +103,7 @@ echo "O ambiente React.js foi configurado e a aplicação está rodando em http:
 ```
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Ajustando para instalar no Debian
 
@@ -181,7 +187,7 @@ echo "O ambiente React.js foi configurado e a aplicação está rodando em http:
 Este script deve funcionar perfeitamente tanto no Ubuntu quanto no Debian, garantindo que todas as dependências necessárias sejam instaladas e configuradas corretamente.
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Ajustando para instalar no Debian ou Ubuntu (.sh)
 
@@ -323,7 +329,7 @@ chmod +x setup-react.sh
 Este script agora é capaz de detectar a distribuição Linux e aplicar as configurações apropriadas automaticamente, tornando-o adequado tanto para Ubuntu quanto para Debian.
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -815,7 +821,7 @@ Isso instalará o Docker Compose, mas verifique a versão para garantir que aten
 Agora que você instalou o Docker Compose, você pode começar a usá-lo para gerenciar seus ambientes de contêineres Docker. Se precisar de mais alguma ajuda ou tiver outras dúvidas, sinta-se à vontade para perguntar!
 
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#ambiente-nodejs-para-reactjs "Subir")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
