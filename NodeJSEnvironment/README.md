@@ -6,8 +6,8 @@
 
 > ### *Summary*
 >
-> - [Link 1](#link1 "Descrição 1")
-> - [Link 2](#link2 "Descrição 2")
+> - [Automação da Configuração do Ambiente React.js no Linux](#automa%C3%A7%C3%A3o-da-configura%C3%A7%C3%A3o-do-ambiente-reactjs-no-linux "Automação da Configuração do Ambiente React.js no Linux")
+> - [Ambiente Node.Js para React.Js (comando por comando)](#ambiente-nodejs-para-reactjs-comando-por-comando "Ambiente Node.Js para React.Js (comando por comando)")
 > - [Link 3](#link3 "Descrição 3")
 
 ## Automação da Configuração do Ambiente React.js no Linux
@@ -333,9 +333,9 @@ Este script agora é capaz de detectar a distribuição Linux e aplicar as confi
 
 ---
 
-# Ambiente Node.Js para React.Js (comando por comando)
+## Ambiente Node.Js para React.Js (comando por comando)
 
-## (1) - Instalar NVM
+### (1) - Instalar NVM
 
 Para instalar o `nvm`, você pode seguir os seguintes passos:
 
@@ -373,7 +373,7 @@ Se encontrar algum problema durante o processo de instalação, por favor, compa
 
 ---
 
-## (2) - Instalar Node.JS
+### (2) - Instalar Node.JS
 
 Para instalar o Node.js usando o NVM (Node Version Manager), siga os passos abaixo:
 
@@ -452,7 +452,7 @@ Aqui estão os passos para definir uma versão padrão:
    node -v
    ```
 
-### Exemplo Completo
+#### Exemplo Completo
 
 Se você quiser definir a versão 16 como padrão:
 
@@ -467,11 +467,11 @@ Esses comandos ajudam a garantir que o ambiente de desenvolvimento tenha a vers�
 
 ---
 
-## (3) - instalar o Prisma
+### (3) - instalar o Prisma
 
 Para instalar o ORM Prisma com todas as suas dependências em uma aplicação React, você pode seguir os passos abaixo. O Prisma é usado principalmente para gerenciar o banco de dados e é frequentemente instalado como parte de um backend Node.js. No entanto, você pode configurar o Prisma em um ambiente Node.js que é parte da configuração do seu projeto, separado da aplicação React propriamente dita.
 
-### Passos para instalar o Prisma
+#### Passos para instalar o Prisma
 
 1. **Instale o Prisma CLI**:
    Primeiro, instale o Prisma CLI globalmente ou como dependência de desenvolvimento do seu projeto. É recomendável instalar o Prisma CLI como uma dependência de desenvolvimento para garantir que todos que trabalhem no projeto usem a mesma versão.
@@ -557,7 +557,7 @@ Para instalar o ORM Prisma com todas as suas dependências em uma aplicação Re
 
    Esse comando criará uma nova migração baseada no seu esquema Prisma e aplicará ao banco de dados.
 
-### Integração com a Aplicação React
+#### Integração com a Aplicação React
 
 Lembre-se de que o Prisma é usado para gerenciar a camada de banco de dados no backend. Portanto, você normalmente não instala o Prisma diretamente no frontend de uma aplicação React, mas sim no backend que a aplicação React consome.
 
@@ -567,11 +567,11 @@ Se precisar de mais alguma ajuda ou tiver outras dúvidas, por favor, me avise!
 
 ---
 
-## (4) - Instalar o Git
+### (4) - Instalar o Git
 
 Para instalar o Git em um sistema Linux, você pode usar o gerenciador de pacotes do seu sistema. O comando específico depende da distribuição Linux que você está usando. Aqui estão os comandos para algumas das distribuições Linux mais comuns:
 
-### 1. **Debian/Ubuntu e derivados (como Linux Mint)**
+#### 1. **Debian/Ubuntu e derivados (como Linux Mint)**
 
 Para instalar o Git em sistemas baseados no Debian, como Ubuntu e Linux Mint, use o comando `apt`:
 
@@ -580,7 +580,7 @@ sudo apt update
 sudo apt install git -y
 ```
 
-### 2. **CentOS/RHEL e derivados (como Fedora)**
+#### 2. **CentOS/RHEL e derivados (como Fedora)**
 
 Para sistemas baseados em Red Hat, como CentOS, RHEL e Fedora, use o gerenciador de pacotes `dnf` (Fedora) ou `yum` (CentOS/RHEL):
 
@@ -596,7 +596,7 @@ sudo yum install git -y
 sudo dnf install git -y
 ```
 
-### 3. **Arch Linux e derivados (como Manjaro)**
+#### 3. **Arch Linux e derivados (como Manjaro)**
 
 Para instalar o Git em sistemas baseados no Arch Linux, como Manjaro, use o comando `pacman`:
 
@@ -604,7 +604,7 @@ Para instalar o Git em sistemas baseados no Arch Linux, como Manjaro, use o coma
 sudo pacman -S git
 ```
 
-### 4. **openSUSE**
+#### 4. **openSUSE**
 
 Para instalar o Git no openSUSE, use o gerenciador de pacotes `zypper`:
 
@@ -612,7 +612,7 @@ Para instalar o Git no openSUSE, use o gerenciador de pacotes `zypper`:
 sudo zypper install git
 ```
 
-### Verificação da Instalação
+#### Verificação da Instalação
 
 Depois de executar o comando de instalação adequado para sua distribuição, você pode verificar se o Git foi instalado corretamente usando:
 
@@ -626,11 +626,11 @@ Se você precisar de mais ajuda ou estiver enfrentando algum problema específic
 
 ---
 
-## (5) - Instalar o Docker
+### (5) - Instalar o Docker
 
 Para instalar o Docker em uma distribuição Linux como Ubuntu, Debian, CentOS, Fedora, ou outros, você pode seguir as instruções específicas para cada sistema. Vou fornecer os passos para algumas das distribuições mais comuns:
 
-### Para Ubuntu e Debian
+#### Para Ubuntu e Debian
 
 1. **Atualize o sistema**:
    Primeiro, atualize o índice de pacotes do sistema:
@@ -683,7 +683,7 @@ Para instalar o Docker em uma distribuição Linux como Ubuntu, Debian, CentOS, 
    docker --version
    ```
 
-### Para CentOS
+#### Para CentOS
 
 1. **Remova versões antigas**:
    Primeiro, remova versões antigas do Docker, caso existam:
@@ -722,7 +722,7 @@ Para instalar o Docker em uma distribuição Linux como Ubuntu, Debian, CentOS, 
    docker --version
    ```
 
-### Para Fedora
+#### Para Fedora
 
 1. **Remova versões antigas**:
    Remova versões antigas do Docker, caso existam:
@@ -761,17 +761,17 @@ Para instalar o Docker em uma distribuição Linux como Ubuntu, Debian, CentOS, 
    docker --version
    ```
 
-### Finalizando
+#### Finalizando
 
 Depois de seguir os passos acima para a sua distribuição específica, o Docker deve estar instalado e funcionando no seu sistema Linux. Se precisar de mais alguma ajuda ou encontrar problemas durante a instalação, sinta-se à vontade para perguntar!
 
 ---
 
-## (6) - Instalar o Docker Compose
+### (6) - Instalar o Docker Compose
 
 Para instalar o `docker-compose` em um sistema Linux, você pode seguir os passos abaixo. A instalação do `docker-compose` pode variar ligeiramente dependendo da sua distribuição Linux, mas o método a seguir funciona para a maioria das distribuições.
 
-### Passos para Instalar o Docker Compose
+#### Passos para Instalar o Docker Compose
 
 1. **Instalar o Docker**:
    Antes de instalar o Docker Compose, certifique-se de que o Docker está instalado e funcionando corretamente no seu sistema. Você pode verificar isso com o comando:
@@ -805,7 +805,7 @@ Para instalar o `docker-compose` em um sistema Linux, você pode seguir os passo
 
    Este comando deve retornar a versão do Docker Compose instalada no seu sistema.
 
-### Alternativa: Usar o Gerenciador de Pacotes (Para Algumas Distribuições)
+#### Alternativa: Usar o Gerenciador de Pacotes (Para Algumas Distribuições)
 
 Algumas distribuições Linux, como Ubuntu, podem ter o Docker Compose disponível diretamente nos repositórios de pacotes. No entanto, a versão disponível através dos repositórios pode não ser a mais recente. Se preferir, você pode instalar o Docker Compose usando o `apt`:
 
@@ -816,7 +816,7 @@ sudo apt install docker-compose -y
 
 Isso instalará o Docker Compose, mas verifique a versão para garantir que atenda às suas necessidades. Para a versão mais recente, o método `curl` é preferível.
 
-### Finalizando
+#### Finalizando
 
 Agora que você instalou o Docker Compose, você pode começar a usá-lo para gerenciar seus ambientes de contêineres Docker. Se precisar de mais alguma ajuda ou tiver outras dúvidas, sinta-se à vontade para perguntar!
 
