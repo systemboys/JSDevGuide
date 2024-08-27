@@ -7,8 +7,37 @@
 > ### *Summary*
 >
 > - [Automação da Configuração do Ambiente React.js no Linux](#automa%C3%A7%C3%A3o-da-configura%C3%A7%C3%A3o-do-ambiente-reactjs-no-linux "Automação da Configuração do Ambiente React.js no Linux")
+>     - [Descrição do Script](#descri%C3%A7%C3%A3o-do-script "Descrição do Script")
+>     - [Código do Script](#c%C3%B3digo-do-script "Código do Script")
+>     - [Ajustando para instalar no Debian](#ajustando-para-instalar-no-debian "Ajustando para instalar no Debian")
+>     - [Principais Motivos:](#principais-motivos "Principais Motivos:")
+>     - [Considerações Específicas](#considera%C3%A7%C3%B5es-espec%C3%ADficas "Considerações Específicas")
+>     - [Ajuste do Script se Necessário](#ajuste-do-script-se-necess%C3%A1rio "Ajuste do Script se Necessário")
+>     - [Ajustando para instalar no Debian ou Ubuntu (.sh)](#ajustando-para-instalar-no-debian-ou-ubuntu-sh "Ajustando para instalar no Debian ou Ubuntu (.sh)")
+>     - [Descrição do Script](#descri%C3%A7%C3%A3o-do-script-1 "Descrição do Script")
+>     - [Como Usar o Script](#como-usar-o-script "Como Usar o Script")
 > - [Ambiente Node.Js para React.Js (comando por comando)](#ambiente-nodejs-para-reactjs-comando-por-comando "Ambiente Node.Js para React.Js (comando por comando)")
-> - [Link 3](#link3 "Descrição 3")
+>     - [(1) - Instalar NVM](#1---instalar-nvm "(1) - Instalar NVM")
+>     - [(2) - Instalar Node.JS](#2---instalar-nodejs "(2) - Instalar Node.JS")
+>         - [Exemplo Completo](#exemplo-completo "Exemplo Completo")
+>     - [(3) - instalar o Prisma](#3---instalar-o-prisma "(3) - instalar o Prisma")
+>         - [Passos para instalar o Prisma](#passos-para-instalar-o-prisma "Passos para instalar o Prisma")
+>         - [Integração com a Aplicação React](#integra%C3%A7%C3%A3o-com-a-aplica%C3%A7%C3%A3o-react "Integração com a Aplicação React")
+>     - [(4) - Instalar o Git](#4---instalar-o-git "(4) - Instalar o Git")
+>         - [1. Debian/Ubuntu e derivados (como Linux Mint)](#1-debianubuntu-e-derivados-como-linux-mint "1. Debian/Ubuntu e derivados (como Linux Mint)")
+>         - [2. CentOS/RHEL e derivados (como Fedora)](#2-centosrhel-e-derivados-como-fedora "2. CentOS/RHEL e derivados (como Fedora)")
+>         - [3. Arch Linux e derivados (como Manjaro)](#3-arch-linux-e-derivados-como-manjaro "3. Arch Linux e derivados (como Manjaro)")
+>         - [4. openSUSE](#4-opensuse "4. openSUSE")
+>         - [Verificação da Instalação](#verifica%C3%A7%C3%A3o-da-instala%C3%A7%C3%A3o "Verificação da Instalação")
+>     - [(5) - Instalar o Docker](#5---instalar-o-docker "(5) - Instalar o Docker")
+>         - [Para Ubuntu e Debian](#para-ubuntu-e-debian "Para Ubuntu e Debian")
+>         - [Para CentOS](#para-centos "Para CentOS")
+>         - [Para Fedora](#para-fedora "Para Fedora")
+>         - [Finalizando](#finalizando "Finalizando")
+>     - [(6) - Instalar o Docker Compose](#6---instalar-o-docker-compose "(6) - Instalar o Docker Compose")
+>         - [Passos para Instalar o Docker Compose](#passos-para-instalar-o-docker-compose "Passos para Instalar o Docker Compose")
+>         - [Alternativa: Usar o Gerenciador de Pacotes (Para Algumas Distribuições)](#alternativa-usar-o-gerenciador-de-pacotes-para-algumas-distribui%C3%A7%C3%B5es "Alternativa: Usar o Gerenciador de Pacotes (Para Algumas Distribuições)")
+>         - [Finalizando](#finalizando-1 "Finalizando")
 
 ## Automação da Configuração do Ambiente React.js no Linux
 
@@ -571,7 +600,7 @@ Se precisar de mais alguma ajuda ou tiver outras dúvidas, por favor, me avise!
 
 Para instalar o Git em um sistema Linux, você pode usar o gerenciador de pacotes do seu sistema. O comando específico depende da distribuição Linux que você está usando. Aqui estão os comandos para algumas das distribuições Linux mais comuns:
 
-#### 1. **Debian/Ubuntu e derivados (como Linux Mint)**
+#### 1. Debian/Ubuntu e derivados (como Linux Mint)
 
 Para instalar o Git em sistemas baseados no Debian, como Ubuntu e Linux Mint, use o comando `apt`:
 
