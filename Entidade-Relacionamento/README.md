@@ -21,6 +21,7 @@
 > 	- [A Cardinalidade e a ordinalidade](#a-cardinalidade-e-a-ordinalidade "A Cardinalidade e a ordinalidade")
 >  - [Exemplos de código para construir bancos de dados relacionados](#exemplos-de-c%C3%B3digo-para-construir-bancos-de-dados-relacionados "Exemplos de código para construir bancos de dados relacionados")
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
+>     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](# "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -197,6 +198,32 @@ O modelo de Entidade-Relacionamento (ER) descrito pelo código SQL consiste em d
 - **Relacionamento**: Um estado pode ter muitas cidades, mas cada cidade está associada a um único estado, caracterizando um relacionamento **um-para-muitos**.
 
 Este modelo é simples e adequado para sistemas que precisam armazenar informações sobre cidades e seus estados de origem, como em um sistema de cadastros ou geolocalização.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+### Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados
+
+Para criar a relação de **chave estrangeira** entre as tabelas `cities` e `states` após a criação das tabelas, você pode usar o comando `ALTER TABLE`. Esse comando permite modificar uma tabela já existente, adicionando a restrição de chave estrangeira.
+
+Aqui está como você pode fazer isso:
+
+```sql
+ALTER TABLE cities
+ADD CONSTRAINT fk_state_id
+FOREIGN KEY (state_id) REFERENCES states(id);
+```
+
+### Explicação:
+- **`ALTER TABLE cities`**: Este comando indica que você está modificando a tabela `cities`.
+- **`ADD CONSTRAINT fk_state_id`**: Aqui, estamos adicionando uma nova restrição com o nome `fk_state_id`. É uma boa prática nomear as chaves estrangeiras para facilitar o gerenciamento e entendimento.
+- **`FOREIGN KEY (state_id)`**: Especifica o campo que será a chave estrangeira, no caso, o atributo `state_id` da tabela `cities`.
+- **`REFERENCES states(id)`**: Define que a chave estrangeira `state_id` faz referência ao campo `id` da tabela `states`.
+
+Esse comando criará o relacionamento **um-para-muitos** entre as tabelas `cities` e `states`, garantindo que todas as cidades cadastradas tenham um estado correspondente na tabela `states`.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
