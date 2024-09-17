@@ -19,6 +19,8 @@
 > 	- [Tipos de](#tipos-de "Tipos de")
 > - [Diagrama de RE notação](#diagrama-de-re-nota%C3%A7%C3%A3o "Diagrama de RE notação")
 > 	- [A Cardinalidade e a ordinalidade](#a-cardinalidade-e-a-ordinalidade "A Cardinalidade e a ordinalidade")
+>  - [Exemplos de código para construir bancos de dados relacionados](# "Exemplos de código para construir bancos de dados relacionados")
+>     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](# "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -135,6 +137,66 @@ Aqui está o significado de cada uma das linhas representadas na imagem:
    - **Exemplo**: Um autor pode não ter escrito nenhum livro ou pode ter escrito muitos.
 
 Essas notações ajudam a definir claramente as regras de cardinalidade nos relacionamentos entre entidades em um diagrama ER, esclarecendo como os dados em diferentes tabelas estão conectados e quais são as restrições ou possibilidades para essas conexões.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+## Exemplos de código para construir bancos de dados relacionados
+
+### Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional
+
+![Relacionamento entre Cidades e Estados](./images/Relations_between_Cities_and_States.png)
+
+```sql
+-- Criando a tabela states
+CREATE TABLE states (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    letters VARCHAR(2) NOT NULL,
+    name VARCHAR(100) NOT NULL
+);
+
+-- Criando a tabela cities
+CREATE TABLE cities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    state_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    FOREIGN KEY (state_id) REFERENCES states(id)
+);
+```
+
+O modelo de Entidade-Relacionamento (ER) descrito pelo código SQL consiste em duas entidades principais: **Estados (states)** e **Cidades (cities)**, com um relacionamento do tipo **um-para-muitos** entre elas. Vamos detalhar cada parte:
+
+### Entidades:
+
+1. **states (Estados)**
+   - **Atributos:**
+     - `id`: Identificador único do estado, do tipo `INT`, que é auto incrementado (`AUTO_INCREMENT`), sendo também a **chave primária** da tabela.
+     - `letters`: Código de duas letras que representam o estado, do tipo `VARCHAR(2)`, que não pode ser nulo (`NOT NULL`). Normalmente representa a sigla do estado.
+     - `name`: Nome completo do estado, do tipo `VARCHAR(100)`, também não nulo.
+   
+   Esta entidade representa a tabela de **Estados**, armazenando o nome completo e a sigla de cada estado.
+
+2. **cities (Cidades)**
+   - **Atributos:**
+     - `id`: Identificador único da cidade, do tipo `INT`, auto incrementado, sendo também a **chave primária** da tabela.
+     - `state_id`: Chave estrangeira (`FOREIGN KEY`) que referencia a tabela `states`, mais especificamente o atributo `id`, garantindo que toda cidade esteja associada a um estado existente.
+     - `name`: Nome da cidade, do tipo `VARCHAR(100)`, e também não nulo.
+
+   Esta entidade representa a tabela de **Cidades**, que inclui o nome da cidade e uma chave estrangeira que a vincula ao estado correspondente.
+
+### Relacionamento:
+
+- O relacionamento entre **states** e **cities** é **um-para-muitos** (1:N), onde **um estado pode ter muitas cidades**, mas **cada cidade pertence a um único estado**. Esse relacionamento é implementado através da **chave estrangeira** `state_id` na tabela `cities`, que referencia a chave primária `id` da tabela `states`.
+
+### Resumo:
+- **Entidade 1 (states)**: Representa os estados, com atributos para a sigla (`letters`) e o nome (`name`).
+- **Entidade 2 (cities)**: Representa as cidades, com atributos para o nome (`name`) e uma chave estrangeira (`state_id`) que relaciona cada cidade a um estado.
+- **Relacionamento**: Um estado pode ter muitas cidades, mas cada cidade está associada a um único estado, caracterizando um relacionamento **um-para-muitos**.
+
+Este modelo é simples e adequado para sistemas que precisam armazenar informações sobre cidades e seus estados de origem, como em um sistema de cadastros ou geolocalização.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
