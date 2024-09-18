@@ -442,6 +442,8 @@ Exemplo abrangente de diferentes tipos de colunas e seus atributos no MySQL, út
 
 Aqui está uma lista dos principais comandos MySQL para manipulação de bancos de dados, incluindo criação, deleção, renomeação, e operações com dados. Cada comando vem com um detalhamento e exemplos de uso.
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 1. **Criar um Banco de Dados: `CREATE DATABASE`**
 Este comando cria um novo banco de dados.
 
@@ -455,6 +457,8 @@ CREATE DATABASE loja_online;
 Isso cria um banco de dados chamado `loja_online`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 2. **Deletar um Banco de Dados: `DROP DATABASE`**
 Este comando apaga um banco de dados completamente.
@@ -470,6 +474,8 @@ Isso exclui o banco de dados `loja_online` e todas as suas tabelas permanentemen
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 3. **Selecionar um Banco de Dados: `USE`**
 Este comando define qual banco de dados será usado para os próximos comandos.
 
@@ -483,6 +489,8 @@ USE loja_online;
 Agora, todas as operações serão feitas dentro do banco de dados `loja_online`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 4. **Criar uma Tabela: `CREATE TABLE`**
 Este comando cria uma nova tabela dentro do banco de dados.
@@ -507,6 +515,8 @@ Isso cria uma tabela `produtos` com colunas `id`, `nome`, `preco`, e `estoque`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 5. **Deletar uma Tabela: `DROP TABLE`**
 Este comando apaga uma tabela e todos os seus dados.
 
@@ -521,6 +531,8 @@ Isso exclui a tabela `produtos` permanentemente.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 6. **Renomear uma Tabela: `RENAME TABLE`**
 Este comando renomeia uma tabela existente.
 
@@ -534,6 +546,8 @@ RENAME TABLE produtos TO itens_loja;
 Isso renomeia a tabela `produtos` para `itens_loja`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 7. **Adicionar uma Coluna: `ALTER TABLE ... ADD COLUMN`**
 Este comando adiciona uma nova coluna a uma tabela existente.
@@ -551,6 +565,8 @@ Isso adiciona uma coluna `descricao` à tabela `produtos`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 8. **Remover uma Coluna: `ALTER TABLE ... DROP COLUMN`**
 Este comando remove uma coluna de uma tabela.
 
@@ -566,6 +582,8 @@ DROP COLUMN descricao;
 Isso remove a coluna `descricao` da tabela `produtos`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 9. **Renomear uma Coluna: `ALTER TABLE ... RENAME COLUMN`**
 Este comando renomeia uma coluna existente.
@@ -583,6 +601,8 @@ Isso renomeia a coluna `nome` para `nome_produto`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 10. **Limpar (Apagar Dados) de uma Tabela: `TRUNCATE TABLE`**
 Este comando remove todos os dados de uma tabela, mas mantém a estrutura.
 
@@ -596,6 +616,8 @@ TRUNCATE TABLE produtos;
 Isso apaga todos os registros da tabela `produtos`, mas mantém a tabela para futuros usos.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 11. **Inserir Dados: `INSERT INTO`**
 Este comando insere dados em uma tabela.
