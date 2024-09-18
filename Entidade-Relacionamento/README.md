@@ -25,6 +25,7 @@
 >     - [Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL](#remo%C3%A7%C3%A3o-de-chaves-estrangeiras-e-desfazimento-de-relacionamentos-em-banco-de-dados-mysql "Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL")
 >     - [Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras](#adi%C3%A7%C3%A3o-de-colunas-em-tabelas-mysql-e-cria%C3%A7%C3%A3o-de-relacionamentos-com-chaves-estrangeiras "Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras")
 >  - [Guia Completo de Tipos de Atributos em MySQL](#guia-completo-de-tipos-de-atributos-em-mysql "Guia Completo de Tipos de Atributos em MySQL")
+>  - [Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta](# "Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -410,6 +411,325 @@ CREATE TABLE exemplo_atributos (
 
 
 Exemplo abrangente de diferentes tipos de colunas e seus atributos no MySQL, útil para referências rápidas e bem documentadas.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+## Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta
+
+Aqui está uma lista dos principais comandos MySQL para manipulação de bancos de dados, incluindo criação, deleção, renomeação, e operações com dados. Cada comando vem com um detalhamento e exemplos de uso.
+
+### 1. **Criar um Banco de Dados: `CREATE DATABASE`**
+Este comando cria um novo banco de dados.
+
+```sql
+CREATE DATABASE nome_do_banco_de_dados;
+```
+Exemplo:
+```sql
+CREATE DATABASE loja_online;
+```
+Isso cria um banco de dados chamado `loja_online`.
+
+---
+
+### 2. **Deletar um Banco de Dados: `DROP DATABASE`**
+Este comando apaga um banco de dados completamente.
+
+```sql
+DROP DATABASE nome_do_banco_de_dados;
+```
+Exemplo:
+```sql
+DROP DATABASE loja_online;
+```
+Isso exclui o banco de dados `loja_online` e todas as suas tabelas permanentemente.
+
+---
+
+### 3. **Selecionar um Banco de Dados: `USE`**
+Este comando define qual banco de dados será usado para os próximos comandos.
+
+```sql
+USE nome_do_banco_de_dados;
+```
+Exemplo:
+```sql
+USE loja_online;
+```
+Agora, todas as operações serão feitas dentro do banco de dados `loja_online`.
+
+---
+
+### 4. **Criar uma Tabela: `CREATE TABLE`**
+Este comando cria uma nova tabela dentro do banco de dados.
+
+```sql
+CREATE TABLE nome_da_tabela (
+    nome_coluna1 tipo_coluna,
+    nome_coluna2 tipo_coluna,
+    ...
+);
+```
+Exemplo:
+```sql
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    estoque INT DEFAULT 0
+);
+```
+Isso cria uma tabela `produtos` com colunas `id`, `nome`, `preco`, e `estoque`.
+
+---
+
+### 5. **Deletar uma Tabela: `DROP TABLE`**
+Este comando apaga uma tabela e todos os seus dados.
+
+```sql
+DROP TABLE nome_da_tabela;
+```
+Exemplo:
+```sql
+DROP TABLE produtos;
+```
+Isso exclui a tabela `produtos` permanentemente.
+
+---
+
+### 6. **Renomear uma Tabela: `RENAME TABLE`**
+Este comando renomeia uma tabela existente.
+
+```sql
+RENAME TABLE nome_atual_da_tabela TO novo_nome_da_tabela;
+```
+Exemplo:
+```sql
+RENAME TABLE produtos TO itens_loja;
+```
+Isso renomeia a tabela `produtos` para `itens_loja`.
+
+---
+
+### 7. **Adicionar uma Coluna: `ALTER TABLE ... ADD COLUMN`**
+Este comando adiciona uma nova coluna a uma tabela existente.
+
+```sql
+ALTER TABLE nome_da_tabela
+ADD COLUMN nome_coluna tipo_coluna [opções];
+```
+Exemplo:
+```sql
+ALTER TABLE produtos
+ADD COLUMN descricao TEXT;
+```
+Isso adiciona uma coluna `descricao` à tabela `produtos`.
+
+---
+
+### 8. **Remover uma Coluna: `ALTER TABLE ... DROP COLUMN`**
+Este comando remove uma coluna de uma tabela.
+
+```sql
+ALTER TABLE nome_da_tabela
+DROP COLUMN nome_coluna;
+```
+Exemplo:
+```sql
+ALTER TABLE produtos
+DROP COLUMN descricao;
+```
+Isso remove a coluna `descricao` da tabela `produtos`.
+
+---
+
+### 9. **Renomear uma Coluna: `ALTER TABLE ... RENAME COLUMN`**
+Este comando renomeia uma coluna existente.
+
+```sql
+ALTER TABLE nome_da_tabela
+RENAME COLUMN nome_coluna_antigo TO nome_coluna_novo;
+```
+Exemplo:
+```sql
+ALTER TABLE produtos
+RENAME COLUMN nome TO nome_produto;
+```
+Isso renomeia a coluna `nome` para `nome_produto`.
+
+---
+
+### 10. **Limpar (Apagar Dados) de uma Tabela: `TRUNCATE TABLE`**
+Este comando remove todos os dados de uma tabela, mas mantém a estrutura.
+
+```sql
+TRUNCATE TABLE nome_da_tabela;
+```
+Exemplo:
+```sql
+TRUNCATE TABLE produtos;
+```
+Isso apaga todos os registros da tabela `produtos`, mas mantém a tabela para futuros usos.
+
+---
+
+### 11. **Inserir Dados: `INSERT INTO`**
+Este comando insere dados em uma tabela.
+
+```sql
+INSERT INTO nome_da_tabela (coluna1, coluna2, ...)
+VALUES (valor1, valor2, ...);
+```
+Exemplo:
+```sql
+INSERT INTO produtos (nome, preco, estoque)
+VALUES ('Notebook', 2999.99, 10);
+```
+Isso insere um novo registro na tabela `produtos`.
+
+---
+
+### 12. **Atualizar Dados: `UPDATE`**
+Este comando atualiza dados em uma tabela.
+
+```sql
+UPDATE nome_da_tabela
+SET coluna1 = valor1, coluna2 = valor2, ...
+WHERE condição;
+```
+Exemplo:
+```sql
+UPDATE produtos
+SET preco = 2799.99
+WHERE nome = 'Notebook';
+```
+Isso atualiza o preço do produto `Notebook` para `2799.99`.
+
+---
+
+### 13. **Deletar Dados: `DELETE`**
+Este comando apaga registros de uma tabela.
+
+```sql
+DELETE FROM nome_da_tabela
+WHERE condição;
+```
+Exemplo:
+```sql
+DELETE FROM produtos
+WHERE nome = 'Notebook';
+```
+Isso apaga o produto com o nome `Notebook` da tabela `produtos`.
+
+---
+
+### 14. **Consultar Dados: `SELECT`**
+Este comando consulta e exibe dados de uma tabela.
+
+```sql
+SELECT coluna1, coluna2, ...
+FROM nome_da_tabela
+WHERE condição;
+```
+Exemplo:
+```sql
+SELECT nome, preco
+FROM produtos
+WHERE estoque > 0;
+```
+Isso consulta os produtos com estoque maior que 0 e retorna suas colunas `nome` e `preco`.
+
+---
+
+### 15. **Criar Índice: `CREATE INDEX`**
+Este comando cria um índice para melhorar a performance das consultas em colunas específicas.
+
+```sql
+CREATE INDEX nome_indice
+ON nome_da_tabela (nome_coluna);
+```
+Exemplo:
+```sql
+CREATE INDEX idx_nome_produto
+ON produtos (nome_produto);
+```
+Isso cria um índice chamado `idx_nome_produto` na coluna `nome_produto` da tabela `produtos`.
+
+---
+
+### 16. **Remover Índice: `DROP INDEX`**
+Este comando remove um índice de uma tabela.
+
+```sql
+DROP INDEX nome_indice
+ON nome_da_tabela;
+```
+Exemplo:
+```sql
+DROP INDEX idx_nome_produto
+ON produtos;
+```
+Isso remove o índice `idx_nome_produto` da tabela `produtos`.
+
+---
+
+### 17. **Exibir Estrutura de uma Tabela: `DESCRIBE`**
+Este comando exibe a estrutura da tabela, mostrando suas colunas e tipos de dados.
+
+```sql
+DESCRIBE nome_da_tabela;
+```
+Exemplo:
+```sql
+DESCRIBE produtos;
+```
+Isso exibe a estrutura da tabela `produtos`.
+
+---
+
+### 18. **Mostrar Tabelas do Banco de Dados: `SHOW TABLES`**
+Este comando lista todas as tabelas do banco de dados atual.
+
+```sql
+SHOW TABLES;
+```
+Exemplo:
+```sql
+SHOW TABLES;
+```
+Isso exibe todas as tabelas no banco de dados atualmente em uso.
+
+---
+
+### 19. **Exibir os Bancos de Dados Existentes: `SHOW DATABASES`**
+Este comando lista todos os bancos de dados existentes no servidor MySQL.
+
+```sql
+SHOW DATABASES;
+```
+Exemplo:
+```sql
+SHOW DATABASES;
+```
+Isso exibe todos os bancos de dados disponíveis no servidor MySQL.
+
+---
+
+### 20. **Excluir Todos os Dados de uma Tabela: `DELETE FROM`**
+Semelhante a `TRUNCATE`, mas este comando permite remover todos os dados de uma tabela, mantendo sua estrutura.
+
+```sql
+DELETE FROM nome_da_tabela;
+```
+Exemplo:
+```sql
+DELETE FROM produtos;
+```
+Isso apaga todos os registros da tabela `produtos`.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
