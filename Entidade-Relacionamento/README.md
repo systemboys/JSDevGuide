@@ -654,13 +654,6 @@ WHERE nome = 'Notebook';
 ```
 Isso apaga o produto com o nome `Notebook` da tabela `produtos`.
 
-Exemplo de busca:
-```sql
-SELECT * FROM nome_da_tabela
-WHERE coluna
-LIKE '%palavra%';
-```
-
 ---
 
 ### 14. **Consultar Dados: `SELECT`**
@@ -678,6 +671,13 @@ FROM produtos
 WHERE estoque > 0;
 ```
 Isso consulta os produtos com estoque maior que 0 e retorna suas colunas `nome` e `preco`.
+
+Exemplo de busca:
+```sql
+SELECT * FROM nome_da_tabela
+WHERE coluna
+LIKE '%palavra%';
+```
 
 ---
 
