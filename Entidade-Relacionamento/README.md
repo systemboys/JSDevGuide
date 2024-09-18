@@ -22,7 +22,7 @@
 >  - [Exemplos de código para construir bancos de dados relacionados](#exemplos-de-c%C3%B3digo-para-construir-bancos-de-dados-relacionados "Exemplos de código para construir bancos de dados relacionados")
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 >     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](#altera%C3%A7%C3%A3o-de-tabelas-para-adicionar-chave-estrangeira-e-estabelecer-relacionamento-entre-entidades-em-banco-de-dados "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
->  - [Tabela de Exemplo com Atributos Diversos no MySQL](# "Tabela de Exemplo com Atributos Diversos no MySQL")
+>  - [Guia Completo de Tipos de Atributos em MySQL](# "Guia Completo de Tipos de Atributos em MySQL")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -232,9 +232,9 @@ Esse comando criará o relacionamento **um-para-muitos** entre as tabelas `citie
 
 ---
 
-## Tabela de Exemplo com Atributos Diversos no MySQL
+## Guia Completo de Tipos de Atributos em MySQL
 
-Aqui está um exemplo de código SQL para criar uma tabela no MySQL que demonstra a utilização de vários tipos de atributos:
+Aqui está uma explicação detalhada sobre cada parte do código da tabela MySQL, destacando o uso de diversos tipos de atributos:
 
 ```sql
 CREATE TABLE exemplo_atributos (
@@ -257,7 +257,64 @@ CREATE TABLE exemplo_atributos (
 );
 ```
 
-Este script cobre os principais tipos de atributos que podem ser usados em tabelas MySQL, incluindo numéricos, strings, datas, booleanos, enumerações e blobs. 
+### Explicação detalhada:
+
+1. **`id INT AUTO_INCREMENT PRIMARY KEY`**:
+   - O tipo `INT` define que a coluna `id` será um número inteiro.
+   - `AUTO_INCREMENT` define que o valor será automaticamente incrementado cada vez que uma nova linha for inserida, garantindo que cada `id` seja único.
+   - `PRIMARY KEY` faz dessa coluna a chave primária da tabela, ou seja, um identificador único para cada registro.
+
+2. **`nome VARCHAR(100) NOT NULL`**:
+   - `VARCHAR(100)` define uma string com tamanho variável até 100 caracteres. 
+   - `NOT NULL` assegura que a coluna `nome` não pode conter valores nulos, ou seja, sempre deve ter um valor.
+
+3. **`descricao TEXT`**:
+   - O tipo `TEXT` é usado para armazenar textos de tamanho longo, geralmente maior que `VARCHAR` e sem limite de caracteres específicos.
+
+4. **`preco DECIMAL(10, 2)`**:
+   - O tipo `DECIMAL(10, 2)` é utilizado para números com casas decimais, onde o número pode ter até 10 dígitos no total, sendo 2 após o ponto decimal (ex.: 12345678.99). Isso é útil para valores monetários ou outros valores com precisão decimal.
+
+5. **`quantidade INT DEFAULT 0`**:
+   - Define uma coluna `INT` (inteiro) para armazenar a quantidade de algum item. 
+   - `DEFAULT 0` define que, caso nenhum valor seja fornecido na inserção de um registro, o valor padrão será `0`.
+
+6. **`data_criacao DATE`**:
+   - O tipo `DATE` armazena apenas a data, no formato `YYYY-MM-DD` (ex.: 2024-09-17). É útil quando você precisa armazenar apenas a data, sem hora.
+
+7. **`horario TIME`**:
+   - O tipo `TIME` armazena apenas a hora, no formato `HH:MM:SS` (ex.: 14:30:00). Útil para representar horários.
+
+8. **`data_hora DATETIME`**:
+   - O tipo `DATETIME` armazena tanto a data quanto a hora, no formato `YYYY-MM-DD HH:MM:SS`. Ideal para registrar eventos que precisam do timestamp completo (ex.: 2024-09-17 14:30:00).
+
+9. **`data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP`**:
+   - `TIMESTAMP` armazena um carimbo de data e hora.
+   - `DEFAULT CURRENT_TIMESTAMP` faz com que o valor padrão da coluna seja a data e hora atuais no momento da inserção do registro.
+   - `ON UPDATE CURRENT_TIMESTAMP` atualiza o valor da coluna sempre que o registro for modificado, registrando a última atualização.
+
+10. **`status ENUM('ativo', 'inativo', 'pendente')`**:
+    - `ENUM` define uma lista de valores permitidos para essa coluna. Aqui, os valores podem ser 'ativo', 'inativo' ou 'pendente'. Isso é útil quando a coluna deve aceitar um número fixo de valores predefinidos.
+
+11. **`ip_address BINARY(16)`**:
+    - `BINARY(16)` armazena dados binários em formato fixo. Nesse exemplo, é usado para armazenar endereços IP no formato binário, o que é útil para representar endereços IPv6 (que têm 16 bytes de comprimento).
+
+12. **`arquivo BLOB`**:
+    - O tipo `BLOB` (Binary Large Object) é usado para armazenar grandes quantidades de dados binários, como imagens, vídeos ou outros arquivos.
+
+13. **`email CHAR(50)`**:
+    - `CHAR(50)` define uma string de tamanho fixo de 50 caracteres. Diferente do `VARCHAR`, o `CHAR` sempre armazena exatamente 50 caracteres, preenchendo o restante com espaços, se necessário.
+
+14. **`ativo BOOLEAN`**:
+    - `BOOLEAN` armazena um valor booleano, que pode ser `TRUE` ou `FALSE`. Alguns bancos de dados implementam o `BOOLEAN` como `TINYINT(1)`, onde `0` é `FALSE` e `1` é `TRUE`.
+
+15. **`UNIQUE (email)`**:
+    - Define que a coluna `email` deve ter valores únicos em todos os registros da tabela, ou seja, não pode haver dois registros com o mesmo valor de email.
+
+16. **`INDEX(nome)`**:
+    - Cria um índice na coluna `nome` para acelerar as consultas que usam essa coluna em suas cláusulas `WHERE`. Índices são usados para melhorar a performance de consultas em colunas frequentemente buscadas.
+
+
+Exemplo abrangente de diferentes tipos de colunas e seus atributos no MySQL, útil para referências rápidas e bem documentadas.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
