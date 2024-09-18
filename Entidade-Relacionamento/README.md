@@ -22,6 +22,7 @@
 >  - [Exemplos de código para construir bancos de dados relacionados](#exemplos-de-c%C3%B3digo-para-construir-bancos-de-dados-relacionados "Exemplos de código para construir bancos de dados relacionados")
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 >     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](#altera%C3%A7%C3%A3o-de-tabelas-para-adicionar-chave-estrangeira-e-estabelecer-relacionamento-entre-entidades-em-banco-de-dados "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
+>  - [Tabela de Exemplo com Atributos Diversos no MySQL](# "Tabela de Exemplo com Atributos Diversos no MySQL")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -224,6 +225,39 @@ FOREIGN KEY (state_id) REFERENCES states(id);
 - **`REFERENCES states(id)`**: Define que a chave estrangeira `state_id` faz referência ao campo `id` da tabela `states`.
 
 Esse comando criará o relacionamento **um-para-muitos** entre as tabelas `cities` e `states`, garantindo que todas as cidades cadastradas tenham um estado correspondente na tabela `states`.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+## Tabela de Exemplo com Atributos Diversos no MySQL
+
+Aqui está um exemplo de código SQL para criar uma tabela no MySQL que demonstra a utilização de vários tipos de atributos:
+
+```sql
+CREATE TABLE exemplo_atributos (
+    id INT AUTO_INCREMENT PRIMARY KEY,       -- Inteiro com auto incremento
+    nome VARCHAR(100) NOT NULL,              -- String com tamanho variável
+    descricao TEXT,                          -- Texto longo
+    preco DECIMAL(10, 2),                    -- Número decimal com precisão
+    quantidade INT DEFAULT 0,                -- Inteiro com valor padrão
+    data_criacao DATE,                       -- Data (apenas data)
+    horario TIME,                            -- Hora (apenas hora)
+    data_hora DATETIME,                      -- Data e hora
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Timestamp com atualização automática
+    status ENUM('ativo', 'inativo', 'pendente'), -- Enumeração de valores
+    ip_address BINARY(16),                   -- Endereço IP armazenado como binário
+    arquivo BLOB,                            -- Blob para armazenar arquivos binários
+    email CHAR(50),                          -- String de comprimento fixo
+    ativo BOOLEAN,                           -- Valor booleano
+    UNIQUE (email),                          -- Exemplo de chave única
+    INDEX(nome)                              -- Exemplo de índice em uma coluna
+);
+```
+
+Este script cobre os principais tipos de atributos que podem ser usados em tabelas MySQL, incluindo numéricos, strings, datas, booleanos, enumerações e blobs. 
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
