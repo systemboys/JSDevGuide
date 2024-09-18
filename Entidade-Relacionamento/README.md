@@ -23,7 +23,7 @@
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 >     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](#altera%C3%A7%C3%A3o-de-tabelas-para-adicionar-chave-estrangeira-e-estabelecer-relacionamento-entre-entidades-em-banco-de-dados "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
 >     - [Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL](#remo%C3%A7%C3%A3o-de-chaves-estrangeiras-e-desfazimento-de-relacionamentos-em-banco-de-dados-mysql "Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL")
->     - [Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras](# "Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras")
+>     - [Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras](#adi%C3%A7%C3%A3o-de-colunas-em-tabelas-mysql-e-cria%C3%A7%C3%A3o-de-relacionamentos-com-chaves-estrangeiras "Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras")
 >  - [Guia Completo de Tipos de Atributos em MySQL](#guia-completo-de-tipos-de-atributos-em-mysql "Guia Completo de Tipos de Atributos em MySQL")
 
 ## Símbolos de diagrama ER conceitual
