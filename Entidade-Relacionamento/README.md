@@ -654,6 +654,13 @@ WHERE nome = 'Notebook';
 ```
 Isso apaga o produto com o nome `Notebook` da tabela `produtos`.
 
+Exemplo de busca:
+```sql
+SELECT * FROM nome_da_tabela
+WHERE coluna
+LIKE '%palavra%';
+```
+
 ---
 
 ### 14. **Consultar Dados: `SELECT`**
