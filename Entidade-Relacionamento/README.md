@@ -644,6 +644,8 @@ Isso insere um novo registro na tabela `produtos`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 12. **Atualizar Dados: `UPDATE`**
 Este comando atualiza dados em uma tabela.
 
@@ -662,6 +664,8 @@ Isso atualiza o preço do produto `Notebook` para `2799.99`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 13. **Deletar Dados: `DELETE`**
 Este comando apaga registros de uma tabela.
 
@@ -677,6 +681,8 @@ WHERE nome = 'Notebook';
 Isso apaga o produto com o nome `Notebook` da tabela `produtos`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 14. **Consultar Dados: `SELECT`**
 Este comando consulta e exibe dados de uma tabela.
@@ -703,6 +709,8 @@ LIKE '%palavra%';
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 15. **Criar Índice: `CREATE INDEX`**
 Este comando cria um índice para melhorar a performance das consultas em colunas específicas.
 
@@ -718,6 +726,8 @@ ON produtos (nome_produto);
 Isso cria um índice chamado `idx_nome_produto` na coluna `nome_produto` da tabela `produtos`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 16. **Remover Índice: `DROP INDEX`**
 Este comando remove um índice de uma tabela.
@@ -735,6 +745,8 @@ Isso remove o índice `idx_nome_produto` da tabela `produtos`.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 17. **Exibir Estrutura de uma Tabela: `DESCRIBE`**
 Este comando exibe a estrutura da tabela, mostrando suas colunas e tipos de dados.
 
@@ -748,6 +760,8 @@ DESCRIBE produtos;
 Isso exibe a estrutura da tabela `produtos`.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 18. **Mostrar Tabelas do Banco de Dados: `SHOW TABLES`**
 Este comando lista todas as tabelas do banco de dados atual.
@@ -763,6 +777,8 @@ Isso exibe todas as tabelas no banco de dados atualmente em uso.
 
 ---
 
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
 ### 19. **Exibir os Bancos de Dados Existentes: `SHOW DATABASES`**
 Este comando lista todos os bancos de dados existentes no servidor MySQL.
 
@@ -776,6 +792,8 @@ SHOW DATABASES;
 Isso exibe todos os bancos de dados disponíveis no servidor MySQL.
 
 ---
+
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 20. **Excluir Todos os Dados de uma Tabela: `DELETE FROM`**
 Semelhante a `TRUNCATE`, mas este comando permite remover todos os dados de uma tabela, mantendo sua estrutura.
