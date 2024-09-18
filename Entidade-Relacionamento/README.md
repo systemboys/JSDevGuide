@@ -23,6 +23,7 @@
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 >     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](#altera%C3%A7%C3%A3o-de-tabelas-para-adicionar-chave-estrangeira-e-estabelecer-relacionamento-entre-entidades-em-banco-de-dados "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
 >     - [Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL](#remo%C3%A7%C3%A3o-de-chaves-estrangeiras-e-desfazimento-de-relacionamentos-em-banco-de-dados-mysql "Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL")
+>     - [Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras](# "Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras")
 >  - [Guia Completo de Tipos de Atributos em MySQL](#guia-completo-de-tipos-de-atributos-em-mysql "Guia Completo de Tipos de Atributos em MySQL")
 
 ## Símbolos de diagrama ER conceitual
@@ -277,6 +278,48 @@ DROP COLUMN state_id;
 - Se você deseja remover a coluna vinculada à chave estrangeira, você pode usar o comando `DROP COLUMN`.
   
 Isso efetivamente "desfaz" o relacionamento entre as duas tabelas.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+### Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras
+
+Para **adicionar uma coluna** em uma tabela no MySQL, você pode utilizar o comando `ALTER TABLE` com a cláusula `ADD COLUMN`. A sintaxe básica é a seguinte:
+
+```sql
+ALTER TABLE nome_da_tabela
+ADD COLUMN nome_da_coluna tipo_da_coluna [constraints];
+```
+
+Aqui estão alguns exemplos:
+
+### Exemplo 1: Adicionando uma coluna simples
+Se você quiser adicionar a coluna `state_id` de volta à tabela `cities` como um número inteiro:
+
+```sql
+ALTER TABLE cities
+ADD COLUMN state_id INT;
+```
+
+### Exemplo 2: Adicionando uma coluna com chave estrangeira
+Se você quiser adicionar a coluna `state_id` e também configurar uma chave estrangeira ao mesmo tempo:
+
+```sql
+ALTER TABLE cities
+ADD COLUMN state_id INT,
+ADD CONSTRAINT fk_state_id
+FOREIGN KEY (state_id) REFERENCES states(id);
+```
+
+### Explicação:
+- **`ADD COLUMN state_id INT`**: Este comando adiciona uma nova coluna `state_id` do tipo `INT` à tabela `cities`.
+- **`ADD CONSTRAINT fk_state_id FOREIGN KEY (state_id) REFERENCES states(id)`**: Este comando adiciona uma restrição de chave estrangeira que faz referência à coluna `id` da tabela `states`.
+
+### Resumo:
+Para adicionar uma coluna, você usa `ALTER TABLE` seguido por `ADD COLUMN`, e pode adicionar outras restrições como `NOT NULL`, `DEFAULT`, ou até chaves estrangeiras para essa nova coluna.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
