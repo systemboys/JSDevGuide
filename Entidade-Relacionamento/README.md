@@ -22,6 +22,7 @@
 >  - [Exemplos de código para construir bancos de dados relacionados](#exemplos-de-c%C3%B3digo-para-construir-bancos-de-dados-relacionados "Exemplos de código para construir bancos de dados relacionados")
 >     - [Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional](#modelagem-de-relacionamento-um-para-muitos-entre-estados-e-cidades-em-banco-de-dados-relacional "Modelagem de Relacionamento Um-para-Muitos entre Estados e Cidades em Banco de Dados Relacional")
 >     - [Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados](#altera%C3%A7%C3%A3o-de-tabelas-para-adicionar-chave-estrangeira-e-estabelecer-relacionamento-entre-entidades-em-banco-de-dados "Alteração de Tabelas para Adicionar Chave Estrangeira e Estabelecer Relacionamento entre Entidades em Banco de Dados")
+>     - [Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL](# "Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL")
 >  - [Guia Completo de Tipos de Atributos em MySQL](#guia-completo-de-tipos-de-atributos-em-mysql "Guia Completo de Tipos de Atributos em MySQL")
 
 ## Símbolos de diagrama ER conceitual
@@ -225,6 +226,57 @@ FOREIGN KEY (state_id) REFERENCES states(id);
 - **`REFERENCES states(id)`**: Define que a chave estrangeira `state_id` faz referência ao campo `id` da tabela `states`.
 
 Esse comando criará o relacionamento **um-para-muitos** entre as tabelas `cities` e `states`, garantindo que todas as cidades cadastradas tenham um estado correspondente na tabela `states`.
+
+[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+---
+
+### Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL
+
+Sim, é possível desfazer o relacionamento entre duas tabelas, removendo a chave estrangeira previamente adicionada. Para isso, você precisa utilizar o comando `ALTER TABLE` para remover a restrição (`CONSTRAINT`) da chave estrangeira. O processo consiste em dois passos:
+
+1. **Descobrir o nome da chave estrangeira (constraint)**: Se você não especificou um nome explícito ao criar a chave estrangeira (como no seu exemplo, onde foi usada `fk_state_id`), o MySQL atribuirá automaticamente um nome para ela. Você pode consultar o nome da chave estrangeira através de uma query nas informações do esquema.
+
+2. **Remover a chave estrangeira**: Uma vez que você tenha o nome da chave estrangeira, pode removê-la.
+
+### Exemplo detalhado:
+
+#### 1. Descobrindo o nome da constraint
+
+Se você não lembra o nome da constraint, pode usar a seguinte consulta para descobrir as chaves estrangeiras em sua tabela:
+
+```sql
+SELECT constraint_name 
+FROM information_schema.key_column_usage
+WHERE table_name = 'cities' AND referenced_table_name = 'states';
+```
+
+Isso retornará o nome da chave estrangeira associada à tabela `cities` e à tabela `states`.
+
+#### 2. Removendo a chave estrangeira
+
+Após descobrir o nome da constraint (por exemplo, `fk_state_id`), você pode removê-la com o seguinte comando:
+
+```sql
+ALTER TABLE cities
+DROP FOREIGN KEY fk_state_id;
+```
+
+Se você também quiser remover a coluna `state_id`, que estava vinculada à chave estrangeira, pode adicionar o seguinte comando:
+
+```sql
+ALTER TABLE cities
+DROP COLUMN state_id;
+```
+
+### Resumo:
+
+- Para remover a chave estrangeira, você precisa usar o comando `ALTER TABLE` com `DROP FOREIGN KEY` e fornecer o nome da constraint.
+- Se você deseja remover a coluna vinculada à chave estrangeira, você pode usar o comando `DROP COLUMN`.
+  
+Isso efetivamente "desfaz" o relacionamento entre as duas tabelas.
 
 [![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
