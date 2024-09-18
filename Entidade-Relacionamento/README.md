@@ -25,7 +25,27 @@
 >     - [Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL](#remo%C3%A7%C3%A3o-de-chaves-estrangeiras-e-desfazimento-de-relacionamentos-em-banco-de-dados-mysql "Remoção de Chaves Estrangeiras e Desfazimento de Relacionamentos em Banco de Dados MySQL")
 >     - [Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras](#adi%C3%A7%C3%A3o-de-colunas-em-tabelas-mysql-e-cria%C3%A7%C3%A3o-de-relacionamentos-com-chaves-estrangeiras "Adição de Colunas em Tabelas MySQL e Criação de Relacionamentos com Chaves Estrangeiras")
 >  - [Guia Completo de Tipos de Atributos em MySQL](#guia-completo-de-tipos-de-atributos-em-mysql "Guia Completo de Tipos de Atributos em MySQL")
->  - [Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta](# "Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta")
+>  - [Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta](#comandos-essenciais-para-manipula%C3%A7%C3%A3o-de-bancos-de-dados-mysql-cria%C3%A7%C3%A3o-dele%C3%A7%C3%A3o-edi%C3%A7%C3%A3o-e-consulta "Comandos Essenciais para Manipulação de Bancos de Dados MySQL: Criação, Deleção, Edição e Consulta")
+>     - [Criar um Banco de Dados: CREATE DATABASE](#1-criar-um-banco-de-dados-create-database "Criar um Banco de Dados: CREATE DATABASE")
+>     - [Deletar um Banco de Dados: DROP DATABASE](#2-deletar-um-banco-de-dados-drop-database "Deletar um Banco de Dados: DROP DATABASE")
+>     - [Selecionar um Banco de Dados: USE](#3-selecionar-um-banco-de-dados-use "Selecionar um Banco de Dados: USE")
+>     - [Criar uma Tabela: CREATE TABLE](#4-criar-uma-tabela-create-table "Criar uma Tabela: CREATE TABLE")
+>     - [Deletar uma Tabela: DROP TABLE](#5-deletar-uma-tabela-drop-table "Deletar uma Tabela: DROP TABLE")
+>     - [Renomear uma Tabela: RENAME TABLE](#6-renomear-uma-tabela-rename-table "Renomear uma Tabela: RENAME TABLE")
+>     - [Adicionar uma Coluna: ALTER TABLE ... ADD COLUMN](#7-adicionar-uma-coluna-alter-table--add-column "Adicionar uma Coluna: ALTER TABLE ... ADD COLUMN")
+>     - [Remover uma Coluna: ALTER TABLE ... DROP COLUMN](#8-remover-uma-coluna-alter-table--drop-column "Remover uma Coluna: ALTER TABLE ... DROP COLUMN")
+>     - [Renomear uma Coluna: ALTER TABLE ... RENAME COLUMN](#9-renomear-uma-coluna-alter-table--rename-column "Renomear uma Coluna: ALTER TABLE ... RENAME COLUMN")
+>     - [Limpar (Apagar Dados) de uma Tabela: TRUNCATE TABLE](#10-limpar-apagar-dados-de-uma-tabela-truncate-table "Limpar (Apagar Dados) de uma Tabela: TRUNCATE TABLE")
+>     - [Inserir Dados: INSERT INTO](#11-inserir-dados-insert-into "Inserir Dados: INSERT INTO")
+>     - [Atualizar Dados: UPDATE](#12-atualizar-dados-update "Atualizar Dados: UPDATE")
+>     - [Deletar Dados: DELETE](#13-deletar-dados-delete "Deletar Dados: DELETE")
+>     - [Consultar Dados: SELECT](#14-consultar-dados-select "Consultar Dados: SELECT")
+>     - [Criar Índice: CREATE INDEX](#15-criar-%C3%ADndice-create-index "Criar Índice: CREATE INDEX")
+>     - [Remover Índice: DROP INDEX](#16-remover-%C3%ADndice-drop-index "Remover Índice: DROP INDEX")
+>     - [Exibir Estrutura de uma Tabela: DESCRIBE](#17-exibir-estrutura-de-uma-tabela-describe "Exibir Estrutura de uma Tabela: DESCRIBE")
+>     - [Mostrar Tabelas do Banco de Dados: SHOW TABLES](#18-mostrar-tabelas-do-banco-de-dados-show-tables "Mostrar Tabelas do Banco de Dados: SHOW TABLES")
+>     - [Exibir os Bancos de Dados Existentes: SHOW DATABASES](#19-exibir-os-bancos-de-dados-existentes-show-databases "Exibir os Bancos de Dados Existentes: SHOW DATABASES")
+>     - [Excluir Todos os Dados de uma Tabela: DELETE FROM](#20-excluir-todos-os-dados-de-uma-tabela-delete-from "Excluir Todos os Dados de uma Tabela: DELETE FROM")
 
 ## Símbolos de diagrama ER conceitual
 
@@ -583,6 +603,15 @@ Este comando insere dados em uma tabela.
 ```sql
 INSERT INTO nome_da_tabela (coluna1, coluna2, ...)
 VALUES (valor1, valor2, ...);
+```
+Ou em grande quantidade:
+```sql
+INSERT INTO nome_da_tabela (coluna1, coluna2, ...) VALUES
+(coluna1, coluna2, ...),
+(coluna1, coluna2, ...),
+(coluna1, coluna2, ...),
+(coluna1, coluna2, ...),
+(coluna1, coluna2, ...);
 ```
 Exemplo:
 ```sql
