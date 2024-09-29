@@ -2,8 +2,8 @@
 >
 > ![Docker](./images/docker_compose.png)
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Início](../../images/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
 > ### *Summary*
 
@@ -13,9 +13,9 @@
 
 ----
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../../images/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Visão Geral de Docker Compose
 
@@ -142,9 +142,9 @@ Docker Compose é uma ferramenta essencial para desenvolver, testar e implementa
 
 Conteúdo do assunto
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../../images/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Como Instalar Docker Compose
 
@@ -234,9 +234,9 @@ Se você ainda não tiver o Docker instalado, siga os passos abaixo para instal�
 
 Com esses passos, Docker e Docker Compose estarão instalados e prontos para uso no seu sistema Debian Linux.
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../../images/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Como Usar Docker Compose
 
@@ -406,7 +406,7 @@ volumes:
 
 Docker Compose é uma ferramenta essencial para desenvolver, testar e implementar aplicações complexas, tornando a gestão de contêineres Docker mais eficiente e organizada.
 
-[![Início](../../imges/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../../images/control/11273_control_stop_icon.png?raw=true "Início")](../../README.md#jsdevguide "Início")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 

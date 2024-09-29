@@ -317,7 +317,7 @@ Docker é uma ferramenta poderosa que está revolucionando a forma como desenvol
 
 A imagem abaixo está comparando a virtualização tradicional com máquinas virtuais (VM) usando um "Hypervisor", e a containerização usando "Docker".
 
-![](/home/marcos/Documentos/Projects/JSDevGuide/images/Hypervisor_And_Containerization.png)
+![](../images/Hypervisor_And_Containerization.png)
 
 **Diferença entre Hypervisor e Docker:**
 

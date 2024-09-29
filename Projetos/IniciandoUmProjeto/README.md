@@ -2,7 +2,7 @@
 >
 > ![Docker](./images/StartingAProject.png)
 
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
 
 > ### *Summary*
 >
@@ -51,8 +51,8 @@ Por favor, note que esses comandos são para sistemas baseados em Debian, como U
 
 Espero que isso ajude! 😊
 
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Configuração inicial
 
@@ -315,8 +315,8 @@ Espero que isso ajude! 😊
     Servidor rodando na porta 3000!
     ```
 
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Criando banco de dados
 
@@ -539,7 +539,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
     root@10:/home/userlinux/Documentos/Projects/myProject/api#
     ```
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### ORM Prisma
 
@@ -765,7 +765,7 @@ Portanto, Docker e Docker Compose são ferramentas complementares usadas para is
 
     **Obs.:** Não esqueça de estar com o Docker rodando, se o Docker parar, o banco de dados não vai rodar!
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Repository de usuários (CRUD)
 
@@ -998,7 +998,7 @@ export const deleteUser = async (id: number) => {
 
 > Obs.: Na variável "user", para apagar o registro utilize "`delete({...})`" ao invés de "`update({...})`". O exemplo acima, é uma exclusão lógica apenas, isso quer dizer que a coluna "`deleted`" do usuário será apenas atualizada para "`true`".
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Controller de usuário
 
@@ -1332,7 +1332,7 @@ Teste com a rota "user" passando o ID na requisição "DELETE":
 
 > ( i ) Observe que o registro foi apagado! Não haverá returno, o registro apenas foi apagado.
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Ajustando retornos
 
@@ -1467,7 +1467,7 @@ Ao chamar a requisição de seleção de todos os registros, a senha não vem ju
 
 ![Trazendo apenas dados específicos, com o 'getAll'](./images/Bringing_only_specific_data_-_getAll.png)
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Paginação de registros
 
@@ -1626,7 +1626,7 @@ http://localhost:3000/v1/user?skip=0&take=20
 
 Altere os parâmetros (`..?skip=0&take=20`) nos testes e verá o resultado.
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Pesquisa de registros
 
@@ -1822,7 +1822,7 @@ http://localhost:3000/v1/user?skip=0take=20&search=rafael
 
 O Prisma receberá o termo pesquisado no Search "`...&search=rafael`".
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Token JWT
 
@@ -1841,7 +1841,7 @@ O JWT é muito utilizado em cenários de autorização. Depois que o usuário es
 > Vamos aplicar uma autenticação com o **Token JWT** ([https://jwt.io](https://jwt.io "Site do Token JWT")).
 > ![Token JWT](./images/Token_JWT.png)
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Rota de Login
 
@@ -2020,7 +2020,7 @@ Use a nova rota "`http://localhost:3000/v1/login`" sem passar nada, como se o us
 └─ package.json
 ```
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Decoded do Token
 
@@ -2073,7 +2073,7 @@ Teste no "Thunder Cliente" ou "Insomnia":
 
 ![Decoded do Token, imagem 1](./images/TokenDecoded_img_1.png)
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Adicionando Middleware
 
@@ -2230,8 +2230,8 @@ Faça o teste com o "Thunder Client" ou "Insomnia":
 └─ package.json
 ```
 
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Começando nosso Frontend
 
@@ -2257,7 +2257,7 @@ Além disso, os desenvolvedores frontend podem usar várias ferramentas e framew
 
 Em resumo, o frontend é a parte do site que os usuários veem e interagem, e é criado usando várias tecnologias de codificação, como HTML, CSS e JavaScript..
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Como funciona o Redux e Redux-Saga
 
@@ -2323,12 +2323,12 @@ Em resumo, o **Redux** é uma biblioteca para gerenciamento de estado síncrono,
 
 Em resumo, o Redux e o Redux-Saga trabalham juntos para gerenciar o estado da aplicação, tornando-o previsível e escalável. O Redux cuida do estado síncrono, enquanto o Redux-Saga lida com operações assíncronas de maneira eficiente.
 
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### Configurando o Redux
 
 Content...
 
-[![Voltar](../../imges/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
-[![Subir](../../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Voltar](../../images/control/11269_control_left_icon.png "Voltar")](../../README.md#summary "Voltar")
+[![Subir](../../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 

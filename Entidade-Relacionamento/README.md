@@ -2,8 +2,8 @@
 >
 > ![img](./images/68747470733a2f2f636f72706f726174652d6173736574732e6c756369642e636f2f63686172742f32663263626436312d62.png)
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
 > ### *Summary*
 >
@@ -163,9 +163,9 @@ Aqui está o significado de cada uma das linhas representadas na imagem:
 
 Essas notações ajudam a definir claramente as regras de cardinalidade nos relacionamentos entre entidades em um diagrama ER, esclarecendo como os dados em diferentes tabelas estão conectados e quais são as restrições ou possibilidades para essas conexões.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -223,9 +223,9 @@ O modelo de Entidade-Relacionamento (ER) descrito pelo código SQL consiste em d
 
 Este modelo é simples e adequado para sistemas que precisam armazenar informações sobre cidades e seus estados de origem, como em um sistema de cadastros ou geolocalização.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -249,9 +249,9 @@ FOREIGN KEY (state_id) REFERENCES states(id);
 
 Esse comando criará o relacionamento **um-para-muitos** entre as tabelas `cities` e `states`, garantindo que todas as cidades cadastradas tenham um estado correspondente na tabela `states`.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -300,9 +300,9 @@ DROP COLUMN state_id;
   
 Isso efetivamente "desfaz" o relacionamento entre as duas tabelas.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -342,9 +342,9 @@ FOREIGN KEY (state_id) REFERENCES states(id);
 ### Resumo:
 Para adicionar uma coluna, você usa `ALTER TABLE` seguido por `ADD COLUMN`, e pode adicionar outras restrições como `NOT NULL`, `DEFAULT`, ou até chaves estrangeiras para essa nova coluna.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -432,9 +432,9 @@ CREATE TABLE exemplo_atributos (
 
 Exemplo abrangente de diferentes tipos de colunas e seus atributos no MySQL, útil para referências rápidas e bem documentadas.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
@@ -442,7 +442,7 @@ Exemplo abrangente de diferentes tipos de colunas e seus atributos no MySQL, út
 
 Aqui está uma lista dos principais comandos MySQL para manipulação de bancos de dados, incluindo criação, deleção, renomeação, e operações com dados. Cada comando vem com um detalhamento e exemplos de uso.
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 1. **Criar um Banco de Dados: `CREATE DATABASE`**
 Este comando cria um novo banco de dados.
@@ -458,7 +458,7 @@ Isso cria um banco de dados chamado `loja_online`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 2. **Deletar um Banco de Dados: `DROP DATABASE`**
 Este comando apaga um banco de dados completamente.
@@ -474,7 +474,7 @@ Isso exclui o banco de dados `loja_online` e todas as suas tabelas permanentemen
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 3. **Selecionar um Banco de Dados: `USE`**
 Este comando define qual banco de dados será usado para os próximos comandos.
@@ -490,7 +490,7 @@ Agora, todas as operações serão feitas dentro do banco de dados `loja_online`
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 4. **Criar uma Tabela: `CREATE TABLE`**
 Este comando cria uma nova tabela dentro do banco de dados.
@@ -515,7 +515,7 @@ Isso cria uma tabela `produtos` com colunas `id`, `nome`, `preco`, e `estoque`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 5. **Deletar uma Tabela: `DROP TABLE`**
 Este comando apaga uma tabela e todos os seus dados.
@@ -531,7 +531,7 @@ Isso exclui a tabela `produtos` permanentemente.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 6. **Renomear uma Tabela: `RENAME TABLE`**
 Este comando renomeia uma tabela existente.
@@ -547,7 +547,7 @@ Isso renomeia a tabela `produtos` para `itens_loja`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 7. **Adicionar uma Coluna: `ALTER TABLE ... ADD COLUMN`**
 Este comando adiciona uma nova coluna a uma tabela existente.
@@ -565,7 +565,7 @@ Isso adiciona uma coluna `descricao` à tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 8. **Remover uma Coluna: `ALTER TABLE ... DROP COLUMN`**
 Este comando remove uma coluna de uma tabela.
@@ -583,7 +583,7 @@ Isso remove a coluna `descricao` da tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 9. **Renomear uma Coluna: `ALTER TABLE ... RENAME COLUMN`**
 Este comando renomeia uma coluna existente.
@@ -601,7 +601,7 @@ Isso renomeia a coluna `nome` para `nome_produto`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 10. **Limpar (Apagar Dados) de uma Tabela: `TRUNCATE TABLE`**
 Este comando remove todos os dados de uma tabela, mas mantém a estrutura.
@@ -617,7 +617,7 @@ Isso apaga todos os registros da tabela `produtos`, mas mantém a tabela para fu
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 11. **Inserir Dados: `INSERT INTO`**
 Este comando insere dados em uma tabela.
@@ -644,7 +644,7 @@ Isso insere um novo registro na tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 12. **Atualizar Dados: `UPDATE`**
 Este comando atualiza dados em uma tabela.
@@ -664,7 +664,7 @@ Isso atualiza o preço do produto `Notebook` para `2799.99`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 13. **Deletar Dados: `DELETE`**
 Este comando apaga registros de uma tabela.
@@ -682,7 +682,7 @@ Isso apaga o produto com o nome `Notebook` da tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 14. **Consultar Dados: `SELECT`**
 Este comando consulta e exibe dados de uma tabela.
@@ -709,7 +709,7 @@ LIKE '%palavra%';
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 15. **Criar Índice: `CREATE INDEX`**
 Este comando cria um índice para melhorar a performance das consultas em colunas específicas.
@@ -727,7 +727,7 @@ Isso cria um índice chamado `idx_nome_produto` na coluna `nome_produto` da tabe
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 16. **Remover Índice: `DROP INDEX`**
 Este comando remove um índice de uma tabela.
@@ -745,7 +745,7 @@ Isso remove o índice `idx_nome_produto` da tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 17. **Exibir Estrutura de uma Tabela: `DESCRIBE`**
 Este comando exibe a estrutura da tabela, mostrando suas colunas e tipos de dados.
@@ -761,7 +761,7 @@ Isso exibe a estrutura da tabela `produtos`.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 18. **Mostrar Tabelas do Banco de Dados: `SHOW TABLES`**
 Este comando lista todas as tabelas do banco de dados atual.
@@ -777,7 +777,7 @@ Isso exibe todas as tabelas no banco de dados atualmente em uso.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 19. **Exibir os Bancos de Dados Existentes: `SHOW DATABASES`**
 Este comando lista todos os bancos de dados existentes no servidor MySQL.
@@ -793,7 +793,7 @@ Isso exibe todos os bancos de dados disponíveis no servidor MySQL.
 
 ---
 
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ### 20. **Excluir Todos os Dados de uma Tabela: `DELETE FROM`**
 Semelhante a `TRUNCATE`, mas este comando permite remover todos os dados de uma tabela, mantendo sua estrutura.
@@ -807,9 +807,9 @@ DELETE FROM produtos;
 ```
 Isso apaga todos os registros da tabela `produtos`.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ---
 
