@@ -2,8 +2,8 @@
 >
 > ![Docker](./images/docker.png)
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
 
 > ### *Summary*
 
@@ -11,12 +11,13 @@
 > - [Guia Completo para Instalação do Docker no Debian Linux](#guia-completo-para-instala%C3%A7%C3%A3o-do-docker-no-debian-linux "Guia Completo para Instalação do Docker no Debian Linux")
 > - [Noções básicas do Docker](#no%C3%A7%C3%B5es-b%C3%A1sicas-do-docker "Noções básicas do Docker")
 > - [Docker Compose](./DockerCompose/README.md#docker-compose "Docker Compose")
+> - [Comparação entre Virtualização com Hypervisor e Containerização com Docker: Eficiência e Utilização de Recursos](# "Comparação entre Virtualização com Hypervisor e Containerização com Docker: Eficiência e Utilização de Recursos")
 
 ----
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Visão Geral do Docker
 
@@ -81,9 +82,9 @@ Docker é uma plataforma de código aberto que automatiza a implantação de apl
 
 Docker revolucionou a maneira como as aplicações são desenvolvidas, implantadas e executadas, proporcionando uma plataforma eficiente, portátil e confiável para a modernização dos processos de desenvolvimento e operações de TI.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Guia Completo para Instalação do Docker no Debian Linux
 
@@ -165,9 +166,9 @@ Se tudo estiver funcionando corretamente, você verá uma mensagem de confirmaç
 
 Pronto! O Docker deve estar instalado e funcionando no seu sistema Debian Linux.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
 ## Noções Básicas do Docker
 
@@ -308,7 +309,34 @@ CMD ["python", "app.py"]
 
 Docker é uma ferramenta poderosa que está revolucionando a forma como desenvolvedores e operadores de TI criam, distribuem e executam aplicações. Compreender suas noções básicas é fundamental para aproveitar todo o potencial dessa tecnologia.
 
-[![Início](../imges/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
-[![Voltar](../imges/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
-[![Subir](../imges/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
+
+### Comparação entre Virtualização com Hypervisor e Containerização com Docker: Eficiência e Utilização de Recursos
+
+A imagem abaixo está comparando a virtualização tradicional com máquinas virtuais (VM) usando um "Hypervisor", e a containerização usando "Docker".
+
+![](/home/marcos/Documentos/Projects/JSDevGuide/images/Hypervisor_And_Containerization.png)
+
+**Diferença entre Hypervisor e Docker:**
+
+1. **Hypervisor**:
+   - O Hypervisor é o software que permite que múltiplos sistemas operacionais (VMs) rodem em uma única máquina física. Ele abstrai o hardware da máquina física para que várias máquinas virtuais (VMs) possam compartilhar os recursos da máquina hospedeira.
+   - Cada VM tem seu próprio sistema operacional completo, suas próprias bibliotecas, bins e aplicativos.
+   - Exemplo: Você pode ter uma VM rodando **Debian** e outra rodando **Ubuntu**, cada uma com seus próprios recursos.
+   - **O que utiliza da máquina hospedeira**: O Hypervisor interage diretamente com o hardware da máquina física, como CPU, memória e armazenamento, e aloca esses recursos para cada máquina virtual.
+
+2. **Docker**:
+   - O Docker, por outro lado, é uma plataforma de containers que compartilha o mesmo sistema operacional (kernel) da máquina hospedeira, mas isola os aplicativos em containers independentes. Cada container inclui apenas o necessário para rodar o aplicativo, como bins e bibliotecas, mas sem um sistema operacional completo, ao contrário das VMs.
+   - Isso faz com que os containers sejam mais leves do que as VMs, pois todos os containers compartilham o mesmo kernel do SO da máquina hospedeira.
+   - **O que utiliza da máquina hospedeira**: O Docker usa o sistema operacional da máquina hospedeira, incluindo o kernel, enquanto isola os aplicativos e suas dependências no nível de container. Ele não cria máquinas virtuais completas, apenas ambientes isolados para os aplicativos.
+
+**Resumindo**:
+- **Hypervisor**: cria e gerencia VMs, cada uma com seu próprio SO completo. Usa mais recursos, pois cada VM precisa de seu próprio SO.
+- **Docker**: usa containers que compartilham o kernel do SO da máquina hospedeira. Containers são mais leves, pois não precisam de um SO completo.
+
+[![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
+[![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
+[![Subir](../images/control/11280_control_up_icon.png "Subir")](#summary "Subir")
 
