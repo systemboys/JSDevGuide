@@ -1,6 +1,6 @@
 > ## Gerenciamento de Variáveis de Ambiente no React
 >
-> ![Descrição da imagem](./images/image.png)
+> ![Descrição da imagem](./images/A-symbolic-and-modern-representation-of-environment-variables-in-React.png)
 
 [![Início](../images/control/11273_control_stop_icon.png?raw=true "Início")](../README.md#jsdevguide "Início")
 [![Voltar](../images/control/11269_control_left_icon.png "Voltar")](../README.md#summary "Voltar")
