@@ -643,7 +643,7 @@ INSERT INTO produtos (nome,        preco, estoque, created_at, updated_at) VALUE
                      ('Produto 3', 9.99,  12,      NULL,       NULL);
 ```
 
-> ( i ) Dessa forma, com essa identação por colunas, facilita a inserção de registros, facilita também na análise de dados para correções em caso de erros nos dados.
+> ( i ) Dessa forma, com essa identação por colunas, facilita a inserção de registros, facilita também na análise de dados para correções em caso de erros.
 
 Isso insere um novo registro na tabela `produtos`.
 
