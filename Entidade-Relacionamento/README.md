@@ -635,11 +635,16 @@ INSERT INTO nome_da_tabela (coluna1, coluna2, ...) VALUES
 (coluna1, coluna2, ...),
 (coluna1, coluna2, ...);
 ```
-Exemplo:
+Exemplo de INSERTs organizados para evitar erros:
 ```sql
-INSERT INTO produtos (nome, preco, estoque)
-VALUES ('Notebook', 2999.99, 10);
+INSERT INTO produtos (nome,        preco, estoque, created_at, updated_at) VALUES
+                     ('Produto 1', 9.97,  10,      NULL,       NULL),
+                     ('Produto 2', 9.98,  11,      NULL,       NULL),
+                     ('Produto 3', 9.99,  12,      NULL,       NULL);
 ```
+
+> ( i ) Dessa forma, facilita quando dados forem inseridos, essa estrutura facilita na análise de dados para correções de problemas em caso de erros nos dados.
+
 Isso insere um novo registro na tabela `produtos`.
 
 ---
