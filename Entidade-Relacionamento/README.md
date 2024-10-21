@@ -635,7 +635,7 @@ INSERT INTO nome_da_tabela (coluna1, coluna2, ...) VALUES
 (coluna1, coluna2, ...),
 (coluna1, coluna2, ...);
 ```
-Exemplo de INSERTs organizados para evitar erros:
+Exemplo de INSERTs organizados (identado) para evitar erros:
 ```sql
 INSERT INTO produtos (nome,        preco, estoque, created_at, updated_at) VALUES
                      ('Produto 1', 9.97,  10,      NULL,       NULL),
@@ -643,7 +643,7 @@ INSERT INTO produtos (nome,        preco, estoque, created_at, updated_at) VALUE
                      ('Produto 3', 9.99,  12,      NULL,       NULL);
 ```
 
-> ( i ) Dessa forma, facilita quando dados forem inseridos, essa estrutura facilita na análise de dados para correções de problemas em caso de erros nos dados.
+> ( i ) Dessa forma, com essa identação por colunas, facilita a inserção de registros, facilita também na análise de dados para correções em caso de erros nos dados.
 
 Isso insere um novo registro na tabela `produtos`.
 
