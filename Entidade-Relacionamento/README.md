@@ -637,10 +637,10 @@ INSERT INTO nome_da_tabela (coluna1, coluna2, ...) VALUES
 ```
 Exemplo de INSERTs organizados (identado) para evitar erros:
 ```sql
-INSERT INTO produtos (nome,        preco,  estoque, created_at, updated_at) VALUES
-                     ('Produto 1', '9.97', 10,      NULL,       NULL),
-                     ('Produto 2', '9.98', 11,      NULL,       NULL),
-                     ('Produto 3', '9.99', 12,      NULL,       NULL);
+INSERT INTO produtos (nome,             preco,  estoque, categoria, created_at, updated_at) VALUES
+                     ('Produto Demo 1', '9.97', '10',    1,         NULL,       NULL),
+                     ('Produto Demo 2', '9.98', '11',    3,         NULL,       NULL),
+                     ('Produto Demo 3', '9.99', '12',    2,         NULL,       NULL);
 ```
 
 > ( i ) Dessa forma, com essa identação por colunas, facilita a inserção de registros, facilita também na análise de dados para correções em caso de erros.
