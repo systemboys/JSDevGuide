@@ -8,7 +8,7 @@
 > ### *Summary*
 
 > - [Visão Geral do Docker](#vis%C3%A3o-geral-do-docker "Visão Geral do Docker")
-> - [Docker Hub: A Plataforma Central de Distribuição e Gestão de Imagens Docker](# "Docker Hub: A Plataforma Central de Distribuição e Gestão de Imagens Docker")
+> - [Docker Hub: A Plataforma Central de Distribuição e Gestão de Imagens Docker](#docker-hub-a-plataforma-central-de-distribui%C3%A7%C3%A3o-e-gest%C3%A3o-de-imagens-docker "Docker Hub: A Plataforma Central de Distribuição e Gestão de Imagens Docker")
 > - [Guia Completo para Instalação do Docker no Debian Linux](#guia-completo-para-instala%C3%A7%C3%A3o-do-docker-no-debian-linux "Guia Completo para Instalação do Docker no Debian Linux")
 > - [Noções básicas do Docker](#no%C3%A7%C3%B5es-b%C3%A1sicas-do-docker "Noções básicas do Docker")
 > - [Docker Compose](./DockerCompose/README.md#docker-compose "Docker Compose")
